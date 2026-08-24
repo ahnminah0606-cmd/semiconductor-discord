@@ -20,7 +20,7 @@ concurrency:
 jobs:
   crawl-and-notify:
     name: 크롤링 및 Discord 알림
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 15
 
     permissions:
@@ -47,9 +47,7 @@ jobs:
 
       - name: Playwright Chromium 설치
         run: |
-          playwright install chromium
-          playwright install-deps chromium
-          echo "Playwright 설치 완료"
+          playwright install --with-deps chromium
 
       - name: 뉴스 크롤러 실행
         id: crawler
