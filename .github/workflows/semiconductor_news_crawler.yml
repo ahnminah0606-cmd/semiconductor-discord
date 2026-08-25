@@ -1,11 +1,11 @@
 # 반도체 뉴스 크롤러 자동화 워크플로우
-# 매일 오전 7시 KST (= 전날 UTC 22:00) 자동 실행
+# 매일 오전 7:07 KST (= 전날 UTC 22:07) 자동 실행
 
 name: 반도체 뉴스 자동 크롤러
 
 on:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "7 22 * * *"   # 매일 오전 7:07 KST
   workflow_dispatch:
     inputs:
       debug_mode:
@@ -53,30 +53,55 @@ jobs:
         id: crawler
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_TRENDFORCE: ${{ secrets.DISCORD_WEBHOOK_TRENDFORCE }}
+          DISCORD_WEBHOOK_SEMIANALYSIS: ${{ secrets.DISCORD_WEBHOOK_SEMIANALYSIS }}
         run: |
           python semiconductor_news_crawler.py
 
       - name: 실행 결과 확인
         run: |
           echo "=== 크롤링 결과 요약 ==="
+
           if [ -d "data" ]; then
             ls -la data/
 
             latest_file=$(ls -t data/*.json 2>/dev/null | head -1)
 
             if [ -n "$latest_file" ]; then
-              python3 -c "
+              python3 - <<PY
           import json
 
-          with open('$latest_file', encoding='utf-8') as f:
-              items = json.load(f)
+          with open("$latest_file", encoding="utf-8") as f:
+              data = json.load(f)
 
-          print(f'총 {len(items)}건 수집')
+          etnews = data.get("etnews", [])
+          trendforce = data.get("trendforce", [])
+          semianalysis = data.get("semianalysis", [])
 
-          for i, item in enumerate(items[:5], 1):
-              print(f'{i}. {item[\"title\"][:60]}')
-          "
+          print(f"전자신문: {len(etnews)}건")
+          print(f"TrendForce: {len(trendforce)}건")
+          print(f"SemiAnalysis: {len(semianalysis)}건")
+
+          total = len(etnews) + len(trendforce) + len(semianalysis)
+          print(f"총 {total}건 수집")
+
+          print("\n=== 전자신문 ===")
+          for i, item in enumerate(etnews[:3], 1):
+              print(f"{i}. {item['title'][:60]}")
+
+          print("\n=== TrendForce ===")
+          for i, item in enumerate(trendforce[:3], 1):
+              print(f"{i}. {item['title'][:60]}")
+
+          print("\n=== SemiAnalysis ===")
+          for i, item in enumerate(semianalysis[:3], 1):
+              print(f"{i}. {item['title'][:60]}")
+          PY
+            else
+              echo "JSON 결과 파일이 없습니다."
             fi
+          else
+            echo "data 디렉토리가 없습니다."
           fi
 
       - name: 결과 자동 커밋
@@ -119,6 +144,8 @@ jobs:
 
             ### 확인 사항
             - Discord Webhook URL 유효성 확인
+            - TrendForce Webhook 설정 확인
+            - SemiAnalysis Webhook 설정 확인
             - 크롤링 대상 사이트 구조 변경 여부
             - Playwright 의존성 설치 오류 여부
 
