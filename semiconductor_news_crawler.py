@@ -221,7 +221,12 @@ def save_sent(urls):
 
 
 def block(index, article):
-    return f"{index}. **{article['summary_title']}**\n{article['summary']}"
+    # URL을 꺾쇠로 감싸 Discord의 자동 링크 미리보기(Embed)를 억제한다.
+    return (
+        f"{index}. **{article['summary_title']}**\n"
+        f"{article['summary']}\n"
+        f"원문: <{article['url']}>"
+    )
 
 
 def messages(source, articles):
@@ -234,7 +239,7 @@ def messages(source, articles):
             continue
         output.append(current)
         header = f"#{source} (계속)\n- {date} 요약"
-        room = 1900 - len(header) - len(article["summary_title"]) - 30
+        room = 1900 - len(header) - len(article["url"]) - len(article["summary_title"]) - 50
         if len(text) > 1800:
             text = block(index, {**article, "summary": article["summary"][:max(room, 100)] + "…"})
         current = header + "\n\n" + text
