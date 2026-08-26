@@ -221,7 +221,7 @@ def save_sent(urls):
 
 
 def block(index, article):
-    return f"{index}. **{article['summary_title']}**\n{article['summary']}\n원문: {article['url']}"
+    return f"{index}. **{article['summary_title']}**\n{article['summary']}"
 
 
 def messages(source, articles):
@@ -234,7 +234,7 @@ def messages(source, articles):
             continue
         output.append(current)
         header = f"#{source} (계속)\n- {date} 요약"
-        room = 1900 - len(header) - len(article["url"]) - len(article["summary_title"]) - 50
+        room = 1900 - len(header) - len(article["summary_title"]) - 30
         if len(text) > 1800:
             text = block(index, {**article, "summary": article["summary"][:max(room, 100)] + "…"})
         current = header + "\n\n" + text
