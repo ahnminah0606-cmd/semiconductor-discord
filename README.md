@@ -295,6 +295,11 @@ Discord에 전송했습니다. 이 때문에 잘못된 API 키 테스트에서�
 발생하면 실패 코드로 종료되므로 GitHub Actions가 잘못된 `Success`로 표시되지
 않습니다.
 
+요약 응답은 OpenAI Structured Outputs의 JSON Schema로 `title`과 `summary`를
+강제합니다. 두 필드가 비었거나 한국어가 아니거나 요약이 지나치게 짧으면 한 번
+자동 재시도합니다. 재시도도 실패하면 영어 원문 제목이나 JSON 코드를 대신 보내지
+않고 해당 사이트의 Discord 전송 전체를 중단합니다.
+
 ### `DISCORD_WEBHOOK_URL`의 용도가 불분명했던 경우
 
 기존 일반 명칭은 실제로 NaverNews 채널의 웹훅이었습니다. 코드와 문서, Actions

@@ -170,17 +170,29 @@ def fetch_article(article):
     return article
 
 
-def parse_summary(raw, fallback):
-    raw = raw.strip()
-    try:
-        data = json.loads(raw)
-        if data.get("title") and data.get("summary"):
-            return str(data["title"]).strip(), str(data["summary"]).strip()
-    except json.JSONDecodeError:
-        pass
-    cleaned = re.sub(r"^```(?:json)?|```$", "", raw, flags=re.MULTILINE).strip()
-    lines = [x.strip() for x in cleaned.splitlines() if x.strip()]
-    return (lines[0][:100] if lines else fallback[:100], " ".join(lines[1:]) or cleaned)
+SUMMARY_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "title": {"type": "string", "description": "자연스러운 한국어 요약 제목"},
+        "summary": {"type": "string", "description": "기사의 중요한 내용을 담은 한국어 2~4문장"},
+    },
+    "required": ["title", "summary"],
+    "additionalProperties": False,
+}
+
+
+def parse_summary(raw):
+    """Structured Output을 검증하고 화면에 JSON 코드가 노출되지 않게 한다."""
+    data = json.loads(raw)
+    title = str(data.get("title", "")).strip()
+    summary = str(data.get("summary", "")).strip()
+    if not title or not summary:
+        raise ValueError("title 또는 summary가 비어 있습니다.")
+    if not re.search(r"[가-힣]", title) or not re.search(r"[가-힣]", summary):
+        raise ValueError("한국어 제목 또는 요약이 생성되지 않았습니다.")
+    if len(summary) < 40:
+        raise ValueError("요약이 지나치게 짧습니다.")
+    return title[:200], summary
 
 
 def summarize(client, article):
@@ -190,20 +202,37 @@ def summarize(client, article):
 
 원문 제목: {article['title']}
 원문 내용: {article['content']}"""
-    try:
-        response = client.responses.create(
-            model=OPENAI_MODEL,
-            instructions="당신은 정확하고 간결한 한국어 반도체 뉴스 편집자입니다.",
-            input=prompt,
-            max_output_tokens=500,
-        )
-        title, summary = parse_summary(response.output_text, article["title"])
-        article["summary_ok"] = True
-    except Exception as exc:
-        logger.error("LLM 요약 실패: %s (%s)", article["url"], exc)
-        title = article["title"]
-        summary = article["description"] or "요약을 생성하지 못했습니다. 원문을 확인해 주세요."
+    last_error = None
+    for attempt in range(1, 3):
+        try:
+            response = client.responses.create(
+                model=OPENAI_MODEL,
+                instructions="당신은 정확하고 간결한 한국어 반도체 뉴스 편집자입니다.",
+                input=prompt,
+                reasoning={"effort": "minimal"},
+                max_output_tokens=1_200,
+                text={
+                    "format": {
+                        "type": "json_schema",
+                        "name": "article_summary",
+                        "strict": True,
+                        "schema": SUMMARY_SCHEMA,
+                    }
+                },
+            )
+            if response.status != "completed" or not response.output_text.strip():
+                raise ValueError(f"불완전한 응답: status={response.status}")
+            title, summary = parse_summary(response.output_text)
+            article["summary_ok"] = True
+            break
+        except Exception as exc:
+            last_error = exc
+            logger.warning("LLM 요약 %d차 실패: %s (%s)", attempt, article["url"], exc)
+    else:
+        # 실패 결과는 Discord에 절대 전송하지 않는다.
+        title, summary = "", ""
         article["summary_ok"] = False
+        logger.error("LLM 요약 최종 실패: %s (%s)", article["url"], last_error)
     article.update(summary_title=title, summary=summary)
     return article
 
