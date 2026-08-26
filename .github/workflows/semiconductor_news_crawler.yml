@@ -52,9 +52,11 @@ jobs:
       - name: 뉴스 크롤러 실행
         id: crawler
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_NAVER: ${{ secrets.DISCORD_WEBHOOK_NAVER }}
           DISCORD_WEBHOOK_TRENDFORCE: ${{ secrets.DISCORD_WEBHOOK_TRENDFORCE }}
           DISCORD_WEBHOOK_SEMIANALYSIS: ${{ secrets.DISCORD_WEBHOOK_SEMIANALYSIS }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5-mini' }}
         run: |
           python semiconductor_news_crawler.py
 
@@ -74,19 +76,19 @@ jobs:
           with open("$latest_file", encoding="utf-8") as f:
               data = json.load(f)
 
-          etnews = data.get("etnews", [])
+          naver = data.get("naver", [])
           trendforce = data.get("trendforce", [])
           semianalysis = data.get("semianalysis", [])
 
-          print(f"전자신문: {len(etnews)}건")
+          print(f"NaverNews: {len(naver)}건")
           print(f"TrendForce: {len(trendforce)}건")
           print(f"SemiAnalysis: {len(semianalysis)}건")
 
-          total = len(etnews) + len(trendforce) + len(semianalysis)
+          total = len(naver) + len(trendforce) + len(semianalysis)
           print(f"총 {total}건 수집")
 
-          print("\n=== 전자신문 ===")
-          for i, item in enumerate(etnews[:3], 1):
+          print("\n=== NaverNews ===")
+          for i, item in enumerate(naver[:3], 1):
               print(f"{i}. {item['title'][:60]}")
 
           print("\n=== TrendForce ===")

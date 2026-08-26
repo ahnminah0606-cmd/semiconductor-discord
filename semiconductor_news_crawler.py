@@ -1,896 +1,296 @@
-# semiconductor_news_crawler.py
-# 반도체 뉴스 자동 크롤러 v3.0
-#
-# 구성
-# 1. 기존 반도체 뉴스
-# 2. TrendForce Semiconductors
-# 3. SemiAnalysis
-#
-# 각 정보원을 별도의 Discord Webhook으로 전송
+"""반도체 뉴스 수집, 한국어 요약, Discord 일일 전송."""
 
 import asyncio
+import html
 import json
 import logging
 import os
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urljoin
 
 import requests
+import trafilatura
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+from openai import OpenAI
 
+# 로컬 실행에서는 프로젝트 .env가 셸에 남은 오래된 값보다 우선한다.
+# GitHub Actions에는 .env가 없으므로 Actions Secret에는 영향을 주지 않는다.
+load_dotenv(override=True)
+WEBHOOKS = {
+    "naver": ("NaverNews", os.getenv("DISCORD_WEBHOOK_NAVER", "")),
+    "trendforce": ("TrendForce", os.getenv("DISCORD_WEBHOOK_TRENDFORCE", "")),
+    "semianalysis": ("SemiAnalysis", os.getenv("DISCORD_WEBHOOK_SEMIANALYSIS", "")),
+}
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+STATE_FILE = Path("data/sent_urls.json")
+HEADERS = {"User-Agent": "Mozilla/5.0 AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 
-# ============================================================
-# 환경 변수
-# ============================================================
-
-load_dotenv()
-
-DISCORD_WEBHOOK_URL = os.getenv(
-    "DISCORD_WEBHOOK_URL",
-    ""
-)
-
-DISCORD_WEBHOOK_TRENDFORCE = os.getenv(
-    "DISCORD_WEBHOOK_TRENDFORCE",
-    ""
-)
-
-DISCORD_WEBHOOK_SEMIANALYSIS = os.getenv(
-    "DISCORD_WEBHOOK_SEMIANALYSIS",
-    ""
-)
-
-
-# ============================================================
-# 로깅
-# ============================================================
-
-LOG_DIR = Path("logs")
-LOG_DIR.mkdir(exist_ok=True)
-
-log_filename = (
-    LOG_DIR
-    / f"crawler_{datetime.now().strftime('%Y%m%d')}.log"
-)
-
+Path("logs").mkdir(exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler(
-            log_filename,
-            encoding="utf-8"
-        ),
+        logging.FileHandler(f"logs/crawler_{datetime.now():%Y%m%d}.log", encoding="utf-8"),
         logging.StreamHandler(sys.stdout),
-    ]
+    ],
 )
-
 logger = logging.getLogger(__name__)
 
 
-# ============================================================
-# 공통 함수
-# ============================================================
+def item(source, title, url, description=""):
+    return {"source": source, "title": " ".join(title.split()), "url": url,
+            "description": " ".join(description.split()), "crawled_at": datetime.now().isoformat()}
 
-def remove_duplicates(
-    news_items: list[dict]
-) -> list[dict]:
-    """
-    URL 기준 중복 제거
-    """
 
-    unique = {}
+def unique(items):
+    return list({x["url"]: x for x in items if x.get("url")}.values())[:5]
 
-    for item in news_items:
-        url = item.get("url")
 
-        if not url:
+async def link_items(page, base, source, valid):
+    found = []
+    links = page.locator("a")
+    for i in range(await links.count()):
+        try:
+            link = links.nth(i)
+            title, href = (await link.inner_text()).strip(), await link.get_attribute("href")
+            if title and len(title) >= 20 and href:
+                url = urljoin(base, href)
+                if valid(url):
+                    found.append(item(source, title, url))
+        except Exception:
             continue
-
-        unique[url] = item
-
-    return list(unique.values())
+    return unique(found)
 
 
-def make_news_item(
-    source: str,
-    title: str,
-    url: str,
-) -> dict:
-    """
-    모든 사이트의 데이터 형식을 동일하게 맞춤
-    """
-
-    return {
-        "source": source,
-        "title": title.strip(),
-        "url": url,
-        "crawled_at": datetime.now().isoformat(),
-    }
-
-
-# ============================================================
-# TrendForce
-# ============================================================
-
-async def crawl_trendforce(
-    context
-) -> list[dict]:
-
-    url = (
-        "https://www.trendforce.com/"
-        "news/category/semiconductors/"
-    )
-
-    logger.info("=" * 50)
-    logger.info("TrendForce 크롤링 시작")
-
+async def crawl_links(context, source, url, valid):
     page = await context.new_page()
-
-    news_items = []
-
     try:
-
-        await page.goto(
-            url,
-            wait_until="domcontentloaded",
-            timeout=30000
-        )
-
-        await page.wait_for_timeout(3000)
-
-        links = page.locator("a")
-
-        count = await links.count()
-
-        for i in range(count):
-
-            try:
-
-                link = links.nth(i)
-
-                title = (
-                    await link.inner_text()
-                ).strip()
-
-                href = await link.get_attribute(
-                    "href"
-                )
-
-                if not title or not href:
-                    continue
-
-                # 너무 짧은 메뉴/카테고리 링크 제거
-                if len(title) < 20:
-                    continue
-
-                full_url = urljoin(
-                    url,
-                    href
-                )
-
-                # TrendForce 뉴스 페이지가 아닌 링크 제거
-                if (
-                    "trendforce.com/news/"
-                    not in full_url
-                ):
-                    continue
-
-                # 카테고리 페이지 자체 제거
-                if (
-                    "/category/"
-                    in full_url
-                ):
-                    continue
-
-                lowered = title.lower()
-
-                # 사이트 메뉴 제거
-                blocked_titles = [
-                    "view more",
-                    "semiconductors",
-                    "latest",
-                    "display",
-                    "energy",
-                    "telecommunications",
-                ]
-
-                if any(
-                    blocked == lowered
-                    for blocked
-                    in blocked_titles
-                ):
-                    continue
-
-                news_items.append(
-                    make_news_item(
-                        "TrendForce",
-                        title,
-                        full_url
-                    )
-                )
-
-            except Exception:
-                continue
-
-        news_items = remove_duplicates(
-            news_items
-        )
-
-        # 너무 많이 전송하지 않도록 제한
-        news_items = news_items[:5]
-
-        logger.info(
-            f"TrendForce: "
-            f"{len(news_items)}개 기사 수집"
-        )
-
-    except Exception as e:
-
-        logger.error(
-            f"TrendForce 크롤링 실패: {e}",
-            exc_info=True
-        )
-
+        logger.info("%s 크롤링 시작", source)
+        await page.goto(url, wait_until="domcontentloaded", timeout=30_000)
+        await page.wait_for_timeout(2_000)
+        return await link_items(page, url, source, valid)
+    except Exception as exc:
+        logger.error("%s 크롤링 실패: %s", source, exc, exc_info=True)
+        return []
     finally:
-
         await page.close()
 
-    return news_items
 
-
-# ============================================================
-# SemiAnalysis
-# ============================================================
-
-async def crawl_semianalysis(
-    context
-) -> list[dict]:
-
-    # 현재 SemiAnalysis archive
-    url = (
-        "https://newsletter."
-        "semianalysis.com/archive"
-    )
-
-    logger.info("=" * 50)
-    logger.info("SemiAnalysis 크롤링 시작")
-
-    page = await context.new_page()
-
-    news_items = []
-
+async def crawl_naver():
+    """네이버 IT/과학 > 반도체 최신 기사 5개를 수집한다."""
+    url = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=230"
     try:
-
-        await page.goto(
+        logger.info("NaverNews 크롤링 시작")
+        response = await asyncio.to_thread(
+            requests.get,
             url,
-            wait_until="domcontentloaded",
-            timeout=30000
+            headers={**HEADERS, "Accept-Language": "ko-KR,ko;q=0.9"},
+            timeout=20,
         )
-
-        await page.wait_for_timeout(3000)
-
-        links = page.locator("a")
-
-        count = await links.count()
-
-        for i in range(count):
-
-            try:
-
-                link = links.nth(i)
-
-                title = (
-                    await link.inner_text()
-                ).strip()
-
-                href = await link.get_attribute(
-                    "href"
-                )
-
-                if not title or not href:
-                    continue
-
-                # 메뉴 / 짧은 텍스트 제외
-                if len(title) < 20:
-                    continue
-
-                full_url = urljoin(
-                    url,
-                    href
-                )
-
-                # 실제 게시물 주소만 사용
-                if (
-                    "/p/"
-                    not in full_url
-                ):
-                    continue
-
-                if (
-                    "semianalysis.com"
-                    not in full_url
-                ):
-                    continue
-
-                news_items.append(
-                    make_news_item(
-                        "SemiAnalysis",
-                        title,
-                        full_url
-                    )
-                )
-
-            except Exception:
-                continue
-
-        news_items = remove_duplicates(
-            news_items
-        )
-
-        # 최신 글 최대 5개
-        news_items = news_items[:5]
-
-        logger.info(
-            f"SemiAnalysis: "
-            f"{len(news_items)}개 글 수집"
-        )
-
-    except Exception as e:
-
-        logger.error(
-            f"SemiAnalysis 크롤링 실패: {e}",
-            exc_info=True
-        )
-
-    finally:
-
-        await page.close()
-
-    return news_items
-
-
-# ============================================================
-# 기존 전자신문
-# ============================================================
-
-async def crawl_etnews(
-    context
-) -> list[dict]:
-
-    url = (
-        "https://www.etnews.com/"
-        "news/section.html?"
-        "id1=01&id2=01"
-    )
-
-    logger.info("=" * 50)
-    logger.info("전자신문 크롤링 시작")
-
-    page = await context.new_page()
-
-    news_items = []
-
-    try:
-
-        await page.goto(
-            url,
-            wait_until="domcontentloaded",
-            timeout=30000
-        )
-
-        await page.wait_for_timeout(3000)
-
-        # 기존 selector 우선 사용
-        articles = await page.query_selector_all(
-            "article.news-item"
-        )
-
-        for article in articles[:5]:
-
-            try:
-
-                title_el = await article.query_selector(
-                    "h4.news-title"
-                )
-
-                link_el = await article.query_selector(
-                    "a"
-                )
-
-                if not title_el or not link_el:
-                    continue
-
-                title = (
-                    await title_el.inner_text()
-                ).strip()
-
-                href = (
-                    await link_el.get_attribute(
-                        "href"
-                    )
-                )
-
-                if not title or not href:
-                    continue
-
-                full_url = urljoin(
-                    "https://www.etnews.com/",
-                    href
-                )
-
-                news_items.append(
-                    make_news_item(
-                        "전자신문",
-                        title,
-                        full_url
-                    )
-                )
-
-            except Exception as e:
-
-                logger.warning(
-                    f"전자신문 기사 파싱 오류: {e}"
-                )
-
-        news_items = remove_duplicates(
-            news_items
-        )
-
-        logger.info(
-            f"전자신문: "
-            f"{len(news_items)}개 기사 수집"
-        )
-
-        if not news_items:
-
-            logger.warning(
-                "전자신문 기사 0건 - "
-                "사이트 구조가 변경되었을 "
-                "가능성이 있습니다."
-            )
-
-    except Exception as e:
-
-        logger.error(
-            f"전자신문 크롤링 실패: {e}",
-            exc_info=True
-        )
-
-    finally:
-
-        await page.close()
-
-    return news_items
-
-
-# ============================================================
-# 모든 사이트 크롤링
-# ============================================================
-
-async def crawl_all_sites():
-
-    from playwright.async_api import (
-        async_playwright
-    )
-
-    results = {
-        "etnews": [],
-        "trendforce": [],
-        "semianalysis": [],
-    }
-
-    async with async_playwright() as p:
-
-        browser = await p.chromium.launch(
-            headless=True
-        )
-
-        context = await browser.new_context(
-
-            user_agent=(
-                "Mozilla/5.0 "
-                "(Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/537.36 "
-                "(KHTML, like Gecko) "
-                "Chrome/120.0.0.0 "
-                "Safari/537.36"
-            ),
-
-            viewport={
-                "width": 1440,
-                "height": 900,
-            }
-        )
-
-        # ----------------------------------------------------
-        # 사이트별로 독립 실행
-        # ----------------------------------------------------
-
-        try:
-            results["etnews"] = (
-                await crawl_etnews(
-                    context
-                )
-            )
-        except Exception as e:
-            logger.error(
-                f"전자신문 전체 오류: {e}"
-            )
-
-        try:
-            results["trendforce"] = (
-                await crawl_trendforce(
-                    context
-                )
-            )
-        except Exception as e:
-            logger.error(
-                f"TrendForce 전체 오류: {e}"
-            )
-
-        try:
-            results["semianalysis"] = (
-                await crawl_semianalysis(
-                    context
-                )
-            )
-        except Exception as e:
-            logger.error(
-                f"SemiAnalysis 전체 오류: {e}"
-            )
-
-        await browser.close()
-
-    return results
-
-
-# ============================================================
-# Discord
-# ============================================================
-
-def send_to_discord(
-    news_items: list[dict],
-    webhook_url: str,
-    channel_name: str,
-) -> bool:
-
-    if not webhook_url:
-
-        logger.error(
-            f"{channel_name}: "
-            "Discord Webhook이 "
-            "설정되지 않았습니다."
-        )
-
-        return False
-
-    if not news_items:
-
-        logger.warning(
-            f"{channel_name}: "
-            "발송할 뉴스가 없습니다."
-        )
-
-        return False
-
-    now_str = datetime.now().strftime(
-        "%Y년 %m월 %d일 %H:%M"
-    )
-
-    # --------------------------------------------------------
-    # 첫 Embed
-    # --------------------------------------------------------
-
-    embeds = [
-        {
-            "title": (
-                f"{channel_name} | "
-                f"{now_str}"
-            ),
-
-            "description": (
-                f"새로운 자료 "
-                f"**{len(news_items)}건**을 "
-                "수집했습니다."
-            ),
-
-            "color": 0x1565C0,
-
-            "footer": {
-                "text": (
-                    "semiconductor-news-crawler "
-                    "| GitHub Actions"
-                )
-            },
-
-            "timestamp": (
-                datetime.utcnow()
-                .isoformat()
-            ),
-        }
-    ]
-
-    # --------------------------------------------------------
-    # 기사 Embed
-    # --------------------------------------------------------
-
-    for i, item in enumerate(
-        news_items[:5],
-        1
-    ):
-
-        title = item.get(
-            "title",
-            "제목 없음"
-        )
-
-        title_short = (
-            title[:150]
-            + (
-                "..."
-                if len(title) > 150
-                else ""
-            )
-        )
-
-        embeds.append(
-            {
-                "title": (
-                    f"{i}. {title_short}"
-                ),
-
-                "url": item["url"],
-
-                "description": (
-                    f"출처: "
-                    f"{item['source']}"
-                ),
-
-                "color": (
-                    0x43A047
-                    if i % 2 == 0
-                    else 0x1E88E5
-                ),
-            }
-        )
-
-    payload = {
-        "username": "반도체뉴스봇",
-        "embeds": embeds,
-    }
-
-    try:
-
-        response = requests.post(
-            webhook_url,
-            json=payload,
-            timeout=15
-        )
-
-        logger.info(
-            f"{channel_name} "
-            f"Discord 응답 코드: "
-            f"{response.status_code}"
-        )
-
-        # Discord Webhook 성공은 보통 204
-        if response.status_code not in (
-            200,
-            204
-        ):
-
-            logger.error(
-                f"{channel_name} "
-                f"Discord 응답: "
-                f"{response.text}"
-            )
-
         response.raise_for_status()
-
-        logger.info(
-            f"{channel_name}: "
-            f"Discord 발송 완료 "
-            f"({len(news_items)}건)"
-        )
-
-        return True
-
-    except Exception as e:
-
-        logger.error(
-            f"{channel_name}: "
-            f"Discord 발송 실패: {e}",
-            exc_info=True
-        )
-
-        return False
+        soup = BeautifulSoup(response.text, "lxml")
+        found = []
+        for link in soup.select("a.sa_text_title"):
+            title, href = link.get_text(" ", strip=True), link.get("href", "")
+            if title and href:
+                found.append(item("NaverNews", title, urljoin(response.url, href)))
+        return unique(found)
+    except Exception as exc:
+        logger.error("NaverNews 크롤링 실패: %s", exc, exc_info=True)
+        return []
 
 
-# ============================================================
-# 결과 저장
-# ============================================================
-
-def save_results(
-    results: dict
-) -> Path:
-
-    data_dir = Path("data")
-    data_dir.mkdir(exist_ok=True)
-
-    filename = (
-        data_dir
-        / (
-            "news_"
-            + datetime.now().strftime(
-                "%Y%m%d_%H%M"
+async def crawl_all():
+    from playwright.async_api import async_playwright
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(user_agent=HEADERS["User-Agent"])
+        try:
+            naver, tf, sa = await asyncio.gather(
+                crawl_naver(),
+                crawl_links(context, "TrendForce", "https://www.trendforce.com/news/category/semiconductors/",
+                            lambda u: "trendforce.com/news/" in u and "/category/" not in u),
+                crawl_links(context, "SemiAnalysis", "https://newsletter.semianalysis.com/archive",
+                            lambda u: "semianalysis.com" in u and "/p/" in u),
             )
-            + ".json"
+            return {"naver": naver, "trendforce": tf, "semianalysis": sa}
+        finally:
+            await browser.close()
+
+
+def meta(soup, *selectors):
+    for selector in selectors:
+        tag = soup.select_one(selector)
+        if tag:
+            value = tag.get("content") or tag.get_text(" ", strip=True)
+            if value:
+                return " ".join(html.unescape(value).split())
+    return ""
+
+
+def json_ld_body(soup):
+    def find(value):
+        if isinstance(value, dict):
+            if isinstance(value.get("articleBody"), str):
+                return value["articleBody"]
+            return next((result for child in value.values() if (result := find(child))), "")
+        if isinstance(value, list):
+            return next((result for child in value if (result := find(child))), "")
+        return ""
+    for script in soup.select('script[type="application/ld+json"]'):
+        try:
+            if body := find(json.loads(script.string or "")):
+                return " ".join(body.split())
+        except (TypeError, json.JSONDecodeError):
+            pass
+    return ""
+
+
+def fetch_article(article):
+    """본문 → JSON-LD → meta description → 제목 순 fallback."""
+    try:
+        response = requests.get(article["url"], headers=HEADERS, timeout=25)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "lxml")
+        description = meta(soup, 'meta[property="og:description"]', 'meta[name="description"]',
+                           'meta[name="twitter:description"]')
+        body = trafilatura.extract(response.text, include_comments=False, include_tables=False,
+                                   favor_precision=True) or json_ld_body(soup)
+        article["description"] = description or article["description"]
+        article["content"] = " ".join((body or description or article["title"]).split())[:12_000]
+        logger.info("본문 수집: %s (%d자)", article["url"], len(article["content"]))
+    except Exception as exc:
+        logger.warning("본문 수집 실패, fallback 사용: %s (%s)", article["url"], exc)
+        article["content"] = article["description"] or article["title"]
+    return article
+
+
+def parse_summary(raw, fallback):
+    raw = raw.strip()
+    try:
+        data = json.loads(raw)
+        if data.get("title") and data.get("summary"):
+            return str(data["title"]).strip(), str(data["summary"]).strip()
+    except json.JSONDecodeError:
+        pass
+    cleaned = re.sub(r"^```(?:json)?|```$", "", raw, flags=re.MULTILINE).strip()
+    lines = [x.strip() for x in cleaned.splitlines() if x.strip()]
+    return (lines[0][:100] if lines else fallback[:100], " ".join(lines[1:]) or cleaned)
+
+
+def summarize(client, article):
+    prompt = f"""다음 반도체/기술 기사를 한국어로 요약하세요. 제공된 내용만 사용하고 추측하지 마세요.
+내용이 제목이나 짧은 설명뿐이면 그 범위만 요약하세요. title은 한국어 요약 제목, summary는 2~4문장입니다.
+반드시 다른 문구나 마크다운 없이 {{"title":"...","summary":"..."}} JSON 객체만 출력하세요.
+
+원문 제목: {article['title']}
+원문 내용: {article['content']}"""
+    try:
+        response = client.responses.create(
+            model=OPENAI_MODEL,
+            instructions="당신은 정확하고 간결한 한국어 반도체 뉴스 편집자입니다.",
+            input=prompt,
+            max_output_tokens=500,
         )
-    )
-
-    with open(
-        filename,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            results,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    total = sum(
-        len(items)
-        for items in results.values()
-    )
-
-    logger.info(
-        f"결과 저장: {filename} "
-        f"(총 {total}건)"
-    )
-
-    return filename
+        title, summary = parse_summary(response.output_text, article["title"])
+        article["summary_ok"] = True
+    except Exception as exc:
+        logger.error("LLM 요약 실패: %s (%s)", article["url"], exc)
+        title = article["title"]
+        summary = article["description"] or "요약을 생성하지 못했습니다. 원문을 확인해 주세요."
+        article["summary_ok"] = False
+    article.update(summary_title=title, summary=summary)
+    return article
 
 
-# ============================================================
-# 메인
-# ============================================================
+def load_sent():
+    try:
+        return set(json.loads(STATE_FILE.read_text(encoding="utf-8")).get("urls", []))
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        return set()
+
+
+def save_sent(urls):
+    STATE_FILE.parent.mkdir(exist_ok=True)
+    STATE_FILE.write_text(json.dumps({"urls": sorted(urls)[-2000:]}, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def block(index, article):
+    return f"{index}. **{article['summary_title']}**\n{article['summary']}\n원문: {article['url']}"
+
+
+def messages(source, articles):
+    date = datetime.now().strftime("%-m/%-d")
+    output, current = [], f"#{source}\n- {date} 요약"
+    for index, article in enumerate(articles, 1):
+        text = block(index, article)
+        if len(current) + len(text) + 2 <= 1900:
+            current += "\n\n" + text
+            continue
+        output.append(current)
+        header = f"#{source} (계속)\n- {date} 요약"
+        room = 1900 - len(header) - len(article["url"]) - len(article["summary_title"]) - 50
+        if len(text) > 1800:
+            text = block(index, {**article, "summary": article["summary"][:max(room, 100)] + "…"})
+        current = header + "\n\n" + text
+    return output + [current]
+
+
+def send(articles, webhook, source):
+    if not articles:
+        logger.info("%s: 새 기사 없음", source)
+        return False
+    if not webhook:
+        logger.error("%s: Discord Webhook 미설정", source)
+        return False
+    for part, content in enumerate(messages(source, articles), 1):
+        try:
+            response = requests.post(webhook, json={"username": "반도체뉴스봇", "content": content}, timeout=20)
+            response.raise_for_status()
+            logger.info("%s Discord 발송 완료 (%d부, %d자)", source, part, len(content))
+        except Exception as exc:
+            logger.error("%s Discord 발송 실패: %s", source, exc, exc_info=True)
+            return False
+    return True
+
+
+def save_results(results):
+    Path("data").mkdir(exist_ok=True)
+    path = Path(f"data/news_{datetime.now():%Y%m%d_%H%M}.json")
+    path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+
 
 async def main():
-
-    logger.info("=" * 60)
-    logger.info(
-        "반도체 뉴스 크롤러 v3.0 시작"
-    )
-    logger.info("=" * 60)
-
-    try:
-
-        results = await crawl_all_sites()
-
-    except ImportError:
-
-        logger.error(
-            "Playwright가 설치되어 있지 않습니다."
-        )
-
-        return 0
-
-    except Exception as e:
-
-        logger.error(
-            f"전체 크롤러 실행 오류: {e}",
-            exc_info=True
-        )
-
-        return 0
-
-    # --------------------------------------------------------
-    # 사이트별 결과
-    # --------------------------------------------------------
-
-    etnews_items = results.get(
-        "etnews",
-        []
-    )
-
-    trendforce_items = results.get(
-        "trendforce",
-        []
-    )
-
-    semianalysis_items = results.get(
-        "semianalysis",
-        []
-    )
-
-    logger.info("=" * 60)
-
-    logger.info(
-        f"전자신문: "
-        f"{len(etnews_items)}건"
-    )
-
-    logger.info(
-        f"TrendForce: "
-        f"{len(trendforce_items)}건"
-    )
-
-    logger.info(
-        f"SemiAnalysis: "
-        f"{len(semianalysis_items)}건"
-    )
-
-    total = (
-        len(etnews_items)
-        + len(trendforce_items)
-        + len(semianalysis_items)
-    )
-
-    logger.info(
-        f"전체 수집: {total}건"
-    )
-
-    logger.info("=" * 60)
-
-    # --------------------------------------------------------
-    # 결과가 하나라도 있으면 JSON 저장
-    # --------------------------------------------------------
-
-    if total > 0:
-
-        save_results(
-            results
-        )
-
-    else:
-
-        logger.error(
-            "모든 사이트에서 "
-            "수집된 뉴스가 없습니다."
-        )
-
-    # --------------------------------------------------------
-    # Discord 각각 전송
-    # --------------------------------------------------------
-
-    if etnews_items:
-
-        send_to_discord(
-            etnews_items,
-            DISCORD_WEBHOOK_URL,
-            "전자신문 반도체 뉴스",
-        )
-
-    if trendforce_items:
-
-        send_to_discord(
-            trendforce_items,
-            DISCORD_WEBHOOK_TRENDFORCE,
-            "TrendForce 반도체 뉴스",
-        )
-
-    if semianalysis_items:
-
-        send_to_discord(
-            semianalysis_items,
-            DISCORD_WEBHOOK_SEMIANALYSIS,
-            "SemiAnalysis",
-        )
-
-    logger.info("=" * 60)
-    logger.info(
-        "크롤러 실행 완료"
-    )
-    logger.info("=" * 60)
-
-    return total
+    if not OPENAI_API_KEY:
+        logger.error("OPENAI_API_KEY가 설정되지 않았습니다.")
+        return 1
+    results, sent_urls, client = await crawl_all(), load_sent(), OpenAI(api_key=OPENAI_API_KEY)
+    sent_count = 0
+    for key, crawled in results.items():
+        source, webhook = WEBHOOKS[key]
+        fresh = [article for article in crawled if article["url"] not in sent_urls]
+        if not fresh:
+            logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
+            continue
+        enriched = await asyncio.gather(*(asyncio.to_thread(fetch_article, article) for article in fresh))
+        summarized = [summarize(client, article) for article in enriched]
+        results[key] = summarized
+        if not all(article.get("summary_ok") for article in summarized):
+            logger.error("%s: LLM 요약 실패 기사가 있어 Discord 발송을 건너뜁니다.", source)
+            continue
+        if send(summarized, webhook, source):
+            sent_urls.update(article["url"] for article in summarized)
+            save_sent(sent_urls)  # 전송 성공한 URL만 기록한다.
+            sent_count += len(summarized)
+    save_results(results)
+    logger.info("실행 완료: 새 기사 %d건 전송", sent_count)
+    return 0
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    raise SystemExit(asyncio.run(main()))

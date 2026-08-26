@@ -3,4 +3,5 @@
 logs/
 data/
 __pycache__/
-*.pyccron.log
+*.pyc
+cron.log
