@@ -220,25 +220,29 @@ def save_sent(urls):
     STATE_FILE.write_text(json.dumps({"urls": sorted(urls)[-2000:]}, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def block(index, article):
-    return f"{index}. **{article['summary_title']}**\n{article['summary']}"
-
-
-def messages(source, articles):
+def embed_payloads(source, articles):
+    """기사 5개를 한 Discord 메시지의 Embed 카드로 묶는다."""
     date = datetime.now().strftime("%-m/%-d")
-    output, current = [], f"#{source}\n- {date} 요약"
+    colors = {"NaverNews": 0x03C75A, "TrendForce": 0x1565C0, "SemiAnalysis": 0x7E57C2}
+    output, embeds, total_chars = [], [], 0
     for index, article in enumerate(articles, 1):
-        text = block(index, article)
-        if len(current) + len(text) + 2 <= 1900:
-            current += "\n\n" + text
-            continue
-        output.append(current)
-        header = f"#{source} (계속)\n- {date} 요약"
-        room = 1900 - len(header) - len(article["summary_title"]) - 30
-        if len(text) > 1800:
-            text = block(index, {**article, "summary": article["summary"][:max(room, 100)] + "…"})
-        current = header + "\n\n" + text
-    return output + [current]
+        title = f"{index}. {article['summary_title']}"[:256]
+        description = article["summary"][:4096]
+        embed_chars = len(title) + len(description)
+        # Discord는 메시지당 Embed 10개, Embed 전체 텍스트 6,000자를 허용한다.
+        if embeds and (len(embeds) >= 10 or total_chars + embed_chars > 5_800):
+            output.append({"content": f"#{source}\n- {date} 요약", "embeds": embeds})
+            embeds, total_chars = [], 0
+        embeds.append({
+            "title": title,
+            "description": description,
+            "color": colors.get(source, 0x1565C0),
+        })
+        total_chars += embed_chars
+    if embeds:
+        continuation = " (계속)" if output else ""
+        output.append({"content": f"#{source}{continuation}\n- {date} 요약", "embeds": embeds})
+    return output
 
 
 def send(articles, webhook, source):
@@ -248,11 +252,11 @@ def send(articles, webhook, source):
     if not webhook:
         logger.error("%s: Discord Webhook 미설정", source)
         return False
-    for part, content in enumerate(messages(source, articles), 1):
+    for part, payload in enumerate(embed_payloads(source, articles), 1):
         try:
-            response = requests.post(webhook, json={"username": "반도체뉴스봇", "content": content}, timeout=20)
+            response = requests.post(webhook, json={"username": "반도체뉴스봇", **payload}, timeout=20)
             response.raise_for_status()
-            logger.info("%s Discord 발송 완료 (%d부, %d자)", source, part, len(content))
+            logger.info("%s Discord Embed 발송 완료 (%d부, %d개)", source, part, len(payload["embeds"]))
         except Exception as exc:
             logger.error("%s Discord 발송 실패: %s", source, exc, exc_info=True)
             return False
