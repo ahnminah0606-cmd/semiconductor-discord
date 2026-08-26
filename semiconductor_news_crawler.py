@@ -269,8 +269,13 @@ async def main():
     if not OPENAI_API_KEY:
         logger.error("OPENAI_API_KEY가 설정되지 않았습니다.")
         return 1
+    missing_webhooks = [source for source, webhook in WEBHOOKS.values() if not webhook]
+    if missing_webhooks:
+        logger.error("Discord Webhook 미설정: %s", ", ".join(missing_webhooks))
+        return 1
     results, sent_urls, client = await crawl_all(), load_sent(), OpenAI(api_key=OPENAI_API_KEY)
     sent_count = 0
+    had_error = False
     for key, crawled in results.items():
         source, webhook = WEBHOOKS[key]
         fresh = [article for article in crawled if article["url"] not in sent_urls]
@@ -282,14 +287,17 @@ async def main():
         results[key] = summarized
         if not all(article.get("summary_ok") for article in summarized):
             logger.error("%s: LLM 요약 실패 기사가 있어 Discord 발송을 건너뜁니다.", source)
+            had_error = True
             continue
         if send(summarized, webhook, source):
             sent_urls.update(article["url"] for article in summarized)
             save_sent(sent_urls)  # 전송 성공한 URL만 기록한다.
             sent_count += len(summarized)
+        else:
+            had_error = True
     save_results(results)
     logger.info("실행 완료: 새 기사 %d건 전송", sent_count)
-    return 0
+    return 1 if had_error else 0
 
 
 if __name__ == "__main__":
