@@ -264,6 +264,14 @@ OpenAI API 한국어 요약
 
 ## 트러블슈팅 기록
 
+### Actions 화면에 `Node.js 20 is deprecated` 경고가 표시되는 경우
+
+작업 자체는 성공해도 오래된 JavaScript Action이 Node.js 20을 사용하면 GitHub가
+지원 종료 경고를 표시합니다. Node.js 24 런타임을 사용하는 `actions/checkout@v6`,
+`actions/setup-python@v6`, `actions/github-script@v8`로 업데이트했습니다. 화면에
+과거 커밋 번호가 보이는 이전 실행 기록의 경고는 그대로 남지만, 변경 후 새로
+실행되는 워크플로우부터 적용됩니다.
+
 ### 새 API 키를 넣었는데도 `401 invalid_api_key`가 발생한 경우
 
 로컬 셸에 이전 `OPENAI_API_KEY`가 남아 있으면 `python-dotenv`의 기본 동작상
