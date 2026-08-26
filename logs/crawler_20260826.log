@@ -1,1 +1,38 @@
 2026-08-26 00:57:20,167 [ERROR] OPENAI_API_KEY가 설정되지 않았습니다.
+2026-08-26 01:20:11,415 [INFO] NaverNews 크롤링 시작
+2026-08-26 01:20:11,481 [INFO] TrendForce 크롤링 시작
+2026-08-26 01:20:11,484 [INFO] SemiAnalysis 크롤링 시작
+2026-08-26 01:20:18,630 [INFO] 본문 수집: https://n.news.naver.com/mnews/article/030/0003460440 (1051자)
+2026-08-26 01:20:18,704 [INFO] 본문 수집: https://n.news.naver.com/mnews/article/421/0009132860 (1341자)
+2026-08-26 01:20:18,778 [INFO] 본문 수집: https://n.news.naver.com/mnews/article/030/0003460438 (497자)
+2026-08-26 01:20:18,798 [INFO] 본문 수집: https://n.news.naver.com/mnews/article/117/0004098309 (1164자)
+2026-08-26 01:20:19,282 [INFO] 본문 수집: https://n.news.naver.com/mnews/article/001/0016271107 (1442자)
+2026-08-26 01:20:27,557 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:20:35,255 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:20:40,387 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:20:46,294 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:20:51,598 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:20:51,753 [INFO] NaverNews Discord 발송 완료 (1부, 976자)
+2026-08-26 01:20:52,631 [INFO] 본문 수집: https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/ (3030자)
+2026-08-26 01:20:52,768 [INFO] 본문 수집: https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/ (2426자)
+2026-08-26 01:20:52,780 [INFO] 본문 수집: https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/ (3230자)
+2026-08-26 01:20:52,785 [INFO] 본문 수집: https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/ (3441자)
+2026-08-26 01:20:52,790 [INFO] 본문 수집: https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/ (3536자)
+2026-08-26 01:20:59,763 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:07,278 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:13,657 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:19,901 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:26,347 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:26,526 [INFO] TrendForce Discord 발송 완료 (1부, 1367자)
+2026-08-26 01:21:27,051 [INFO] 본문 수집: https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast (12000자)
+2026-08-26 01:21:27,080 [INFO] 본문 수집: https://newsletter.semianalysis.com/p/are-open-models-catching-up (11361자)
+2026-08-26 01:21:27,146 [INFO] 본문 수집: https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia (12000자)
+2026-08-26 01:21:27,163 [INFO] 본문 수집: https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted (12000자)
+2026-08-26 01:21:27,398 [INFO] 본문 수집: https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat (12000자)
+2026-08-26 01:21:35,268 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:41,883 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:47,329 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:52,939 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:59,321 [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-08-26 01:21:59,498 [INFO] SemiAnalysis Discord 발송 완료 (1부, 884자)
+2026-08-26 01:21:59,501 [INFO] 실행 완료: 새 기사 15건 전송
