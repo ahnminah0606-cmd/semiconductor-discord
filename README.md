@@ -39,7 +39,9 @@ semiconductor_discord/
 ```text
 GitHub Actions
       ↓
-매일 오전 7시 7분 KST
+매일 오전 7시 17분 KST 1차 실행
+      ↓
+오전 8시 37분 KST 누락 대비 백업 실행
       ↓
 Python 크롤러 실행
       ↓
@@ -120,7 +122,7 @@ python semiconductor_news_crawler.py
 
 ## macOS crontab 자동 실행
 
-로컬에서 매일 오전 7시 7분에 실행하려면:
+로컬에서 매일 오전 7시 17분에 실행하려면:
 
 ```bash
 crontab -e
@@ -129,7 +131,7 @@ crontab -e
 예시:
 
 ```cron
-7 7 * * * cd "/Users/username/path/semiconductor_discord" && "/Users/username/path/semiconductor_discord/.venv/bin/python" semiconductor_news_crawler.py >> cron.log 2>&1
+17 7 * * * cd "/Users/username/path/semiconductor_discord" && "/Users/username/path/semiconductor_discord/.venv/bin/python" semiconductor_news_crawler.py >> cron.log 2>&1
 ```
 
 등록 확인:
@@ -155,16 +157,17 @@ GitHub Actions를 사용하면 로컬 컴퓨터가 꺼져 있어도 자동으로
 ```yaml
 on:
   schedule:
-    - cron: "7 22 * * *"
+    - cron: "17 22 * * *" # 오전 7:17 KST
+    - cron: "37 23 * * *" # 오전 8:37 KST 백업
   workflow_dispatch:
 ```
 
 GitHub Actions의 cron은 UTC 기준이므로:
 
 ```text
-UTC 22:07
+UTC 22:17 / 23:37
 =
-KST 오전 07:07
+KST 오전 07:17 / 08:37
 ```
 
 으로 설정했습니다.
@@ -244,7 +247,7 @@ git status
 최종적으로 다음 과정이 자동으로 수행됩니다.
 
 ```text
-매일 오전 7시 7분
+매일 오전 7시 17분, 누락 시 오전 8시 37분 백업 실행
         ↓
 GitHub Actions 실행
         ↓
@@ -264,6 +267,14 @@ OpenAI API 한국어 요약
 ```
 
 ## 트러블슈팅 기록
+
+### 예약 시간에 GitHub Actions 실행 자체가 생성되지 않은 경우
+
+GitHub Actions의 `schedule` 이벤트는 서비스 부하에 따라 지연되거나 드물게 누락될
+수 있습니다. 실제로 8월 27일에는 오전 7시 예약 실행이 오전 10시 36분까지도
+생성되지 않았습니다. 실행 확률을 높이기 위해 오전 7시 17분 1차 실행과 오전
+8시 37분 백업 실행을 등록했습니다. 첫 실행이 성공하면 `sent_urls.json`의 중복
+방지 로직에 의해 백업 실행에서는 같은 기사를 다시 보내지 않습니다.
 
 ### Actions 화면에 `Node.js 20 is deprecated` 경고가 표시되는 경우
 

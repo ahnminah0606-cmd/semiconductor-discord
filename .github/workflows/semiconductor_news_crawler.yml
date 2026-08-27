@@ -1,11 +1,12 @@
 # 반도체 뉴스 크롤러 자동화 워크플로우
-# 매일 오전 7:07 KST (= 전날 UTC 22:07) 자동 실행
+# 매일 오전 7:17 KST 실행, 8:37 KST에 누락 대비 백업 실행
 
 name: 반도체 뉴스 자동 크롤러
 
 on:
   schedule:
-    - cron: "7 22 * * *"   # 매일 오전 7:07 KST
+    - cron: "17 22 * * *"  # 매일 오전 7:17 KST
+    - cron: "37 23 * * *"  # 매일 오전 8:37 KST 백업
   workflow_dispatch:
     inputs:
       debug_mode:
