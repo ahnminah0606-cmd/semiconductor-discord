@@ -29,6 +29,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 STATE_FILE = Path("data/sent_urls.json")
 HEADERS = {"User-Agent": "Mozilla/5.0 AppleWebKit/537.36 Chrome/120 Safari/537.36"}
+MAX_CANDIDATES = 20
+MAX_SUMMARIES = 5
 
 Path("logs").mkdir(exist_ok=True)
 logging.basicConfig(
@@ -48,7 +50,7 @@ def item(source, title, url, description=""):
 
 
 def unique(items):
-    return list({x["url"]: x for x in items if x.get("url")}.values())[:5]
+    return list({x["url"]: x for x in items if x.get("url")}.values())[:MAX_CANDIDATES]
 
 
 async def link_items(page, base, source, valid):
@@ -82,7 +84,7 @@ async def crawl_links(context, source, url, valid):
 
 
 async def crawl_naver():
-    """네이버 IT/과학 > 반도체 최신 기사 5개를 수집한다."""
+    """네이버 IT/과학 > 반도체 최신 기사 후보를 수집한다."""
     url = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=230"
     try:
         logger.info("NaverNews 크롤링 시작")
@@ -180,6 +182,20 @@ SUMMARY_SCHEMA = {
     "additionalProperties": False,
 }
 
+SELECTION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "selected_ids": {
+            "type": "array",
+            "items": {"type": "integer"},
+            "minItems": MAX_SUMMARIES,
+            "maxItems": MAX_SUMMARIES,
+        }
+    },
+    "required": ["selected_ids"],
+    "additionalProperties": False,
+}
+
 
 def parse_summary(raw):
     """Structured Output을 검증하고 화면에 JSON 코드가 노출되지 않게 한다."""
@@ -235,6 +251,60 @@ def summarize(client, article):
         logger.error("LLM 요약 최종 실패: %s (%s)", article["url"], last_error)
     article.update(summary_title=title, summary=summary)
     return article
+
+
+def select_important(client, articles, source):
+    """신규 기사가 6개 이상이면 산업적으로 중요한 5개를 AI로 선별한다."""
+    candidates = [
+        f"ID {index}\n제목: {article['title']}\n내용: {article.get('content', '')[:1_500]}"
+        for index, article in enumerate(articles, 1)
+    ]
+    prompt = f"""{source}의 신규 반도체/기술 기사 {len(articles)}개 중 가장 중요한 기사 {MAX_SUMMARIES}개를 고르세요.
+
+선정 기준:
+1. 반도체 기술·제품·공정 발전의 중요도
+2. 시장, 투자, 공급망, 기업 경쟁에 미치는 파급력
+3. 수치와 사실이 구체적이고 독자에게 새로운 정보인지
+4. 비슷한 주제는 하나만 선택해 5개가 다양한 핵심 이슈를 다루는지
+5. 광고성·주변적 내용보다 산업 의사결정에 유용한지
+
+중요한 순서대로 서로 다른 ID {MAX_SUMMARIES}개를 선택하세요.
+
+기사 후보:
+{chr(10).join(candidates)}"""
+    last_error = None
+    for attempt in range(1, 3):
+        try:
+            response = client.responses.create(
+                model=OPENAI_MODEL,
+                instructions="당신은 반도체 산업 뉴스의 중요도를 판단하는 한국어 편집장입니다.",
+                input=prompt,
+                reasoning={"effort": "minimal"},
+                max_output_tokens=600,
+                text={
+                    "format": {
+                        "type": "json_schema",
+                        "name": "important_article_selection",
+                        "strict": True,
+                        "schema": SELECTION_SCHEMA,
+                    }
+                },
+            )
+            if response.status != "completed" or not response.output_text.strip():
+                raise ValueError(f"불완전한 선별 응답: status={response.status}")
+            selected_ids = json.loads(response.output_text).get("selected_ids", [])
+            if len(selected_ids) != MAX_SUMMARIES or len(set(selected_ids)) != MAX_SUMMARIES:
+                raise ValueError("서로 다른 기사 5개가 선택되지 않았습니다.")
+            if any(not isinstance(value, int) or value < 1 or value > len(articles) for value in selected_ids):
+                raise ValueError("선택 ID가 후보 범위를 벗어났습니다.")
+            selected = [articles[value - 1] for value in selected_ids]
+            logger.info("%s: 신규 %d건 중 중요 기사 ID %s 선별", source, len(articles), selected_ids)
+            return selected
+        except Exception as exc:
+            last_error = exc
+            logger.warning("%s 중요 기사 선별 %d차 실패: %s", source, attempt, exc)
+    logger.error("%s 중요 기사 선별 최종 실패: %s", source, last_error)
+    return []
 
 
 def load_sent():
@@ -316,20 +386,31 @@ async def main():
     had_error = False
     for key, crawled in results.items():
         source, webhook = WEBHOOKS[key]
-        fresh = [article for article in crawled if article["url"] not in sent_urls]
-        if not fresh:
+        fresh_candidates = [article for article in crawled if article["url"] not in sent_urls]
+        if not fresh_candidates:
             logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
             continue
-        enriched = await asyncio.gather(*(asyncio.to_thread(fetch_article, article) for article in fresh))
-        summarized = [summarize(client, article) for article in enriched]
+        enriched = await asyncio.gather(
+            *(asyncio.to_thread(fetch_article, article) for article in fresh_candidates)
+        )
+        if len(enriched) > MAX_SUMMARIES:
+            selected = select_important(client, enriched, source)
+            if len(selected) != MAX_SUMMARIES:
+                had_error = True
+                continue
+        else:
+            selected = enriched
+            logger.info("%s: 신규 %d건 전부 요약", source, len(selected))
+        summarized = [summarize(client, article) for article in selected]
         results[key] = summarized
         if not all(article.get("summary_ok") for article in summarized):
             logger.error("%s: LLM 요약 실패 기사가 있어 Discord 발송을 건너뜁니다.", source)
             had_error = True
             continue
         if send(summarized, webhook, source):
-            sent_urls.update(article["url"] for article in summarized)
-            save_sent(sent_urls)  # 전송 성공한 URL만 기록한다.
+            # 선택되지 않은 후보도 검토 완료로 기록해 다음 날 오래된 기사로 재등장하지 않게 한다.
+            sent_urls.update(article["url"] for article in fresh_candidates)
+            save_sent(sent_urls)
             sent_count += len(summarized)
         else:
             had_error = True
