@@ -199,7 +199,8 @@ OPENAI_API_KEY
 
 중복 방지 상태는 `data/sent_urls.json`에 저장되고 GitHub Actions가 실행 결과와
 함께 저장소에 커밋합니다. Discord 전송에 실패한 기사는 상태에 기록하지 않아
-다음 실행에서 다시 시도합니다.
+다음 실행에서 다시 시도합니다. 실행 로그는 비밀값 노출 방지를 위해 GitHub에
+커밋하지 않고 Actions 실행 화면에서만 확인합니다.
 
 워크플로우에서는 다음과 같이 사용합니다.
 
@@ -275,6 +276,14 @@ GitHub Actions의 `schedule` 이벤트는 서비스 부하에 따라 지연되�
 생성되지 않았습니다. 실행 확률을 높이기 위해 오전 7시 17분 1차 실행과 오전
 8시 37분 백업 실행을 등록했습니다. 첫 실행이 성공하면 `sent_urls.json`의 중복
 방지 로직에 의해 백업 실행에서는 같은 기사를 다시 보내지 않습니다.
+
+### Discord가 `404 Not Found`를 반환하는 경우
+
+해당 채널의 Webhook이 삭제됐거나 Secret에 저장한 URL이 더 이상 유효하지 않은
+상태입니다. Discord 채널 설정에서 새 Webhook을 만든 뒤 로컬 `.env`와 GitHub
+Repository Secret의 값을 모두 교체해야 합니다. HTTP 오류 로그에는 Webhook URL을
+기록하지 않도록 상태 코드와 예외 유형만 남기며, 로그 파일은 GitHub 자동 커밋에서
+제외합니다.
 
 ### Actions 화면에 `Node.js 20 is deprecated` 경고가 표시되는 경우
 

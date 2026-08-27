@@ -285,10 +285,14 @@ def send(articles, webhook, source):
     for part, content in enumerate(messages(source, articles), 1):
         try:
             response = requests.post(webhook, json={"username": "반도체뉴스봇", "content": content}, timeout=20)
-            response.raise_for_status()
+            if response.status_code not in (200, 204):
+                # requests 예외에는 비밀값인 Webhook URL이 포함될 수 있으므로 직접 처리한다.
+                logger.error("%s Discord 응답 오류: HTTP %d", source, response.status_code)
+                return False
             logger.info("%s Discord 발송 완료 (%d부, %d자)", source, part, len(content))
         except Exception as exc:
-            logger.error("%s Discord 발송 실패: %s", source, exc, exc_info=True)
+            # 예외 문자열과 traceback에 Webhook URL이 노출되지 않게 유형만 기록한다.
+            logger.error("%s Discord 발송 실패: %s", source, type(exc).__name__)
             return False
     return True
 

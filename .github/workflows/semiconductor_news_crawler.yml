@@ -113,7 +113,8 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions Bot"
 
-          git add -f data/ logs/ 2>/dev/null || true
+          # 중복 방지 상태와 결과만 커밋하고, 비밀값 노출 위험이 있는 로그는 제외
+          git add -f data/ 2>/dev/null || true
 
           if git diff --staged --quiet; then
             echo "커밋할 변경사항 없음"
