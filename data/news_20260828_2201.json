@@ -1,0 +1,259 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "실리콘밸리 투자거물, 1.5조원 AI하드웨어 펀드 '기계시대' 조성",
+      "url": "https://n.news.naver.com/mnews/article/001/0016277594",
+      "description": "앤드리슨 호로비츠, 소프트웨어 중심에서 15년 만의 '피벗' 반도체·로봇 등 투자…\"AI 실물 구축 가속화할 때\" 권영전 특파원 = 실리콘밸리를 대표하는 벤처 투자사 앤드리슨 호로비츠(a16z)가 사상 최초로 하드웨",
+      "crawled_at": "2026-08-28T22:00:58.651520",
+      "content": "반도체·로봇 등 투자…\"AI 실물 구축 가속화할 때\" [게티이미지/AFP=연합뉴스 자료사진] (샌프란시스코=연합뉴스) 권영전 특파원 = 실리콘밸리를 대표하는 벤처 투자사 앤드리슨 호로비츠(a16z)가 사상 최초로 하드웨어 전용 투자기금을 조성했다. a16z는 하드웨어에 투자하는 신규 '기계시대'(Machine Age) 펀드'를 꾸리고 11억 달러(약 1조5천억원)를 조달했다고 28일(현지시간) 밝혔다. 머신에이지 펀드는 칩과 메모리, 스토리지를 포함한 인공지능(AI) 연산 인프라는 물론이고 데이터센터와 로봇공학, AI 가전제품 등에 투자할 계획이다. 이 투자사는 해당 펀드가 투자 대상으로 삼은 영역이 \"모두 현재의 공급망 역량과 물리학, 컴퓨터 과학의 한계에 부딪히고 있다\"는 공통점이 있다면서 \"따라서 혁신과 투자가 시급히 필요한 상황\"이라고 지적했다. 이어 \"이제 본격적으로 속도를 높여 문제 해결과 풍요를 가져다주는 인공지능(AI)의 실물 구축을 가속할 때\"라며 \"이는 우리 사회와 국가가 반드시 수행해야 할 사명\"이라고 강조했다. 특히 a16z는 \"하드웨어 스타트업의 투자 제안 비중은 미미한 규모였지만 최근 수년 사이 20% 이상으로 늘었다\"면서 실제 창업과 투자의 흐름도 소프트웨어에서 하드웨어로 옮겨가고 있다고 짚었다. 자신들도 소프트웨어 투자사로 알려졌지만, 스페이스X와 안두릴, 웨이모 등 하드웨어 분야에도 투자해왔다는 점을 언급했다. 이와 같은 a16z의 하드웨어 투자는 공동 창업자 마크 앤드리슨이 2011년 8월 언론 기고를 통해 '소프트웨어가 세상을 먹어치우고 있다'고 선언한 지 꼭 15년 만에 단행한 전략적 피벗(방향 전환)이라는 점에서 눈길을 끈다. 이와 같은 변화는 AI 모델 발전 속도가 빨라지고, 시장의 수요도 급격히 늘고 있지만 인프라 부문이 병목이 되고 있다는 판단에 따른 것으로 풀이된다. a16z의 마틴 카사도 제너럴 파트너는 미 일간 월스트리트저널(WSJ)에 \"기술적 전환기마다 인프라 부문에 압박이 있었지만, 지금처럼 극적이었던 적은 없었다\"며 \"칩부터 메모리, 전력에 이르기까지 하드웨어 공급망의 모든 측면이 용량 부족 사태\"라고 펀드 조성 배경을 설명했다. 그는 시장에서 제기되는 AI 거품론이나 기업가치 하락 우려에 대해서도 \"시장 건전성의 기본 지표는 수요\"라며 \"수요가 계속된다면 공급에 투자하는 것은 당연하다\"고 일축했다. comma@yna.co.kr",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "a16z, AI 하드웨어 전용 11억달러 '기계시대' 펀드 조성",
+      "summary": "실리콘밸리 벤처투자사 앤드리슨 호로비츠(a16z)가 처음으로 하드웨어 전용 펀드 '기계시대'를 만들어 11억 달러(약 1조5천억원)를 조달했다. 펀드는 AI 연산 칩·메모리·스토리지, 데이터센터, 로봇공학 및 AI 가전 등 물리적 인프라와 공급망 개선에 투자할 계획이다. a16z는 소프트웨어 중심 투자에서 하드웨어로 전략을 전환한 이유로 AI 수요 급증으로 인한 인프라 병목과 용량 부족을 들었다. 펀드 조성은 하드웨어 스타트업 및 공급망 확충이 시급하다는 판단에 따른 것이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "더 세지는 美 반도체 관세… “칩 들어간 제품도 부과 검토”",
+      "url": "https://n.news.naver.com/mnews/article/023/0003995531",
+      "description": "한국에 공장 짓는 삼성·SK 겨냥 미 트럼프 행정부가 한국 반도체를 겨냥한 관세 카드를 다시 만지작거리고 있다. 미 정치 전문 매체 폴리티코는 27일(현지 시각) 트럼프 행정부가 반도체 칩뿐만 아니라 노트북, 게임",
+      "crawled_at": "2026-08-28T22:00:58.651675",
+      "content": "미 트럼프 행정부가 한국 반도체를 겨냥한 관세 카드를 다시 만지작거리고 있다. 미 정치 전문 매체 폴리티코는 27일(현지 시각) 트럼프 행정부가 반도체 칩뿐만 아니라 노트북, 게임 콘솔, 데이터센터 서버 등 반도체가 들어간 완제품까지 관세를 부과하는 방안을 검토하고 있다고 보도했다. 트럼프 행정부는 국가별 관세율과 쿼터 설정, 주요 반도체 제조사별 국가 지침 적용 여부도 함께 검토하는 것으로 알려졌다. 특히 하워드 러트닉 미 상무장관은 기업별로 미국 내 생산을 약속한 반도체 물량에 연동해 무관세 수입 쿼터 상한을 정하는 방식을 선호하고 있다고 폴리티코는 보도했다. ◇또다시 꺼낸 반도체 관세 카드 트럼프 행정부는 작년부터 미국 내 반도체 시설 건설을 압박하며 다양한 관세 부과 계획을 밝혔다. 작년 8월 트럼프 대통령은 “반도체에 100% 관세를 매기겠다. 다만 미국에서 (생산 시설을) 짓고 있다면 아직 생산 전이라도 부과하지 않겠다”고 말했다. 미국 내 생산을 약속한 반도체 물량과 연동한 관세율 조정 방안도 꺼냈다. 올 1월엔 엔비디아의 인공지능(AI) 반도체 ‘H200’같이 미국으로 수입됐다가 재수출되는 반도체에 국한해 25% 관세를 부과하는 내용의 포고문에 서명하며 반도체 압박을 강화했다. 하지만 지난 2월 미 연방대법원이 미국의 상호 관세를 위법·무효로 판결하면서 반도체 품목 관세 압박도 주춤했다. 최근 압박이 다시 강해지는 상황이지만 국내 반도체 산업에 단기적으로는 큰 영향이 없을 것이라는 분석이 많다. 현재 D램과 낸드플래시, HBM 등 메모리 반도체 공급은 전 세계적으로 매우 부족한 상황이다. 삼성전자, SK하이닉스, 마이크론이 생산 시설 확충에 나섰지만 증산 물량이 나오려면 2028년은 돼야 한다. 메모리 가격이 치솟는 상황에서 관세까지 부과되면 AI 데이터센터용 메모리가 필요한 미국 빅테크의 부담이 크게 증가할 수 있다. 다만 한국 가전 업체에는 악영향을 줄 수 있다. ‘칩플레이션’으로 IT 기기 수요가 위축된 상황에서 관세 부담까지 겹칠 경우, 미국 내 삼성전자와 LG전자 제품 판매량은 더욱 줄어들 수 있다. ◇장기적으로 미국 내 투자 압박에 활용 관세 압박의 장기화 여부가 관건이다. 대규모 투자 여력이 입증된 삼성전자·SK하이닉스를 상대로 미국이 ‘현지 생산 연계 무관세 혜택’을 내세워 추가 투자를 압박할 가능성이 높기 때문이다. 트럼프 정부가 검토하는 미국 내 투자 연계 관세는 올 1월 미국과 대만 사이 합의에서 처음 등장했다. 당시 대만은 상호 관세를 25%에서 15%로 낮추는 대신 TSMC 등이 미국에 공장을 짓고 현지 생산 능력의 2.5배, 완공 후에는 신규 생산 능력의 1.5배까지 반도체 품목 관세를 면제받기로 했다. 한국은 ‘다른 나라보다 불리하지 않게 대우하겠다’는 최혜국 대우 약속을 받았지만 서면 합의로 명문화되지는 않았다. 한편 미국은 한국의 1호 대미 투자 프로젝트로 유력한 텍사스 가스복합화력발전소의 총사업비를 기존 198억달러(약 27조원)에서 250억달러(약 34조원)로 25%가량 높여달라고 요구한 것으로 28일 알려졌다. 52억달러(약 7조원)가 한꺼번에 늘어나는 것으로, 한국이 매년 집행하기로 한 대미 투자액 200억달러의 4분의 1을 웃도는 규모다. 이 요구를 수용하면 사업성을 원점에서 다시 따져야 한다. 미국은 증액 근거로 발전소 용수 확보 문제를 거론했을 뿐 구체적인 산출 자료는 제시하지 않은 것으로 전해졌다. 정부는 “증액 필요성을 판단할 근거가 부족하다”는 의견을 전달했다. 첫 투자 사업에서 사업성을 충분히 따져보지 않고 미국 측 요구를 수용할 경우 이후 프로젝트 협상에서 불리한 선례가 될 수 있다는 우려도 나온다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "미, 반도체 관세 확대 검토…완제품까지 적용 방안 논의",
+      "summary": "트럼프 행정부가 반도체 칩뿐 아니라 노트북·게임기·서버 등 반도체가 들어간 완제품에도 관세를 부과하는 방안을 검토 중이며, 국가별 관세율·쿼터 설정과 기업별 미국 내 생산 연동 무관세 쿼터 도입 가능성도 검토되고 있다. 메모리 공급 부족으로 단기적 충격은 제한적일 것이란 분석이 있으나, 한국 가전업체 수출과 미국 빅테크의 메모리 조달 비용 부담은 커질 수 있다. 장기적으로는 미국 내 추가 투자를 압박하는 수단으로 활용될 우려가 있으며, 미측이 요구한 한국의 대미 투자 사업비 증액 사례는 향후 협상 불리함을 낳을 수 있다는 지적도 제기됐다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "中 CXMT, 상반기 매출 10배…순이익 15조원대",
+      "url": "https://n.news.naver.com/mnews/article/081/0003674649",
+      "description": "중국 최대 D램 업체 창신메모리테크놀로지(CXMT)가 메모리 가격 상승에 힘입어 올해 상반기 15조원이 넘는 순이익을 냈다. CXMT는 상반기 매출이 1503억 1000만 위안(약 31조원)으로 지난해 같은 기간보다",
+      "crawled_at": "2026-08-28T22:00:58.651783",
+      "content": "순이익 15조 8000억원…예상치 36% 웃돌아 D램 가격 상승·판매량 증가에 흑자 전환 중국 최대 D램 업체 창신메모리테크놀로지(CXMT)가 메모리 가격 상승에 힘입어 올해 상반기 15조원이 넘는 순이익을 냈다. CXMT는 상반기 매출이 1503억 1000만 위안(약 31조원)으로 지난해 같은 기간보다 873.64% 늘었다고 28일 상하이거래소에 공시했다. 지배주주 귀속 순이익은 776억 500만 위안(약 15조 8000억원)으로, 지난해 상반기 23억 3200만 위안 적자에서 흑자로 돌아섰다. 지난 5월 내놓은 예상치도 크게 넘어섰다. 당시 CXMT는 상반기 매출을 1100억~1200억 위안, 지배주주 귀속 순이익을 500억~570억 위안으로 제시했다. 실제 매출과 순이익은 예상 범위 상단보다 각각 25%, 36% 많았다. 2분기 지배주주 귀속 순이익은 528억 4300만 위안으로 1분기 247억 6200만 위안보다 113% 늘었다. 상반기 매출총이익률은 84.84%, 영업활동 현금흐름은 1311억 5600만 위안이었다. CXMT는 인공지능(AI)용 메모리 수요가 늘어난 데다 주요 업체들이 첨단 제품으로 생산라인을 돌리면서 D램 공급이 부족해진 결과라고 설명했다. 지난해 하반기부터 D램 가격이 큰 폭으로 오른 데다 판매량 증가와 제품 구성 개선도 실적에 영향을 미쳤다. 2016년 설립된 CXMT는 삼성전자와 SK하이닉스, 미국 마이크론에 이은 세계 4위 D램 업체다. 알리바바클라우드와 바이트댄스, 텐센트, 레노버, 샤오미 등 중국 기업을 고객으로 두고 있으며 지난달 상하이증권거래소 과학기술주 시장에 상장했다. 월스트리트저널(WSJ)은 AI발 메모리 부족으로 CXMT도 큰 수혜를 봤다고 전했다. CXMT는 고대역폭메모리(HBM) 등 첨단 제품에서는 선두 3사와 격차가 있지만, 범용 D램 판매로 확보한 자금을 공정 개선과 증설에 투입하고 있다. 중국 내 범용 D램 시장을 놓고 삼성전자·SK하이닉스와의 경쟁이 한층 치열해질 수 있다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "중국 CXMT, 상반기 매출 10배 급증·순이익 15조원대 흑자 전환",
+      "summary": "중국 최대 D램 업체 창신메모리테크놀로지(CXMT)는 상반기 매출이 1503억 위안으로 전년 동기 대비 873.64% 증가하고 지배주주 귀속 순이익이 776억 위안(약 15조8000억원)으로 흑자 전환했다고 공시했다. 매출총이익률 84.84%, 영업현금흐름 1311억 위안 등을 기록했으며 AI 수요 증가와 D램 공급 부족, 판매량·제품 구성 개선이 실적 호조 배경이라고 회사는 설명했다. CXMT는 범용 D램으로 확보한 자금을 공정 개선과 증설에 투입해 삼성·SK하이닉스 등과의 경쟁이 심화될 전망이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "뉴욕증시, 워시 매파 발언에 하락…반도체주 약세 뚜렷",
+      "url": "https://n.news.naver.com/mnews/article/138/0002239414",
+      "description": "뉴욕증시가 28일(현지시간) 하락했다. 케빈 워시 미국 연방준비제도(연준) 의장의 매파적 발언이 투자심리를 얼어붙게 했다. 반도체 관련주 낙폭이 두드러졌다. 다우존스30산업평균지수는 전장보다 9.45포인트(0.02%",
+      "crawled_at": "2026-08-28T22:00:58.651332",
+      "content": "[디지털데일리 이상일기자] 뉴욕증시가 28일(현지시간) 하락했다. 케빈 워시 미국 연방준비제도(연준) 의장의 매파적 발언이 투자심리를 얼어붙게 했다. 반도체 관련주 낙폭이 두드러졌다. 다우존스30산업평균지수는 전장보다 9.45포인트(0.02%) 내린 53,559.99에 마감했다. 스탠더드앤드푸어스(S&P)500지수는 19.28포인트(0.25%) 하락한 7,711.76에 거래를 마쳤다. 나스닥종합지수는 138.93포인트(0.52%) 떨어진 26,402.42에 장을 마쳤다. 중소형주 중심 러셀2000지수는 1.39% 내렸다. 반면 변동성지수(VIX)는 0.55% 하락한 14.43을 기록했다. 반도체주 하락이 나스닥지수 낙폭을 키웠다. 엔비디아는 4.57% 내린 217.55달러에 마감했다. 마벨테크놀로지는 10.28% 급락한 216.62달러를 기록했다. 인텔은 2.85% 하락한 89.47달러에 거래를 마쳤다. 브로드컴도 0.74% 내린 368.79달러에 장을 마쳤다. 필라델피아반도체지수 추종 상장지수펀드(ETF) SOXX는 3.20%, 반도체 ETF SMH는 3.47% 각각 하락했다. 업종별로도 기술주 섹터가 1.55% 내려 낙폭이 가장 컸다. 워시 의장은 이날 미국 와이오밍주에서 열린 잭슨홀 경제 심포지엄에서 물가 관련 지표가 우려스럽다고 진단했다. 그는 기조적 물가상승률이 목표치를 향해 충분한 속도로 움직이고 있다는 확신이 필요하다고 밝혔다. 시장에서는 이를 두고 연준의 금리 인상 가능성이 부각됐다는 해석이 나왔다. 국제유가는 호르무즈 해협을 통한 원유 수송이 회복될 것이란 기대가 이어진 가운데 하락했다. 이날 뉴욕상업거래소에서 10월 인도분 서부텍사스산원유(WTI)는 전장 대비 0.13달러(0.16%) 내린 배럴당 83.40달러에 거래를 마쳤다. 런던 ICE 선물거래소에서 브렌트유 10월물은 전장 대비 0.39달러(0.43%) 하락한 배럴당 89.31달러에 장을 마감했다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "뉴욕증시, 워시 연준 의장의 매파 발언에 하락…반도체주 약세 두드러져",
+      "summary": "28일 뉴욕증시는 케빈 워시 연준 의장의 매파적 발언으로 투자심리가 위축되며 하락 마감했다. 다우·S&P·나스닥 모두 하락했고 특히 반도체주 낙폭이 커 엔비디아·마벨·인텔 등 주요 반도체 종목과 SOXX·SMH ETF가 크게 내렸다. 업종별로 기술주가 가장 큰 하락세를 보였고, 국제유가는 호르무즈 해협 통과 회복 기대 속 소폭 하락했다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.273327"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.299263"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.325991"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.365852"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.439799"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.475280"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.502151"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.540349"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.568423"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:01.591535"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:01.666872"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:01.801793"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:01.848528"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:01.904308"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:01.973436"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.032441"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.106701"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.156595"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.200486"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.264755"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.396247"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.477478"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.533690"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.578529"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.625249"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.715275"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.798898"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Was Widespread TokenMaxxing Ever Really Here?",
+      "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.838514"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Why the Grid Can't Keep Up, and Why that Drives Behind-The-Meter 50%+ of DCs/Year By 2028",
+      "url": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+      "description": "",
+      "crawled_at": "2026-08-28T22:01:02.882225"
+    }
+  ]
+}
