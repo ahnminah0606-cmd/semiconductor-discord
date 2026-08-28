@@ -53,6 +53,35 @@ def unique(items):
     return list({x["url"]: x for x in items if x.get("url")}.values())[:MAX_CANDIDATES]
 
 
+def title_tokens(title):
+    """제목 비교용 토큰 집합."""
+    return {
+        token.lower()
+        for token in re.findall(r"[가-힣A-Za-z0-9]+", title)
+        if len(token) >= 2
+    }
+
+
+def deduplicate_topics(articles, threshold=0.6):
+    """언론사만 다른 동일 이슈를 제목 토큰 중복률로 제거한다."""
+    kept = []
+    kept_tokens = []
+    for article in articles:
+        tokens = title_tokens(article.get("title", ""))
+        duplicate = False
+        for previous in kept_tokens:
+            smaller = min(len(tokens), len(previous))
+            overlap = len(tokens & previous) / smaller if smaller else 0
+            if overlap >= threshold:
+                duplicate = True
+                logger.info("유사 주제 제외: %s", article.get("title", ""))
+                break
+        if not duplicate:
+            kept.append(article)
+            kept_tokens.append(tokens)
+    return kept
+
+
 async def link_items(page, base, source, valid):
     found = []
     links = page.locator("a")
@@ -154,7 +183,7 @@ def json_ld_body(soup):
 
 
 def fetch_article(article):
-    """본문 → JSON-LD → meta description → 제목 순 fallback."""
+    """본문을 수집하고, 요약할 만큼 내용이 확보됐는지 표시한다."""
     try:
         response = requests.get(article["url"], headers=HEADERS, timeout=25)
         response.raise_for_status()
@@ -164,11 +193,16 @@ def fetch_article(article):
         body = trafilatura.extract(response.text, include_comments=False, include_tables=False,
                                    favor_precision=True) or json_ld_body(soup)
         article["description"] = description or article["description"]
-        article["content"] = " ".join((body or description or article["title"]).split())[:12_000]
-        logger.info("본문 수집: %s (%d자)", article["url"], len(article["content"]))
+        article["content"] = " ".join((body or description or "").split())[:12_000]
+        article["content_ok"] = len(article["content"]) >= 200
+        if article["content_ok"]:
+            logger.info("본문 수집: %s (%d자)", article["url"], len(article["content"]))
+        else:
+            logger.warning("본문 부족으로 제외: %s (%d자)", article["url"], len(article["content"]))
     except Exception as exc:
-        logger.warning("본문 수집 실패, fallback 사용: %s (%s)", article["url"], exc)
-        article["content"] = article["description"] or article["title"]
+        logger.warning("본문 수집 실패로 제외: %s (%s)", article["url"], exc)
+        article["content"] = ""
+        article["content_ok"] = False
     return article
 
 
@@ -188,7 +222,7 @@ SELECTION_SCHEMA = {
         "selected_ids": {
             "type": "array",
             "items": {"type": "integer"},
-            "minItems": MAX_SUMMARIES,
+            "minItems": 0,
             "maxItems": MAX_SUMMARIES,
         }
     },
@@ -254,21 +288,31 @@ def summarize(client, article):
 
 
 def select_important(client, articles, source):
-    """신규 기사가 6개 이상이면 산업적으로 중요한 5개를 AI로 선별한다."""
+    """반도체와 직접 관련된 중요 기사만 0~5개 선별한다."""
+    if not articles:
+        return []
+
     candidates = [
         f"ID {index}\n제목: {article['title']}\n내용: {article.get('content', '')[:1_500]}"
         for index, article in enumerate(articles, 1)
     ]
-    prompt = f"""{source}의 신규 반도체/기술 기사 {len(articles)}개 중 가장 중요한 기사 {MAX_SUMMARIES}개를 고르세요.
+    prompt = f"""다음 {source} 기사 후보에서 반도체 산업과 직접 관련된 중요 기사만 최대 {MAX_SUMMARIES}개 선택하세요.
 
-선정 기준:
-1. 반도체 기술·제품·공정 발전의 중요도
-2. 시장, 투자, 공급망, 기업 경쟁에 미치는 파급력
-3. 수치와 사실이 구체적이고 독자에게 새로운 정보인지
-4. 비슷한 주제는 하나만 선택해 5개가 다양한 핵심 이슈를 다루는지
-5. 광고성·주변적 내용보다 산업 의사결정에 유용한지
+반드시 포함 가능한 주제:
+- 반도체 공정, 장비, 소재, 소자, 설계, 메모리, 파운드리, 패키징
+- 반도체 기업의 투자, 생산, 수율, 공급망, 기술 경쟁
+- AI 반도체 칩, GPU, NPU, ASIC 자체가 기사의 핵심인 경우
 
-중요한 순서대로 서로 다른 ID {MAX_SUMMARIES}개를 선택하세요.
+반드시 제외할 주제:
+- 일반 AI 서비스, 챗봇, 통신 서비스, 정부 서비스 사업자 선정
+- 바이오·신약 AI, 일반 소프트웨어·플랫폼·소비자 제품
+- 반도체가 한두 문장 언급될 뿐 기사의 핵심이 아닌 경우
+- 같은 사건을 다룬 중복 기사와 본문 정보가 부족한 기사
+
+규칙:
+- 중요 기사가 부족하면 5개를 채우지 말고 0~{MAX_SUMMARIES}개만 선택하세요.
+- 직접 관련성이 불확실하면 제외하세요.
+- 중요한 순서대로 서로 다른 ID만 반환하세요.
 
 기사 후보:
 {chr(10).join(candidates)}"""
@@ -277,7 +321,7 @@ def select_important(client, articles, source):
         try:
             response = client.responses.create(
                 model=OPENAI_MODEL,
-                instructions="당신은 반도체 산업 뉴스의 중요도를 판단하는 한국어 편집장입니다.",
+                instructions="당신은 반도체 산업과 무관한 일반 AI·IT 뉴스를 엄격히 제외하는 편집장입니다.",
                 input=prompt,
                 reasoning={"effort": "minimal"},
                 max_output_tokens=600,
@@ -293,19 +337,19 @@ def select_important(client, articles, source):
             if response.status != "completed" or not response.output_text.strip():
                 raise ValueError(f"불완전한 선별 응답: status={response.status}")
             selected_ids = json.loads(response.output_text).get("selected_ids", [])
-            if len(selected_ids) != MAX_SUMMARIES or len(set(selected_ids)) != MAX_SUMMARIES:
-                raise ValueError("서로 다른 기사 5개가 선택되지 않았습니다.")
+            if len(selected_ids) > MAX_SUMMARIES or len(set(selected_ids)) != len(selected_ids):
+                raise ValueError("선택 개수 또는 중복 ID가 올바르지 않습니다.")
             if any(not isinstance(value, int) or value < 1 or value > len(articles) for value in selected_ids):
                 raise ValueError("선택 ID가 후보 범위를 벗어났습니다.")
             selected = [articles[value - 1] for value in selected_ids]
-            logger.info("%s: 신규 %d건 중 중요 기사 ID %s 선별", source, len(articles), selected_ids)
+            logger.info("%s: 후보 %d건 중 반도체 직접 관련 기사 ID %s 선별",
+                        source, len(articles), selected_ids)
             return selected
         except Exception as exc:
             last_error = exc
             logger.warning("%s 중요 기사 선별 %d차 실패: %s", source, attempt, exc)
     logger.error("%s 중요 기사 선별 최종 실패: %s", source, last_error)
-    return []
-
+    return None
 
 def load_sent():
     try:
@@ -390,17 +434,26 @@ async def main():
         if not fresh_candidates:
             logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
             continue
+
         enriched = await asyncio.gather(
             *(asyncio.to_thread(fetch_article, article) for article in fresh_candidates)
         )
-        if len(enriched) > MAX_SUMMARIES:
-            selected = select_important(client, enriched, source)
-            if len(selected) != MAX_SUMMARIES:
-                had_error = True
-                continue
-        else:
-            selected = enriched
-            logger.info("%s: 신규 %d건 전부 요약", source, len(selected))
+        usable = [article for article in enriched if article.get("content_ok")]
+        deduplicated = deduplicate_topics(usable)
+        logger.info("%s: 신규 %d건 → 본문 확보 %d건 → 유사 주제 제거 후 %d건",
+                    source, len(fresh_candidates), len(usable), len(deduplicated))
+
+        selected = select_important(client, deduplicated, source)
+        if selected is None:
+            had_error = True
+            continue
+        if not selected:
+            logger.info("%s: 반도체 직접 관련 중요 기사 없음", source)
+            results[key] = []
+            sent_urls.update(article["url"] for article in fresh_candidates)
+            save_sent(sent_urls)
+            continue
+
         summarized = [summarize(client, article) for article in selected]
         results[key] = summarized
         if not all(article.get("summary_ok") for article in summarized):
@@ -408,7 +461,7 @@ async def main():
             had_error = True
             continue
         if send(summarized, webhook, source):
-            # 선택되지 않은 후보도 검토 완료로 기록해 다음 날 오래된 기사로 재등장하지 않게 한다.
+            # 전송된 기사 외의 중복·무관 기사도 검토 완료로 기록한다.
             sent_urls.update(article["url"] for article in fresh_candidates)
             save_sent(sent_urls)
             sent_count += len(summarized)
@@ -417,7 +470,6 @@ async def main():
     save_results(results)
     logger.info("실행 완료: 새 기사 %d건 전송", sent_count)
     return 1 if had_error else 0
-
 
 if __name__ == "__main__":
     raise SystemExit(asyncio.run(main()))
