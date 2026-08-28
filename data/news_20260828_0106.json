@@ -1,0 +1,266 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "SK하이닉스 'ICE·TSMC 협력' vs 삼성 '원스톱·빛'…패키징 격돌",
+      "url": "https://n.news.naver.com/mnews/article/031/0001053224",
+      "description": "삼성전자와 SK하이닉스가 인공지능(AI) 반도체 성능을 좌우하는 첨단 패키징(반도체 후공정)에서 서로 다른 기술 전략을 선보였다. 메모리에 집중하는 SK하이닉스는 고대역폭 메모리(HBM)를 더 높이 쌓고 열을 효과적",
+      "crawled_at": "2026-08-28T01:05:30.741245",
+      "content": "HBM4 로직 베이스다이, 대만 TSMC와 협업 확대 삼성, 메모리·파운드리·패키징 '원스톱'...'빛' 기술도 확대삼성전자와 SK하이닉스가 인공지능(AI) 반도체 성능을 좌우하는 첨단 패키징(반도체 후공정)에서 서로 다른 기술 전략을 선보였다. 메모리에 집중하는 SK하이닉스는 고대역폭 메모리(HBM)를 더 높이 쌓고 열을 효과적으로 빼내는 냉각 소자인 'ICE' 기술을 고도화했다. 현재 제품인 HBM4(6세대)부터는 삼성전자 파운드리(반도체 위탁생산) 사업부의 경쟁사이자 세계 1위 파운드리 대만 TSMC와 로직 베이스다이(HBM 맨 아래에서 신호를 처리하는 층)·2.5차원(2.5D) 패키징 협업도 넓히고 있다. 삼성전자는 메모리와 파운드리, 패키징을 한 번에 제공하는 '원스톱(One-stop) 솔루션'을 앞세웠다. 여기에 2.3D·2.5D·3D 패키징과 광(빛) 기반 기술까지 더해 고객별 AI 반도체 수요에 대응한다. 지난 27일 경기 수원컨벤션센터에서 열린 '차세대 반도체 패키징 산업전(ASPS) 2026'에서 SK하이닉스는 HBM4와 다음 세대인 HBM4E(7세대)의 고단화와 발열 문제를 해결하기 위한 기술을 집중적으로 소개했다. HBM을 높이 쌓는 기반은 '어드밴스드 매스리플로우-몰디드언더필(MR-MUF)'이다. 반도체 칩을 모두 쌓아 구운 뒤 칩 사이 공간을 액체 형태의 보호재로 채운다. SK하이닉스는 HBM3(4세대)부터 적용해온 MR-MUF를 HBM4·HBM4E로 확장하고 있다. 전시장에서는 8단·12단을 넘어 16단 HBM까지 대응하는 기술 로드맵을 공개했다. SK하이닉스 관계자는 \"대역폭(처리해야 할 신호)이 커질수록 파워(Power)를 많이 쓰기 때문에 열 관리가 중요해진다\"고 말했다. SK하이닉스가 이번 전시에서 강조한 건 'iHBM(ICE-HBM)'이다. HBM 내부에 전기가 통하지 않으면서 열 전도성이 높은 실리콘(Si) 기반 ICE를 추가해 방열 성능을 높이는 기술이다. 기존 HBM은 실리콘과 금속, 에폭시 몰딩 컴파운드(High-K EMC) 등 여러 소재가 겹쳐 있어 내부에서 발생한 열이 빠져나가기 쉽지 않다. 현장 관계자는 \"핫스팟(열이 몰리는 부분) 위쪽에 대량의 실리콘을 넣으면 열원(증기)에서 냉각 시스템까지 이어주는 열 이동 경로를 만들 수 있다\"고 설명했다. SK하이닉스는 이 기술로 열저항을 기존보다 30% 이상 낮출 수 있다고 보고 있다. SK하이닉스 관계자는 \"HBM4부터 로직 쪽은 TSMC와 같이 협업하고 있다\"며 \"HBM과 그래픽처리장치(GPU) 등을 하나의 패키지로 묶는 2.5D 통합까지 가면 TSMC 등 다른 업체와의 협력이 필요하다\"고 말했다. 부스에는 TSMC의 첨단 패키징 기술인 '칩 온 웨이퍼 온 서브 스트레이트(CoWoS)'를 결합해 HBM과 로직칩을 하나의 AI 가속기(GPU·NPU 등)로 묶는 방식도 소개됐다. 현장에서 만난 관계자는 \"삼성전자는 파운드리까지 갖고 있어 메모리·로직·패키징을 몪는 통합 로드맵을 보여주는 반면, SK하이닉스는 메모리에 집중해 HBM 자체와 관련 패키징 기술을 더 구체적으로 보여준 것 같다\"고 설명했다. 삼성전자가 부스 전면에 내세운 것은 '원스톱 솔루션'이다. HBM용 D램과 4나노미터(1나노는 10억분의 1m) 로직 베이스다이, 파운드리와 첨단 패키징까지 자체적으로 공급할 수 있다는 점을 강조했다. 현장에서 만난 관계자는 \"과거에는 메모리는 메모리대로, 로직은 로직대로 수요가 따로 있었지만 요즘은 로직을 만드는 회사가 메모리 수요까지 가지고 있다\"고 말했다. 이어 \"삼성의 사업 구조가 바뀐 것은 아니고, 고객의 수요 스타일이 변하면서 원스톱 서비스를 소개하기 시작한 것\"이라고 설명했다. 최근 엔비디아·AMD·구글·아마존웹서비스(AWS)·오픈AI·브로드컴 등 자체 AI칩을 만드는 기업이 늘면서 하나의 고객이 로직칩과 HBM, 패키징을 함께 요구하는 경우가 많아졌다는 얘기다. 삼성전자는 고객이 원하는 칩 구조에 맞춘 패키징 기술도 선보였다. '2.3D 큐브(Cube)-E'는 실리콘 브리지(Bridge)와 재배선층(RDL)으로 HBM과 로직칩을 수평으로 연결하고, '2.5D Cube-S'는 실리콘 인터포저(기판) 위에 로직칩과 여러 HBM을 배치한다. '3D Cube-H'는 하이브리드 구리(Cu) 본딩으로 칩을 위아래로 직접 연결하는 기술이다. 전기 신호를 넘어 빛을 이용하는 공동패키징광학(CPO) 기술도 개발하고 있다. 칩 가까이에 광 센서용 부품(엔진)을 함께 배치해 전기 신호가 이동하는 거리를 줄이고, 대용량 데이터 전송에는 빛을 활용하는 기술이다. 현장 관계자는 \"아직 상용화된 것은 아니고 서비스를 제공하기 위해 개발하고 있다\"고 말했다. AI칩에서 오가는 데이터가 급증하면서 패키징 기술의 범위가 칩을 쌓고 붙이는 단계를 넘어 데이터가 이동하는 방식까지 넓어지고 있다. 행사 종료가 가까워질 때까지 SK하이닉스 부스에는 삼성전자 직원들이 찾아 냉각 기술을 묻고, 대학생들은 패키징 기술과 관련 업무에 필요한 역량을 질문하는 등 현장 열기가 이어졌다. 한편 이번 행사는 수원에서 26~28일 열리며, 삼성전자와 SK하이닉스를 포함한 약 180개 기업이 참여해 약 400개 부스를 꾸렸다.",
+      "summary_ok": true,
+      "summary_title": "SK하이닉스는 ICE·TSMC와 협력, 삼성은 원스톱·광기술로 패키징 전략 차별화",
+      "summary": "ASPS 2026에서 SK하이닉스는 HBM4·HBM4E의 고단화와 발열 해소를 위해 MR-MUF 기반 적층과 실리콘 기반 ICE(iHBM)로 방열 성능을 개선하고, HBM과 로직베이스다이를 묶는 2.5D 통합을 위해 TSMC 등과 협업을 확대한다고 밝혔다. 반면 삼성전자는 메모리·파운드리·패키징을 자체 제공하는 원스톱 솔루션을 강조하며 2.3D·2.5D·3D 패키징과 광(光) 기반 공동패키징광학(CPO) 기술로 고객 맞춤형 AI 반도체 수요에 대응한다고 설명했다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "‘모두의 AI’ 사업자에 SKT·카카오·KT 선정…연내 전 국민 서비스",
+      "url": "https://n.news.naver.com/mnews/article/117/0004099336",
+      "description": "정부가 전 국민 대상 인공지능(AI) 서비스인 ‘모두의 AI’ 프로젝트 사업자로 SK텔레콤과 카카오, KT 등 3개 컨소시엄을 선정했다. 정부는 올해 그래픽처리장치(GPU) B200 512장을 지원하고 베타 서비스를",
+      "crawled_at": "2026-08-28T01:05:30.741079",
+      "content": "올해 GPU B200 512장 지원…베타 거쳐 연내 정식 출시 [마이데일리 = 박성규 기자] 정부가 전 국민 대상 인공지능(AI) 서비스인 ‘모두의 AI’ 프로젝트 사업자로 SK텔레콤과 카카오, KT 등 3개 컨소시엄을 선정했다. 정부는 올해 그래픽처리장치(GPU) B200 512장을 지원하고 베타 서비스를 거쳐 연내 정식 서비스를 시작할 계획이다. 28일 과학기술정보통신부는 ‘모두의 AI’ 프로젝트 공모에 참여한 6개 컨소시엄을 평가한 결과 SK텔레콤과 카카오, KT 컨소시엄을 사업 수행기관으로 선정했다고 밝혔다. 평가는 서면평가와 발표평가로 진행됐다. 서면평가에서는 AI 모델·서비스 경쟁력과 GPU 활용·인프라 운영 계획 등을 심사했고 발표평가에서는 서비스 편의성과 이용자 확보 전략, 품질·안전성 확보 방안, AI 생태계 기여계획 등을 종합 평가했다. 선정된 3개 컨소시엄은 범용 AI 챗봇과 공공 AI 에이전트, 생활 밀착형 특화 서비스를 개발한다. 과기정통부는 컨소시엄별 평가 점수와 순위는 공개하지 않았다. SK텔레콤 컨소시엄은 이용자의 요청 하나로 계획 수립부터 실행, 결과 확인까지 처리하는 실행형 AI 서비스를 개발한다. 앱과 웹뿐 아니라 전화와 문자로도 서비스를 제공해 디지털 취약계층의 접근성을 높일 계획이다. SK텔레콤 컨소시엄에는 굿닥과 라이너, 신한카드, SK브로드밴드, 티맵모빌리티, 하나카드 등과 함께 국내 AI 모델인 ‘에이닷엑스 K2’, ‘솔라 오픈2’, ‘모티프3’, ‘K-엑사원 2.0’ 등이 활용된다. 카카오 컨소시엄은 카카오톡을 진입점으로 범용 챗봇과 AI 에이전트를 제공한다. 예약과 신청, 결제까지 메신저 안에서 처리하는 서비스를 구현하고 LG유플러스와 연내 범용 전화 AI 서비스의 라이트 버전도 출시할 계획이다. 카카오 컨소시엄에는 루닛과 서울대병원, 신한은행, LG AI연구원, LG CNS, LG유플러스, LG전자, 카카오엔터프라이즈 등이 참여한다. 활용 모델은 ‘카나나’, ‘엑사원’, ‘K-엑사원 2.0’ 등이다. KT 컨소시엄은 하나의 대화 안에서 정보 탐색과 비교·판단, 공공·특화서비스 실행까지 지원하는 AI 서비스를 개발한다. 다음 포털과 앱, 다나와·무신사·직방 등 파트너 채널에 AI 진입점을 배치하고 KT의 통신·미디어 채널과도 연계할 예정이다. KT 컨소시엄에는 다음과 무신사, 직방, 업스테이지, 모티프테크놀로지스, 엔씨AI, EBS 등이 참여한다. ‘믿음 K 프로 2.5’, ‘솔라 프로4’, ‘모티프3’ 등이 활용된다. 정부는 선정된 3개 사업자에 올해 총 GPU B200 512장을 지원한다. 내년부터는 정부 예산을 통해 전 국민 서비스 제공에 필요한 비용도 지원할 계획이다. 과기정통부는 다음달 중 3개 사업자와 협약을 체결하고 베타 서비스를 거쳐 연내 ‘모두의 AI’를 정식 출시할 예정이다. 공공데이터 연계 등을 위해 관계부처 협의도 병행한다.",
+      "summary_ok": true,
+      "summary_title": "정부 '모두의 AI' 사업자에 SKT·카카오·KT 선정",
+      "summary": "과기정통부는 전 국민 대상 AI 서비스 '모두의 AI' 사업자로 SK텔레콤, 카카오, KT 컨소시엄을 선정했다. 각 컨소시엄은 범용 챗봇·공공 에이전트·생활 특화 서비스 등을 개발하며 올해 정부가 GPU B200 512장을 지원하고 베타 테스트를 거쳐 연내 정식 출시할 계획이다. 선정된 사업자는 통신·플랫폼·금융·의료 등 다수 민간 파트너와 국내 AI 모델을 활용해 접근성·편의성 중심의 서비스를 구현한다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "‘모두의 AI’ 사업자로 SKT·카카오·KT 선정…엔비디아 GPU 지원",
+      "url": "https://n.news.naver.com/mnews/article/056/0012246456",
+      "description": "국산 인공지능 모델을 기반으로 대국민 서비스를 제공하는 정부의 ‘모두의 AI’ 사업 수행기관으로 SK텔레콤과 카카오, KT 컨소시엄이 선정됐습니다. 과학기술정보통신부는 AI 모델과 서비스 경쟁력, 이용 편의성과 안전",
+      "crawled_at": "2026-08-28T01:05:30.741127",
+      "content": "과학기술정보통신부는 AI 모델과 서비스 경쟁력, 이용 편의성과 안전성 등을 평가해 이들 3개 컨소시엄을 선정했다고 오늘(28일) 밝혔습니다. 선정된 사업자들은 범용 AI 챗봇과 함께 공공서비스 신청 등을 대신 처리하는 AI 에이전트, 건강·금융·교육 등 생활 밀착형 서비스를 개발하게 됩니다. SK텔레콤 컨소시엄은 앱과 웹뿐 아니라 전화와 문자로도 서비스를 이용할 수 있도록 하고, 매장이나 관공서에 대신 전화해 주는 기능을 제공할 계획입니다. 카카오 컨소시엄은 카카오톡에서 범용 챗봇과 AI 에이전트를 함께 이용할 수 있도록 하고, LG유플러스와 연내 전화 AI 서비스를 출시할 예정입니다. KT 컨소시엄은 다음과 다나와, 무신사, 직방 등 다양한 플랫폼과 통신·인터넷TV 서비스를 연계해 정보 검색부터 공공서비스 이용까지 하나의 대화로 처리할 수 있도록 할 방침입니다. 정부는 올해 이들 사업자에게 엔비디아 B200 그래픽처리장치(GPU) 512장을 나눠 지원하고, 내년부터는 서비스 운영 비용도 지원할 예정입니다. 과기정통부는 다음 달 사업자들과 협약을 맺고 베타 서비스를 거쳐 올해 안에 ‘모두의 AI’ 서비스를 정식 출시할 계획입니다. [사진 출처 : 연합뉴스 / 과학기술정보통신부 제공] ■ 제보하기 ▷ 전화 : 02-781-1234, 4444 ▷ 이메일 : kbs1234@kbs.co.kr ▷ 카카오톡 : 'KBS제보' 검색, 채널 추가 ▷ 유튜브, 다음에서도 KBS뉴스를 구독해주세요!",
+      "summary_ok": true,
+      "summary_title": "‘모두의 AI’ 사업자로 SKT·카카오·KT 컨소시엄 선정",
+      "summary": "과학기술정보통신부는 범용 AI 챗봇과 공공서비스 처리 등 생활 밀착형 서비스를 개발할 3개 컨소시엄(SKT·카카오·KT)을 선정했다. SKT는 전화·문자 연계 서비스와 매장·관공서 대리전화 기능을, 카카오는 카카오톡 내 챗봇·에이전트와 연내 전화 AI 출시를, KT는 다양한 플랫폼·통신·IPTV 연동으로 정보검색부터 공공서비스까지 하나의 대화로 처리하는 기능을 제공할 계획이다. 정부는 엔비디아 B200 GPU 512장과 내년부터 운영비를 지원하며 다음 달 협약을 거쳐 올해 안에 정식 출시할 예정이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "'이변 없었다'…'모두의 AI' 사업자 SKT·KT·카카오",
+      "url": "https://n.news.naver.com/mnews/article/648/0000050263",
+      "description": "과학기술정보통신부는 전국민에게 인공지능(AI) 서비스를 제공하는 '모두의 AI' 사업자로 SK텔레콤 컨소시엄, KT 컨소시엄, 카카오 컨소시엄 등 3곳을 선정했다고 28일 밝혔다. 과기정통부는 프로젝트에 공모한 컨소",
+      "crawled_at": "2026-08-28T01:05:30.741283",
+      "content": "이번에 선정된 사업자들은 다양하고 폭넓은 대국민 접점을 제공하고 외산 AI를 뛰어넘는 범용 AI 챗봇 서비스와 복잡한 신청 절차를 대신하는 공공 AI 에이전트, 스타트업의 협업을 통한 차별화된 특화서비스 계획을 제시해 높은 평가를 받았다. 각 컨소시엄 사업 계획을 보면 SK텔레콤 컨소시엄은 실행형 AI서비스를 개발한다는 계획이다. 국내 행정과 지역 생활 맥락에 특화된 검색 품질을 제공하고, 건강·금융 등 생활 밀착 분야 특화 서비스를 함께 선보인다. KT컨소시엄은 포털 다음의 검색·뉴스·콘텐츠 이용 동선을 비롯해 다나와·무신사·직방 등 파트너 채널에 AI 진입점을 배치해 검색 수요를 AI 챗봇으로 연결한다. 교육과 부동산 등 생활밀착 분야 특화 서비스도 지원한다. 카카오 컨소시엄은 전국민이 이용하는 카카오톡 메신저를 진입점으로 범용 챗봇과 AI에이전트를 통합 이용할 수 있는 서비스를 제공한다. 유망 AI기업이 특화 에이전트를 직접 제작·시험·유통할 수 있도록 지원하고, 시니어케어·세무 등 생애주기별 특화 서비스를 갖출 예정이다. 과기정통부는 선정된 3개 사업자에게 올해 총 그래픽처리장치(GPU) B200 512장을, 내년부터 정부 예산을 통해 전국민 서비스 제공에 필요한 비용을 지원한다. 내달 중 3개 사업자와 협약을 체결하고 베타서비스를 거쳐 연내 모두의 AI 서비스를 정식 출시한다는 계획이다. 과기정통부 관계자는 \"선정된 사업자와 실무협의체를 구성하고 공공데이터 연계 등 관계부처 협의를 진행할 것\"이라며 \"모두의 AI가 우리나라를 대표하는 AI 서비스로 자리매김하도록 국민 접근성을 높이고 브랜딩과 홍보 등을 펼칠 계획\"이라고 말했다.",
+      "summary_ok": true,
+      "summary_title": "SKT·KT·카카오, ‘모두의 AI’ 사업자 선정",
+      "summary": "과기정통부는 국민 접점과 특화 서비스 계획을 제시한 SK텔레콤, KT, 카카오 컨소시엄을 모두의 AI 사업자로 선정했다. SKT는 실행형 AI와 행정·지역·건강·금융 특화 서비스를, KT는 포털·파트너 채널을 통한 AI 진입점과 교육·부동산 특화 서비스를, 카카오는 카카오톡 기반의 범용 챗봇·에이전트와 생애주기별 특화 서비스를 제공할 예정이다. 선정 사업자에는 올해 GPU B200 512장과 내년부터의 예산 지원이 제공되며, 다음달 협약 후 베타를 거쳐 연내 정식 출시할 계획이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "신약 설계하는 ‘국가대표 바이오 AI’ 나왔다…구글급 성능에 속도 25배",
+      "url": "https://n.news.naver.com/mnews/article/011/0004656116",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:30.741033",
+      "content": "신약 설계하는 ‘국가대표 바이오 AI’ 나왔다…구글급 성능에 속도 25배",
+      "summary_ok": true,
+      "summary_title": "신약 설계하는 ‘국가대표 바이오 AI’ 개발",
+      "summary": "기사 원문은 제목과 짧은 설명만 제공되어 있어 그 범위 내에서 요약합니다. 신약 설계를 위한 국가대표급 바이오 인공지능이 개발되었으며, 구글급 성능을 보이면서 처리 속도가 25배 빠르다고 전합니다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.420569"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.439339"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.459140"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.479240"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.547391"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.565743"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.583504"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.601584"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.619100"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.276566"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.320907"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.368263"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.402159"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.443591"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.486630"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.533079"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.586324"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.661139"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.697868"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.747654"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.841256"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.913647"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:33.964700"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.004570"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.037197"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.107684"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.156606"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Was Widespread TokenMaxxing Ever Really Here?",
+      "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.192990"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Why the Grid Can't Keep Up, and Why that Drives Behind-The-Meter 50%+ of DCs/Year By 2028",
+      "url": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+      "description": "",
+      "crawled_at": "2026-08-28T01:05:34.223537"
+    }
+  ]
+}
