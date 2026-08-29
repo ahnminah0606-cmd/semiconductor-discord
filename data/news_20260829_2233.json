@@ -1,0 +1,223 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "GPU 수보다 운영 생산성…SK AX가 짚은 AI 데이터센터의 조건",
+      "url": "https://n.news.naver.com/mnews/article/293/0000089746",
+      "description": "기업이 인공지능(AI) 데이터센터를 구축할 때 그래픽처리장치(GPU) 구매부터 시작하면 투자에 실패할 가능성이 높다는 분석이 나왔다. AI 학습과 추론 등 실제 업무에 맞춰 전력·냉각·네트워크·저장장치와 운영체계를",
+      "crawled_at": "2026-08-29T22:33:38.627767",
+      "content": "GPU 수보다 운영 생산성…SK AX가 짚은 AI 데이터센터의 조건 기업이 인공지능(AI) 데이터센터를 구축할 때 그래픽처리장치(GPU) 구매부터 시작하면 투자에 실패할 가능성이 높다는 분석이 나왔다. AI 학습과 추론 등 실제 업무에 맞춰 전력·냉각·네트워크·저장장치와 운영체계를 함께 설계해야 한다는 설명이다. 30일 SK AX의 'AI 데이터센터 핵심 요소와 추진 전략' 보고서에 따르면 회사는 AI 데이터센터를 GPU를 많이 배치한 시설이 아니라 AI 학습과 추론을 통해 토큰과 의사결정, 자동화 결과를 지속해서 만들어내는 시스템으로 정의했다. 기존 데이터센터가 중앙처리장치(CPU) 서버와 저장장치의 안정적인 운영에 초점을 맞춘다면 AI 데이터센터는 수백~수만개의 GPU가 하나의 작업을 나눠 처리한다. GPU 사이의 통신이나 데이터 이동, 냉각 가운데 한 부분만 막혀도 전체 작업 속도가 급격히 떨어진다. 전력과 냉각은 AI 데이터센터의 규모와 사업 속도를 좌우한다. 전력 인입과 변전 용량, 재생에너지 조달, 인허가에 따라 확장 가능 범위가 갈린다. AI 서버를 넣는 랙의 소비전력도 100킬로와트(kW)를 넘어 200kW 이상으로 높아지고 있다. 랙은 서버와 네트워크 장비를 쌓아 넣는 장비함이다. 공기로 열을 식히는 기존 방식만으로는 한계가 생겨 서버 부품에 냉각수를 직접 전달하는 액체냉각과 누수 감지, 물 사용량 관리까지 설계해야 한다. 랙 내부에서는 GPU 성능보다 GPU가 기다리는 시간을 줄이는 것이 중요하다. 학습 상태를 저장·복구하거나 저장장치에서 데이터를 불러오는 속도가 느리면 GPU가 계산하지 못한 채 대기한다. 같은 GPU라도 네트워크와 저장장치, 작업 배치 방식에 따라 실제 성능과 비용이 달라진다. SK AX는 GPU 평균 사용률만으로 운영 성과를 판단해서는 안 된다고 지적했다. 사용률이 높아도 작업이 늦게 끝나거나 장애 복구에 시간이 걸리면 생산성이 높다고 보기 어렵다. 실제 GPU 가동 시간과 전력 대비 토큰 생산량, 작업 완료 시간, 장애 복구 시간을 함께 측정해야 한다. 토큰은 AI가 문장을 처리하고 답변을 만들 때 사용하는 기본 단위다. 학습과 추론에도 서로 다른 기준이 필요하다. 학습은 여러 GPU 사이의 통신과 작업 중간 상태의 저장·복구가 중요하다. 이용자 질문에 답하는 추론은 응답 지연시간과 토큰당 비용이 핵심이다. 모든 AI 업무에 같은 장비를 적용하면 학습용 설비를 추론에 과도하게 쓰거나 추론용 환경에서 대규모 학습을 수행할 수 있다. SK AX는 AI 업무를 학습과 미세조정, 검색증강생성(RAG), 실시간 추론, AI 에이전트 등으로 나눈 뒤 사내 전용 설비와 퍼블릭 클라우드 GPU, GPU 서비스형 인프라(GPUaaS) 등에 배치할 것을 제안했다. 대표 업무로 처리량과 응답속도, 토큰당 비용을 시험해 설비를 결정하는 방식이다. SK AX는 자체 AI 플랫폼 '에이전틱와이어 코어'의 운영 기능을 소개했다. 에이전틱와이어 코어의 GPU 서비스형 인프라(GPUaaS)는 프로젝트별 GPU 요청과 할당, 사용량·비용 확인, 모델 배포와 버전 관리를 지원한다. AI 통제·평가(ACE) 기능은 AI가 만든 답변과 에이전트의 작업 결과를 대상으로 정확성과 출처, 외부 도구 호출의 적절성 등을 점검한다. 보고서에서는 \"좋은 GPU와 최신 인프라를 확보하는 것만으로 AI 데이터센터의 성과가 보장되지는 않는다\"며 \"AI 데이터센터의 경쟁력은 얼마나 큰 인프라를 보유했는지가 아니라 AI 업무를 얼마나 빠르고 안정적이며 경제적으로 생산·운영할 수 있는지에 따라 결정된다\"고 설명했다. Copyright ⓒ 블로터. All rights reserved. 무단 전재 및 재배포 금지. 블로터 많이 본 뉴스 함께 볼만한 뉴스 이 기사를 본 이용자들이 함께 많이 본 기사, 해당 기사와 유사한 기사, 관심 기사 등을 자동 추천합니다",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "GPU 수보다 운영 생산성에 방점 둬야 하는 AI 데이터센터 조건",
+      "summary": "SK AX는 AI 데이터센터를 단순히 GPU 수로 판단하면 실패할 수 있다고 분석했다. 전력·냉각·네트워크·저장장치와 운영체계를 학습·추론 등 업무 특성에 맞춰 함께 설계해야 하며, GPU 평균 사용률 대신 실제 가동시간, 전력 대비 토큰 생산량, 작업 완료 시간, 장애 복구 시간 등으로 성과를 측정해야 한다. 또한 업무 유형별로 전용 설비·퍼블릭 클라우드·GPUaaS를 혼용해 비용과 응답속도, 처리량을 시험해 배치하라고 제안했다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.406716"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.425024"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.445258"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.465462"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.529557"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.558158"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.583749"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.608720"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.635028"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.596652"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.653968"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.708167"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.748596"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.796227"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.888422"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.942726"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:41.994859"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.033249"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.072269"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.130979"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.224138"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.289150"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.344698"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.382552"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.414510"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.489173"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.535468"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Was Widespread TokenMaxxing Ever Really Here?",
+      "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.576790"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Why the Grid Can't Keep Up, and Why that Drives Behind-The-Meter 50%+ of DCs/Year By 2028",
+      "url": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+      "description": "",
+      "crawled_at": "2026-08-29T22:33:42.607408"
+    }
+  ]
+}
