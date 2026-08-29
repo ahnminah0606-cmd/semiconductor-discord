@@ -1,0 +1,247 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "[AI세계속으로]폭풍 성장한 엔비디아…식지 않은 인프라 투자",
+      "url": "https://n.news.naver.com/mnews/article/277/0005809018",
+      "description": "엔비디아의 매출과 영업이익이 전년 동기보다 100% 이상 증가, 예상치를 훌쩍 뛰어넘으면서 인공지능(AI) 업계 인프라 투자 열기가 지속될 것이란 기대감이 커지고 있다. 대규모 데이터센터 운용사인 '하이퍼스케일러'의",
+      "crawled_at": "2026-08-29T21:32:28.760831",
+      "content": "데이터센터 부문 전체 매출의 92% 차지 \"깜짝 실적, 시장 의구심 불식시키는 계기\"엔비디아의 매출과 영업이익이 전년 동기보다 100% 이상 증가, 예상치를 훌쩍 뛰어넘으면서 인공지능(AI) 업계 인프라 투자 열기가 지속될 것이란 기대감이 커지고 있다. 대규모 데이터센터 운용사인 '하이퍼스케일러'의 투자가 이어지는 가운데 엔비디아가 깜작 실적으로 화답하면서 당분간 대규모 투자가 계속될 것이란 전망에 힘이 실리고 있다. 엔비디아는 2027 회계연도 2분기(5~7월) 매출이 지난해 동기 대비 106% 증가한 962억2000만달러(약 133조원)로 13분기 연속 매출 신기록을 경신했다. 이같은 2028 매출 성장률 가이던스는 시장 기대치(45%)를 크게 상회한 수치로, 실제 고객 수요는 100% 이상 폭증 중이나 공급망 제약을 반영한 보수적 수치라는 설명이다. 2분기 주당순이익(EPS)도 2.22달러로, 시장 전망치(2.1달러)를 넘어섰다. 부문별로는 AI 칩 매출이 포함된 데이터센터 부문이 전년 동기 대비 117% 늘어난 890억 달러를 기록해 전체 매출의 92%를 차지했다. 엔비디아는 \"내년 매출이 70% 성장할 것\"이라고 예상했는데 엔비디아가 1년 시계로 실적 전망을 공개한 건 처음이라 자신감을 반영했다는 분석이 나온다. 이같은 공격적인 전망은 하이퍼스케일러들의 투자가 여전히 가파르게 증가할 것이라는 전망에 기초한다. 엔비디아의 호실적은 AI 피크아웃 우려를 일축하고 있다. NH투자증권 고민성 연구원은 \"엔비디아 성장의 핵심은 인간 대비 15~100배의 컴퓨팅을 소모하는 에이전트 확산에 따른 토큰 처리량 급증\"이라며 \"엔비디아 플랫폼 쿠다(CUDA)의 높은 호환성을 바탕으로 프론티어 모델과 오픈웨이트 모델의 학습·추론 수요 전 주기를 흡수 중으로, 이달 출하를 시작한 최첨단 AI 가속기 '베라 루빈'의 매출 확대도 향후 실적을 기대하게 하는 요소\"라고 봤다. 흥국증권 이영원 연구원은 \"이번 실적은 젠슨 황 엔비디아 회장이 2030년 4조달러의 투자를 예상하는 장기적인 전망에 부합하는 것으로 많은 논란에도 불구하고 AI 투자 성장에 대한 낙관적인 시각을 다시 확인시켜주고 있다\"면서 \"이는 메모리 업황의 호조가 장기간 이어질 수 있음을 시사하며, 메모리 가격 강세로 이어져 엔비디아의 매출 총 이익률이 다음 분기 이후 압박을 받을 수 있다는 예상으로 이어지고 있다\"고 말했다. 그간 AI 투자의 지속성 여부에 회의적인 시각을 보이거나 하이퍼스케일러의 현금이 소진되면서 자금조달 어려움에 대한 우려가 커졌지만 엔비디아의 예상치를 뛰어넘는 실적은 시장의 의구심을 불식시키는 계기로 작용했다는 설명이다. 특히 IT업계는 AI 투자를 자극하는 토큰 수요와 관련해 최근 에이전트 AI의 등장 이후 수요증가가 가속화되고 있는 점에 주목했다. 오픈AI 분석에 따르면 에이전틱 AI '코덱스'를 채택한 상위 10%의 선도기업과 일반기업의 토큰 사용량 추이는 2025년 4월 이후 현재 17배까지 격차가 확대되고 있다. 이 연구원은 \"AI의 진화에 따라 토큰 수요가 급증하고 이를 가능케 하는 인프라를 구축하기 위한 투자는 지속적으로 증가하는 구조가 이어지고 있다\"면서 \"하이퍼스케일러의 지출이 예상을 넘어서는 속도로 증가하고 메모리 반도체 매출의 성장이 좀처럼 꺾이지 않으면서 반도체 수요 성장의 신뢰를 유지시켜줄 것\"이라고 덧붙였다. 최근 AI 사용의 중심이 사람이 직접 프롬프트를 입력하는 방식에서 에이전트 방식으로 넘어가면서 앞으로 기업은 직원보다 훨씬 많은 수의 AI 에이전트를 운영하게 될 것으로 전망된다. 에이전트는 24시간 백그라운드에서 작동하고 다른 에이전트와 협업해 컴퓨팅 사용량이 크게 증가한다. 고 연구원은 \"AI가 생산적이고 유용한 업무를 수행하기 시작했고, AI 서비스가 수익성 있는 토큰을 생성하며, 컴퓨팅을 추가하면 더 많은 토큰과 이익 창출이 가능하다\"면서 \"AI 서비스 업체들이 인프라 투자를 지속적으로 확대하는 추세가 당분간 이어질 것\"이라고 내다봤다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "엔비디아, AI 인프라 호황 속 폭발적 성장 지속",
+      "summary": "엔비디아는 2027회계연도 2분기 매출이 전년 대비 106% 증가한 962억2000만달러를 기록하며 데이터센터 부문(전체의 92%) 중심으로 가파른 성장을 보였다. 회사는 내년 매출 70% 성장 전망을 내놓으며 하이퍼스케일러들의 대규모 인프라 투자가 지속될 것이라는 시장 기대를 강화했다. 전문가들은 에이전트 AI 확산에 따른 토큰 처리량 급증과 CUDA 플랫폼의 폭넓은 호환성이 엔비디아 수요를 견인한다고 평가했고, 이번 실적이 AI 투자 지속성에 대한 의구심을 불식시켰다고 분석했다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "낸드 1위 넘보는 중국…'D램 집중' 삼전닉스 빈틈 위협",
+      "url": "https://n.news.naver.com/mnews/article/001/0016278262",
+      "description": "YMTC 낸드 웨이퍼 생산량 올해 200만장→내년 250만장 확대 삼성·SK, 2028년까지 신규 캐파 확대 불가로 점유율 위기 중국 메모리 업체 YMTC가 내년 낸드 시장 1위에 도전장을 낸 가운데, 고대역폭메모리",
+      "crawled_at": "2026-08-29T21:32:28.760901",
+      "content": "삼성·SK, 2028년까지 신규 캐파 확대 불가로 점유율 위기 [YMTC 홈페이지 캡처. 재판매 및 DB 금지] (서울=연합뉴스) 김민지 기자 = 중국 메모리 업체 YMTC가 내년 낸드 시장 1위에 도전장을 낸 가운데, 고대역폭메모리(HBM)를 포함한 D램 위주로 생산능력(캐파)을 늘리고 있는 삼성전자와 SK하이닉스가 낸드 시장에서는 주도권을 놓치는 것 아니냐는 우려가 나온다. 30일 업계에 따르면 최근 시장조사업체 옴디아는 중국 YMTC의 낸드 웨이퍼 생산량이 올해 201만장에서 내년 249만6천장 규모로 48만6천장 확대될 것으로 내다봤다. 연말 초기 가동에 들어가는 우한 3공장이 내년 본격 가동을 시작하며 우한 3공장의 생산량만 올해 9만장에서 내년 57만5천장으로 대폭 늘어날 것으로 예상된다. 반면 삼성전자와 SK하이닉스의 낸드 생산량은 내년까지 사실상 제자리걸음을 이어갈 전망이다. 삼성전자의 낸드 웨이퍼 생산량은 올해 477만장에서 내년 484만5천장으로 7만5천장 증가할 것으로 예상된다. SK하이닉스(솔리다임 포함)도 같은 기간 279만에서 286만5천장으로 7만5천장 늘어날 것으로 보인다. YMTC의 생산량 증가세에 비하면 크게 낮은 수치다. [촬영 김성민·홍기원] 중국 YMTC는 올해 2분기 낸드 시장에서 키옥시아를 제치고 처음으로 출하량 기준 3위에 올랐다. 고가의 데이터센터용 eSSD 비중이 낮은 탓에 아직 매출액 기준으로는 5위에 머무르고 있지만, 낸드 가격 상승에 따른 수익성 개선으로 빠르게 점유율을 확대할 수 있을 것으로 업계는 보고 있다. YMTC는 최근 기업공개(IPO) 준비 과정에서 이르면 내년 말까지 글로벌 낸드 시장 1위 자리를 차지하겠다는 목표를 제시한 것으로 전해졌다. 현재 나란히 1·2위를 차지하고 있는 삼성전자와 SK하이닉스에 사실상 선전포고를 한 셈이다. YMTC는 이르면 올해 4분기로 예상되는 상장을 통해 대규모 자금을 마련하고 설비투자를 대폭 확대하겠다는 방침이다. 연말 우한 3공장 가동을 시작으로 추가 공장을 신속하게 건설해 생산능력을 2배 이상으로 키우는 것을 목표로 하고 있다. 반면 삼성전자와 SK하이닉스는 빨라야 2028년부터 본격적인 낸드 캐파 확대가 가능한 상황이라 점유율에 위협이 예상된다. [삼성전자 제공. 재판매 및 DB 금지] 삼성전자는 현재 건설 중인 평택캠퍼스 P5 1·2의 일부 클린룸에서 낸드를 생산할 예정이다. 가동은 2027년부터 2030년까지 순차적으로 진행될 예정이다. SK하이닉스도 최근 청주 M17 건설 투자 규모를 확정 짓고 내년 2월 착공해 2028년 12월 첫 번째 클린룸을 오픈할 계획이다. 업계에서는 YMTC를 포함한 중국 업체들의 증설과 점유율 확대가 경쟁 심화를 야기해 낸드 가격 하락으로 이어질 수 있다고도 우려한다. 시장조사업체 트렌드포스는 낸드 시장 전망에 대해 \"D램과 달리 낸드 시장은 2027년 하반기부터 신규 생산능력 가동과 소비자용 전자제품 수요 부진이 맞물리며 공급이 느슨해지고 가격 하방 압력이 커질 것\"이라고 분석했다. jakmj@yna.co.kr",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "중국 YMTC의 낸드 점유율 확대에 삼성·SK 낸드 캐파 정체로 위기",
+      "summary": "시장조사업체 옴디아는 YMTC의 낸드 웨이퍼 생산량이 내년 249만6천장으로 급증할 것으로 예측하는 반면, 삼성전자와 SK하이닉스는 내년까지 낸드 생산량이 소폭 증가에 그칠 전망이다. YMTC는 우한 3공장 가동과 IPO를 통한 자금 조달로 빠른 증설을 계획해 내년 말까지 글로벌 1위를 목표로 하고 있어, 삼성·SK는 2028년 이후에야 본격적인 낸드 캐파 확대가 가능해 점유율 하락 우려가 제기된다. 업계는 중국 업체들의 증설로 경쟁이 심화되면 낸드 가격 하락 압력이 커질 수 있다고 분석한다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "삼전닉스 상반기 법인세 11.2조…세금도 역대 최고 수순",
+      "url": "https://n.news.naver.com/mnews/article/001/0016278260",
+      "description": "전년比 167%↑…지난해 실적 기준인데도 역대 2위 '슈퍼사이클' 올해 실적 반영시 연간 100조 가능성도 올해 상반기 삼성전자와 SK하이닉스의 법인세 납부액이 총 11조원을 넘어서 반기 기준 역대 2번째로 많았던",
+      "crawled_at": "2026-08-29T21:32:28.760922",
+      "content": "'슈퍼사이클' 올해 실적 반영시 연간 100조 가능성도 (서울=연합뉴스) 조성흠 기자 = 올해 상반기 삼성전자와 SK하이닉스의 법인세 납부액이 총 11조원을 넘어서 반기 기준 역대 2번째로 많았던 것으로 나타났다. 이는 지난해 실적을 토대로 한 것으로, 최근 실적 급상승세를 고려하면 올해 연간으로는 기존 최고 기록인 15조원대를 가볍게 넘어서고 100조원까지 기대할 수 있다는 조심스러운 전망도 나온다. [촬영 홍기원] 30일 금융감독원 전자공시시스템에 제출된 반기·사업보고서에 따르면 상반기 삼성전자와 SK하이닉스의 법인세 납부액은 각각 3조9천876억원, 7조2천207억원, 합계 11조2천083억원에 달했다. 합산 기준으로 지난해 상반기 4조1천906억원에 비해 7조177억원, 167% 급증한 것이다. 이는 2019년 상반기 12조6천614억원에 이어 역대 반기 2번째 규모이기도 하다. 상반기 삼성전자와 SK하이닉스의 사별 납부액은 전년 동기 1조1천187억원, 3조719억원에 비해 256%, 135% 증가했다. SK하이닉스는 2019년 상반기 4조5천264억원을 넘어 자사 반기 기준 역대 최대 법인세 납부 기록도 세웠다. 양사 합산 역대 최대 기록인 2019년 상반기 법인세 납부액은 이번에 앞서 반도체 초호황을 맞은 2018년 실적이 반영된 것으로 풀이된다. 일반적으로 12월 결산 법인은 매년 3월 전년 법인세를 확정 신고·납부하고, 8월 그해 법인세를 중간 예납하는 등 매년 2차례에 걸쳐 법인세를 납부한다. 실제로 2018년 서버 및 모바일용 반도체 수요 급증으로 삼성전자 연간 영업익이 역대 최대인 58조9천억원을 기록했다. 같은 해 SK하이닉스 영업익도 20조8천억원으로, 고대역폭메모리(HBM) 효과가 본격화한 2024년 이전 최고치였다. 이 같은 실적 인식 시차를 고려하면 삼성전자와 SK하이닉스의 법인세 납부액은 올해 상반기보다 앞으로 본격적으로 증가할 것으로 예상된다. 공시대상기업집단 소속 2천600여개 법인(중소기업 제외)의 경우 8월 중간 예납하는 법인세는 당해 상반기 실적을 가결산해 산정한다. 이 기준을 따르는 삼성전자와 SK하이닉스의 상반기 영업익은 각각 146조7천억원, 98조2천억원으로, 지난해 상반기 11조4천억원, 16조7천억원보다 무려 6~13배가량 늘었다. 나아가 최근 1개월 기준 연합인포맥스가 집계한 삼성전자의 올해 영업익 컨센서스(시장 평균 전망치)는 385조원, SK하이닉스는 266조원에 달한다. 지난해 영업익이 각각 43조5천억원, 47조2천억원이었던 데 비해 6~9배가량 증가할 것으로 예상되는 것이다. 이에 따라 올해 8월 납부하는 중간 예납분은 물론 내년 3월 납부하는 올해분 법인세까지 역대 최고치를 연이어 경신할 것이 확실시되고 있다. 지금까지 삼성전자와 SK하이닉스의 연간 법인세 납부 합산 최고 기록은 2019년의 15조6천387억원이었으나, 올해 상반기에만 합산이 11조2천억원을 넘어섰고 하반기 더 좋은 실적이 기대되기 때문이다. 구체적으로는 법인세 납부 기준이 되는 개별 기준 올해 양사 합산 영업이익이 500조~600조원에 달한다고 가정하고 법인세 실효세율로 20%를 적용할 경우 연간 납부액이 100조원을 넘어설 수 있다는 추정이 나온다. 법인세 최종 납부액은 연구개발과 국내투자 등에 대한 세액 공제, 중간 예납 계산 방식을 고려하지 않은 단순 계산인 만큼 실제 납부액은 세부 산정 방식과 공제 혜택 등에 따라 달라들 수 있다. 실제로 삼성전자와 SK하이닉스 모두 시설투자 및 연구개발비를 크게 늘려 역대 최고 기록을 경신하고 있다. 8월 중간 예납이 상반기 실적을 기준으로 하는 만큼 하반기 비중이 더 큰 올해 영업익 전망치에 비해 납부액이 더 적어질 수도 있다. 업계 관계자는 \"반도체 산업 성장이 수출과 투자, 고용을 넘어 세수 확대에까지 국가 경제에 상당한 기여를 하고 있다\"며 \"업계 실적이 큰 폭으로 개선되고 있는 만큼 앞으로 유례없는 법인세 납부가 이어지면서 재정에 미치는 긍정적 효과도 더욱 커질 것\"이라고 말했다. josh@yna.co.kr",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "삼전·SK하이닉스 상반기 법인세 11.2조…역대 반기 두번째 규모",
+      "summary": "삼성전자와 SK하이닉스는 올해 상반기 법인세로 각각 3조9,876억원·7조2,207억원을 납부해 합계 11조2,083억원을 기록했다. 이는 전년 동기 대비 167% 증가한 수치로 반기 기준 역대 두번째로 많으며, 최근 실적 호조를 반영하면 올해 연간 법인세는 종전 최고치(15조원대)를 넘어설 가능성이 크다. 업계의 컨센서스대로 양사 연간 영업이익이 급증할 경우 단순 계산으로 법인세 납부액이 100조원 수준에 달할 수 있다는 추정도 제기되지만, 연구개발·투자에 대한 세액공제 등으로 실제 납부액은 달라질 수 있다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.721487"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.742797"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.764230"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.785943"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.857191"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.885243"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.912962"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.944203"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.974769"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:31.885656"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:31.941201"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.011656"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.122941"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.186766"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.250901"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.317649"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.374135"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.416148"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.462690"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.519355"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.627948"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.720278"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.770187"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.813694"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.849644"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.928760"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:32.980551"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Was Widespread TokenMaxxing Ever Really Here?",
+      "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:33.023926"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Why the Grid Can't Keep Up, and Why that Drives Behind-The-Meter 50%+ of DCs/Year By 2028",
+      "url": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+      "description": "",
+      "crawled_at": "2026-08-29T21:32:33.064604"
+    }
+  ]
+}
