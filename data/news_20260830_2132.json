@@ -1,0 +1,247 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "“말하지 않아도 알아요”… 카톡 속 ‘5000만 AI 비서’ 어떻게 만들까 [핫 IT(잇)슈]",
+      "url": "https://n.news.naver.com/mnews/article/022/0004154966",
+      "description": "빛의 속도로 변하는 IT 업계 주요 이슈를 짚고, 그 배경과 파장을 분석합니다. 인공지능(AI), 플랫폼, 통신, 클라우드, 반도체 등 기술 변화가 기업과 산업, 일상에 어떤 영향을 미치는지 쉽게 풀어서 전합니다.",
+      "crawled_at": "2026-08-30T21:32:10.942968",
+      "content": "친구와 카카오톡으로 이런 대화를 나눴다고 해보겠습니다. “이번 주말에 조용한 카페에서 만날까?” 보통이라면 대화는 여기서 끝납니다. 친구와 만날 카페를 찾으려면 네이버나 구글을 검색하거나 챗GPT, 제미나이 같은 AI를 열어 질문해야 하죠. 카카오가 그리는 미래는 조금 다릅니다. 카카오톡 속 AI ‘카나나’가 대화를 읽고 먼저 “조용한 카페를 추천해 드릴까요?”라고 묻는 겁니다. 마음에 드는 곳을 고르면 장소 검색을 넘어 예약과 결제까지 이어집니다. 이용자가 AI에게 무엇을 해야 할지 일일이 명령하지 않아도 알아서 필요한 일을 챙겨주는 ‘AI 비서’인 셈입니다. 카카오가 최근 회사를 카카오AI와 카카오X로 인적분할하기로 하면서 내세운 핵심 전략도 이와 맞닿아 있습니다. 목표는 ‘5000만 AI 에이전트 플랫폼’. 카카오톡 이용자 한 명 한 명의 관계와 맥락을 이해하는 ‘1인 1에이전트’를 만들겠다는 겁니다. 그 출발점이 ‘카나나 인 카카오톡’, 줄여서 ‘카인톡’입니다. 5000만 AI 비서를 만들겠다는 카카오의 실험은 이용자가 카인톡을 얼마나 자주, 자연스럽게 쓰게 되느냐에 달렸습니다. 특히 카인톡은 이용자가 먼저 질문하는 서비스가 아니라 AI가 대화 맥락을 읽고 먼저 개입하는 구조여서 한두 번만 엉뚱한 말을 걸어도 금세 ‘성가신 알림’으로 인식될 수 있습니다. 이용자의 체감도를 좌우하는 건 언제, 얼마나 정확하게 말을 거는지입니다. 지난 26일 경기 성남시 카카오 판교아지트에서 만난 카인톡 개발진이 인터뷰 내내 가장 많이 꺼낸 단어도 정확도였습니다. ◆카인톡 개발진에게 직접 물었습니다. -카인톡에서 가장 중요하게 보는 기능은 무엇인가요. 윤소원(SONA) “저희가 카나나 인 카카오톡에서 가장 중요하게 보는 게 온디바이스와 선톡이고요. 그 안에서도 가장 중요한 건 선톡의 정확도입니다. 카카오톡 데이터는 잘 정리된 문서와 다르게 비정형적인 대화가 아주 많잖아요. 오타도 많고 사람마다 대화 패턴도 다르고요. 그래서 그 안에서 어떻게 정확한 맥락을 잡아낼지를 가장 많이 고민하고 있습니다. 거의 매일 아침 ‘선톡 스크럼’을 하고 있어요. 1년째 정확도가 얼마나 올라가는지 정량적으로 측정하고, 학습시키기 위한 데이터를 계속 생성하는 과정을 거치고 있습니다.” -선톡이 너무 많으면 오히려 스팸처럼 느껴질 것 같은데요. 민규식(QUEUE) “그게 진짜 어렵습니다. 너무 많이 잡히면 스팸 같고, 너무 안 잡히면 ‘이거 왜 안 와?’라고 생각하실 수 있거든요. 아주 적절한 균형을 잡기 위해 노력하고 있습니다. 그러면서 정확성까지 잘 챙겨야죠. 작은 모델을 가지고 열심히 고군분투하면서 흔히 말하는 ‘알잘딱깔센’으로 적절하게 잘 끼어드는 아이를 만들려고 노력하고 있습니다.” -AI가 카카오톡 대화에서 가장 이해하기 어려워 하는 건 무엇인가요. 민규식 “불분명한 대화입니다. 업무에서는 보통 몇 시에 어디서 만나 무슨 얘기를 하자고 분명하게 대화하잖아요. 그런데 친구들은 이상한 이야기를 하다가 중간에 일정 이야기를 잠깐 하고, 다시 다른 이야기를 하고 그래요. 그러면 맥락이 끊기거나 AI 입장에서는 ‘대체 무슨 소리를 하는 거지?’라고 생각할 만한 대화들이 나올 수 있습니다. 진담과 농담을 구별하기도 어렵습니다. 예전에는 ‘내일 봬요’라고 하면 실제로 내일 만나는 일정으로 잡기도 했어요. 그런데 퇴근하면서 직장 동료한테 하는 ‘내일 봬요’는 그냥 인사잖아요. 클론으로 ‘이건 인사고 이건 인사가 아니다’라는 유사 데이터를 만들어서 학습시킨 뒤 해결한 사례가 있습니다.” 김다인(DENVER) “카카오톡 대화를 계속 생각하고 있으면 ‘한국어의 형상을 한 다른 언어 같다’는 생각도 들어요. 실제 대화와 카톡 대화가 다릅니다. 친구들끼리 장난을 치면서 실제로 궁금한 것처럼 얘기할 수도 있잖아요. 실제 의도는 아닌데 AI는 궁금해한다고 판단할 수도 있고요. 그런 숨겨진 의도를 어떻게 파악할지 고민하게 됩니다.” -실제 카카오톡 대화를 학습에 사용하지 못하는데 어떻게 모델을 개선하나요. 민규식 “카톡 유저분들의 데이터를 학습에 쓸 수는 없습니다. 그런데 저희는 유저의 대화를 보고 알아서 끼어드는 모델을 학습해야 하잖아요. 사용자의 데이터는 쓸 수 없지만 사용자의 대화는 잘 인지해야 하는 어려운 상황이었습니다. 그래서 만든 게 클론입니다. 처음에는 큰 언어모델을 가지고 대화를 시뮬레이션하면 되겠다고 생각했는데 생각보다 저희가 원하는 다양한 형태의 대화가 잘 나오지 않았어요. 지금은 다양한 상황에서 정말 유저가 카톡을 쓰는 것 같은 대화를 만들어냅니다.” -클론을 이용한 학습은 어떻게 이뤄지나요. 민규식 “클론이 매일 여러 대화를 만들고 온디바이스 모델이 다 풀어봅니다. 그다음 더 똑똑한 큰 모델이 결과를 평가해요. 틀린 유형을 쭉 정리하면 ‘지금 모델은 이게 약점이고 이건 강점이네’를 알 수 있습니다. 약점이라고 판단한 부분에 대해서 다시 클론으로 데이터를 만들고 학습해요. 해결됐는지 확인하고 또 약점을 찾고, 보완하고를 반복하는 겁니다. 데이터가 많은 게 중요한 건 아닙니다. 모델이 못하는 약점을 다양하게 포함하고 있는 게 더 중요해요. 작은 모델한테 필요한 걸 집중적으로 알려주는 방식입니다.” -클론 도입 이후 실제 개발 속도나 성능도 달라졌나요. 민규식 “초창기에는 데이터를 구할 수 없으니까 저희가 직접 손으로 만들었어요. 그러다 보니 모델을 한 번 업데이트하는 데 한두 달 가까이 걸렸습니다. 클론이 나오고 나서는 한 번 업데이트하는 게 거의 1~2주 단위로 빨라졌습니다. 개선 주기도 굉장히 빨라지고 성능 향상 속도도 늘어나고 있습니다. 정확하게 어느 수준이라고 딱 찍기는 어렵지만 초기와 비교하면 거의 모든 지표에서 약 20%씩 성능 향상이 있었습니다.” -굳이 작은 온디바이스 모델을 사용하는 이유는 뭐죠. 민규식 “온디바이스 모델은 사실 되게 작습니다. AI는 크면 클수록 더 똑똑하고 작은 모델일수록 성능이 낮을 수밖에 없습니다. 그런데 핸드폰에 탑재하고 보안을 지키려면 기기에서 돌려야 합니다. 작은 모델 안에서 데이터를 최대한 잘 가공하고 다양한 학습 기법을 적용해 조금이라도 더 똑똑하게 만들고 있습니다.” -대화 내용을 읽는다는 데 대한 개인정보 우려도 있습니다. 김다인 “대화는 당연히 서버로 올라가지 않습니다. 요약된 맥락도 처리 용도로만 쓰고 바로 버립니다. 발송된 내용은 실제 브리핑으로 전달돼야 하기 때문에 그런 정보는 서버에 남아 있을 수 있습니다.” -챗GPT·제미나이·클로드와 경쟁해야 합니다. 카인톡만의 강점은 무엇인가요. 민규식 “GPT나 클로드나 제미나이를 저도 써보면 대답은 잘합니다. 그런데 친구들이랑 여행 계획을 짜다가 ‘거기 영업시간이 어떻게 돼?’라고 얘기했다고 해볼게요. GPT를 쓰려면 카카오톡에서 나가서 GPT를 열고 영업시간을 물어본 다음, 답을 복사해서 다시 카카오톡에 보내야 하잖아요. 선톡은 그 대화를 읽고 바로 ‘운영시간 궁금하세요?’라고 물어볼 수 있습니다. 카카오톡에서 이탈하지 않고 대화를 통해 나오는 궁금증이나 일정을 한 곳에서 편하게 처리할 수 있다는 게 강점이라고 생각합니다.” -앞으로 선톡은 어떻게 달라질까요. 민규식 “조금 더 미래를 생각하면 개인화가 될 것 같습니다. 사람마다 특성이 있잖아요. 사사건건 선톡을 잡아줬으면 하는 사람이 있고, 적당히만 받고 싶은 사람도 있을 겁니다. 윤소원 “예를 들어 쇼핑 관련 선톡을 몇 번 보냈는데 이 사람이 절대 클릭하지 않는 것 같다면 앞으로는 그런 걸 안 보낼 수도 있습니다. 반응했던 분야에 대해서만 보낼 수도 있고요.” -카나나를 어떤 서비스로 만들고 싶은가요. 윤소원 “지금은 선톡을 굉장히 강조하고 있지만 모든 정보가 매번 선톡으로 날아오면 아무리 유용해도 광고처럼 느껴지는 순간이 있을 수 있을 것 같아요. 나중에는 이용자들이 카나나를 ‘나를 정말 가장 잘 이해하는 AI’라고 믿고, 매일 들어와서 ‘내가 놓친 건 없나’, ‘지금 알면 좋은 정보가 없나’를 확인하는 습관이 생겼으면 좋겠습니다. 필요할 때 먼저 알려주는 것도 있고, 내가 필요해서 찾아오는 것도 둘 다 가져가고 싶습니다. 특정 정보가 궁금해서라기보다 ‘내가 놓친 게 있나’라는 마음으로 들어오게 하고 싶어요.”",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "카카오, 카톡 대화 읽는 ‘카인톡’으로 5000만 AI 비서 만든다",
+      "summary": "카카오는 카카오톡 대화를 문맥적으로 읽어 이용자에게 먼저 개입하는 AI 비서 '카나나(카인톡)'로 '1인1에이전트' 플랫폼을 목표로 한다. 개발진은 선제 발화(선톡)의 정확도와 빈도 균형, 불분명한 대화 해석, 개인정보 보호를 핵심 과제로 꼽았고, 실제 이용자 대화를 직접 쓸 수 없어 '클론'으로 다양한 대화 데이터를 생성해 모델을 학습·보완한다고 설명했다. 온디바이스 소형 모델을 활용해 기기 내 처리·보안을 유지하면서도 업데이트 주기와 성능을 개선해 나가고 있으며, 향후 개인화된 선톡으로 사용자 경험을 최적화하는 것을 지향한다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "“중국 D램 무섭게 컸다”…CXMT, 삼성·SK하이닉스 턱밑 추격",
+      "url": "https://n.news.naver.com/mnews/article/031/0001053625",
+      "description": "세계 4위·중국 1위 D램 업체 창신메모리(CXMT)가 인공지능(AI)발 메모리 호황을 타고 급성장하고 있다. 삼성전자와 SK하이닉스가 고대역폭 메모리(HBM)와 서버용 D램에 생산능력을 집중하는 사이 모바일·범용",
+      "crawled_at": "2026-08-30T21:32:10.942989",
+      "content": "모바일 D램 넘어 LPDDR6까지 개발 “기술격차 여전하지만 중국 내수 기반 성장세 변수”세계 4위·중국 1위 D램 업체 창신메모리(CXMT)가 인공지능(AI)발 메모리 호황을 타고 급성장하고 있다. 삼성전자와 SK하이닉스가 고대역폭 메모리(HBM)와 서버용 D램에 생산능력을 집중하는 사이 모바일·범용 D램 시장을 중심으로 점유율을 확대하며 국내 업체들을 바짝 추격하는 모습이다. 30일 업계에 따르면 CXMT의 올해 상반기 매출은 1503억1000만위안(약 30조8271억원)으로 전년 동기보다 873.6% 증가했다. 순이익은 776억500만위안(약 15조9160억원)으로 지난해 상반기 23억3200만위안(약 4778억5970만원) 적자에서 흑자로 돌아섰다. CXMT의 급성장은 AI 서버 수요 증가에 따른 메모리 가격 상승과 맞물려 있다. 주요 메모리 업체들이 HBM과 서버용 D램에 생산능력을 우선 배정하면서 범용 D램 공급이 빠듯해졌고, CXMT가 이 틈새를 파고들었다. 실적을 끌어올린 것은 D램 가격 상승이다. AI 서버 수요가 급증한 가운데 삼성전자와 SK하이닉스 등 주요 업체가 HBM과 서버용 D램에 생산능력을 우선 배정하면서 범용 D램 공급도 빠듯해졌다. CXMT는 스마트폰 등에 쓰이는 모바일 D램을 중심으로 점유율을 늘리고 있다. 삼성전자와 SK하이닉스 등이 구형 저전력 D램(LPDDR)4X 생산을 줄이자 부족한 물량을 공급했고, 현재는 LPDDR5X까지 제품군을 확대했다. 생산능력도 빠르게 커지고 있다. CXMT의 D램 웨이퍼(반도체 원판) 생산능력은 월 30만장 수준으로 추산된다. 모건스탠리는 이를 글로벌 D램 웨이퍼 생산능력의 약 13%, 비트(데이터의 단위) 출하량 기준 11%에 해당하는 규모로 분석했다. 신규 공장 증설도 추진 중이다. 시장에서는 추가 생산시설이 가동되면 CXMT의 월 생산능력이 약 50만~60만장 수준까지 늘어날 가능성이 제기된다. CXMT는 생산능력 확대와 함께 차세대 D램 개발에도 속도를 내고 있다. 선두 업체를 따라잡기 위해 일부 기술 세대를 건너뛰거나 개발 기간을 줄이는 '세대도약형 연구개발(R&D)' 전략을 펴고 있다. 대표적인 분야가 모바일 D램이다. CXMT는 지난해 LPDDR5X 양산을 시작한 데 이어 LPDDR6 양산도 추진하고 있다. 삼성전자와 SK하이닉스가 이미 LPDDR6 개발을 마치고 하반기부터 본격 양산에 들어간 가운데 CXMT도 차세대 제품으로 빠르게 추격하고 있다. 구형 제품은 과감히 정리하고 있다. 지난해 공급 부족으로 저가용 D램(DDR)4 가격이 크게 올랐지만 CXMT는 생산을 중단하고 고가용(DDR)5와 LPDDR5X 등 차세대 제품에 생산능력을 집중했다. 다만 삼성전자와 SK하이닉스와의 기술 격차는 여전히 남아 있다. UBS와 골드만삭스는 CXMT가 선두 D램 업체보다 공정 기술에서 2~3세대 뒤처진 것으로 평가했다. 미세공정과 수율(정상품 비율) 격차로 웨이퍼 한 장에서 생산할 수 있는 D램 양도 상대적으로 적다. 그럼에도 중국 내수 시장을 기반으로 생산능력과 기술 수준을 동시에 끌어올리는 점은 변수다. 골드만삭스는 CXMT가 2028년 중국 내 D램 수요의 약 50%, HBM 수요의 약 40%를 공급할 것으로 전망했다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "창신메모리(CXMT), 모바일·LPDDR6로 삼성·SK 추격",
+      "summary": "세계 4위·중국 1위 D램업체 창신메모리(CXMT)가 AI 수요에 따른 D램 호황을 타고 올해 상반기 매출과 흑자를 기록하며 급성장했다. 모바일과 범용 D램 중심으로 점유율을 확대하고 있으며 생산능력은 월 약 30만장에서 향후 50만~60만장까지 늘어날 가능성이 있다. LPDDR5X에 이어 LPDDR6 양산을 추진하는 등 세대도약형 R&D로 선두권을 추격하고 있으나 공정 기술과 수율에서 삼성·SK 대비 2~3세대의 격차는 남아 있다. 중국 내수 기반의 성장으로 향후 시장공급 비중 확대가 변수로 작용할 전망이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "마이크론도 ‘성과급’ 파업 조짐…메모리 초호황의 그늘",
+      "url": "https://n.news.naver.com/mnews/article/029/0003045111",
+      "description": "인공지능(AI) 열풍으로 메모리 반도체 업황이 빠르게 살아나면서 글로벌 메모리 업체들의 성과급을 둘러싼 노사 갈등도 커지고 있다. 삼성전자와 SK하이닉스에 이어 마이크론에서도 실적 개선에 따른 보상 확대를 요구하는",
+      "crawled_at": "2026-08-30T21:32:10.943067",
+      "content": "31일 트렌드포스에 따르면 마이크론 대만의 2개 노조는 현재의 인센티브 지급 제도(IPP)를 보다 공정한 이익 배분 방식으로 개편할 것을 요구하고 있다. 노조는 마이크론의 현행 제도가 삼성전자와 SK하이닉스에 비해 투명성이 떨어지고 실제 보상 수준도 낮다고 주장하고 있다. 마이크론 대만 노조원은 약 1만명에 달하는 것으로 알려졌다. 최근 진행된 설문에서는 응답자의 약 80%가 파업에 찬성한 것으로 전해졌다. 이달 말부터 노사 조정 절차가 시작될 예정이며 협상이 결렬될 경우 이르면 9월 파업 찬반 투표가 진행될 가능성이 있다. 노조가 경쟁사로 삼성전자와 SK하이닉스를 직접 거론하고 있다는 점도 주목된다. 삼성전자 반도체(DS) 부문은 영업이익의 10.5%를 재원으로 성과급을 지급하는 제도를 운영하고 있으며, SK하이닉스 역시 연간 영업이익의 10%를 직원 성과급으로 배분하고 있다. SK하이닉스에서도 성과급을 둘러싼 갈등이 이어지고 있다. 지난 25일 노조원들은 임금 6.3% 인상과 성과급 제도 변경 등을 담은 잠정합의안을 부결했다. 성과급의 60%를 회사 주식으로 지급하는 방안에 대해 주가 변동성 등을 우려하는 직원들의 반대가 있었던 것으로 전해졌다. 삼성전자 역시 올해 성과급을 둘러싼 노사 갈등을 겪은 끝에 지난 5월 임금 및 성과급 관련 합의에 도달하며 파업 위기를 넘겼다. 업계에서는 AI용 고대역폭 메모리(HBM)를 중심으로 메모리 가격과 수익성이 크게 개선되고 있는 만큼 향후 실적에 따른 이익 배분을 둘러싼 갈등이 업계 전반으로 확산할 수 있다는 전망도 나온다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "마이크론 대만 노조, 성과급 제도 개편 요구…파업 가능성 대두",
+      "summary": "마이크론 대만의 2개 노조는 현행 인센티브 지급 제도의 투명성 및 보상 수준이 낮다며 삼성·SK와 유사한 공정한 이익 배분으로의 개편을 요구하고 있다. 노조원 약 1만명 중 설문 응답의 약 80%가 파업에 찬성했으며, 이달 말 노사 조정이 시작돼 협상 결렬 시 9월 파업 찬반 투표가 진행될 가능성이 있다. 삼성전자와 SK하이닉스에서도 유사한 성과급 갈등이 발생했던 만큼, AI용 HBM 호황에 따른 이익 배분을 둘러싼 분쟁이 업계 전반으로 확산할 우려가 제기된다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.684721"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.708876"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.725886"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.740689"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.791225"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.811200"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.833490"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.854883"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.874129"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI vs HuggingFace, Container Escapes, Kernel Bypass, Network Policies, Security Keys, Multi-tenant Grafana, and a ClusterMAX 3.0 Preview",
+      "url": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.404844"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.450439"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.493601"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.554499"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.589130"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.628647"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.675221"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.717876"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.773018"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.857068"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.896361"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:13.954932"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.046295"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.119123"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.172994"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.210541"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.244593"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.317130"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.364891"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Was Widespread TokenMaxxing Ever Really Here?",
+      "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+      "description": "",
+      "crawled_at": "2026-08-30T21:32:14.401391"
+    }
+  ]
+}
