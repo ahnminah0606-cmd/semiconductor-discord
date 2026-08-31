@@ -9,6 +9,7 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.parse import urljoin
 
 import requests
@@ -28,16 +29,22 @@ WEBHOOKS = {
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 STATE_FILE = Path("data/sent_urls.json")
+DAILY_STATE_FILE = Path("data/daily_sent.json")
+KST = ZoneInfo("Asia/Seoul")
 HEADERS = {"User-Agent": "Mozilla/5.0 AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 MAX_CANDIDATES = 20
 MAX_SUMMARIES = 5
+
+def now_kst():
+    return datetime.now(KST)
+
 
 Path("logs").mkdir(exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler(f"logs/crawler_{datetime.now():%Y%m%d}.log", encoding="utf-8"),
+        logging.FileHandler(f"logs/crawler_{now_kst():%Y%m%d}.log", encoding="utf-8"),
         logging.StreamHandler(sys.stdout),
     ],
 )
@@ -46,7 +53,7 @@ logger = logging.getLogger(__name__)
 
 def item(source, title, url, description=""):
     return {"source": source, "title": " ".join(title.split()), "url": url,
-            "description": " ".join(description.split()), "crawled_at": datetime.now().isoformat()}
+            "description": " ".join(description.split()), "crawled_at": now_kst().isoformat()}
 
 
 def unique(items):
@@ -247,7 +254,7 @@ def parse_summary(raw):
 
 def summarize(client, article):
     prompt = f"""다음 반도체/기술 기사를 한국어로 요약하세요. 제공된 내용만 사용하고 추측하지 마세요.
-내용이 제목이나 짧은 설명뿐이면 그 범위만 요약하세요. title은 한국어 요약 제목, summary는 2~4문장입니다.
+본문의 핵심 사실만 사용하세요. title은 70자 이내의 한국어 제목, summary는 1~2문장·160자 안팎으로 간결하게 작성하세요.
 반드시 다른 문구나 마크다운 없이 {{"title":"...","summary":"..."}} JSON 객체만 출력하세요.
 
 원문 제목: {article['title']}
@@ -363,30 +370,69 @@ def save_sent(urls):
     STATE_FILE.write_text(json.dumps({"urls": sorted(urls)[-2000:]}, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def block(index, article):
-    # URL을 꺾쇠로 감싸 Discord의 자동 링크 미리보기(Embed)를 억제한다.
-    return (
-        f"{index}. **{article['summary_title']}**\n"
-        f"{article['summary']}\n"
-        f"원문: <{article['url']}>"
+def load_daily_sent():
+    """오늘 이미 메시지를 보낸 출처를 불러온다."""
+    today = now_kst().date().isoformat()
+    try:
+        data = json.loads(DAILY_STATE_FILE.read_text(encoding="utf-8"))
+        if data.get("date") == today:
+            return set(data.get("sources", []))
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        pass
+    return set()
+
+
+def save_daily_sent(sources):
+    DAILY_STATE_FILE.parent.mkdir(exist_ok=True)
+    DAILY_STATE_FILE.write_text(
+        json.dumps(
+            {"date": now_kst().date().isoformat(), "sources": sorted(sources)},
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
     )
 
 
-def messages(source, articles):
-    date = datetime.now().strftime("%-m/%-d")
-    output, current = [], f"#{source}\n- {date} 요약"
+def shorten(text, limit):
+    text = " ".join(str(text).split())
+    if len(text) <= limit:
+        return text
+    shortened = text[:limit].rstrip()
+    last_period = shortened.rfind(".")
+    if last_period >= max(40, limit // 2):
+        return shortened[:last_period + 1]
+    return shortened + "…"
+
+
+def compact_block(index, article, summary_limit):
+    # URL을 꺾쇠로 감싸 Discord의 자동 링크 미리보기(Embed)를 억제한다.
+    title = shorten(article["summary_title"], 70)
+    summary = shorten(article["summary"], summary_limit)
+    return f"{index}. **{title}**\n{summary}\n원문: <{article['url']}>"
+
+
+def daily_message(source, articles):
+    """선별 기사 전체를 Discord 제한 안의 메시지 한 개로 합친다."""
+    header = f"#{source}\n- {now_kst().strftime('%-m/%-d')} 요약"
+    for summary_limit in (170, 140, 110, 80):
+        blocks = [
+            compact_block(index, article, summary_limit)
+            for index, article in enumerate(articles, 1)
+        ]
+        content = header + "\n\n" + "\n\n".join(blocks)
+        if len(content) <= 1900:
+            return content
+
+    # URL이 비정상적으로 길어도 메시지를 나누지 않고 들어가는 기사까지만 싣는다.
+    blocks = []
     for index, article in enumerate(articles, 1):
-        text = block(index, article)
-        if len(current) + len(text) + 2 <= 1900:
-            current += "\n\n" + text
-            continue
-        output.append(current)
-        header = f"#{source} (계속)\n- {date} 요약"
-        room = 1900 - len(header) - len(article["url"]) - len(article["summary_title"]) - 50
-        if len(text) > 1800:
-            text = block(index, {**article, "summary": article["summary"][:max(room, 100)] + "…"})
-        current = header + "\n\n" + text
-    return output + [current]
+        block = compact_block(index, article, 60)
+        candidate = header + "\n\n" + "\n\n".join(blocks + [block])
+        if len(candidate) > 1900:
+            break
+        blocks.append(block)
+    return header + "\n\n" + "\n\n".join(blocks)
 
 
 def send(articles, webhook, source):
@@ -396,24 +442,23 @@ def send(articles, webhook, source):
     if not webhook:
         logger.error("%s: Discord Webhook 미설정", source)
         return False
-    for part, content in enumerate(messages(source, articles), 1):
-        try:
-            response = requests.post(webhook, json={"username": "반도체뉴스봇", "content": content}, timeout=20)
-            if response.status_code not in (200, 204):
-                # requests 예외에는 비밀값인 Webhook URL이 포함될 수 있으므로 직접 처리한다.
-                logger.error("%s Discord 응답 오류: HTTP %d", source, response.status_code)
-                return False
-            logger.info("%s Discord 발송 완료 (%d부, %d자)", source, part, len(content))
-        except Exception as exc:
-            # 예외 문자열과 traceback에 Webhook URL이 노출되지 않게 유형만 기록한다.
-            logger.error("%s Discord 발송 실패: %s", source, type(exc).__name__)
+    content = daily_message(source, articles)
+    try:
+        response = requests.post(webhook, json={"username": "반도체뉴스봇", "content": content}, timeout=20)
+        if response.status_code not in (200, 204):
+            logger.error("%s Discord 응답 오류: HTTP %d", source, response.status_code)
             return False
-    return True
+        logger.info("%s Discord 일일 메시지 1개 발송 완료 (%d자, 기사 %d건)",
+                    source, len(content), len(articles))
+        return True
+    except Exception as exc:
+        logger.error("%s Discord 발송 실패: %s", source, type(exc).__name__)
+        return False
 
 
 def save_results(results):
     Path("data").mkdir(exist_ok=True)
-    path = Path(f"data/news_{datetime.now():%Y%m%d_%H%M}.json")
+    path = Path(f"data/news_{now_kst():%Y%m%d_%H%M}.json")
     path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
@@ -426,10 +471,15 @@ async def main():
         logger.error("Discord Webhook 미설정: %s", ", ".join(missing_webhooks))
         return 1
     results, sent_urls, client = await crawl_all(), load_sent(), OpenAI(api_key=OPENAI_API_KEY)
+    daily_sent = load_daily_sent()
     sent_count = 0
     had_error = False
     for key, crawled in results.items():
         source, webhook = WEBHOOKS[key]
+        if source in daily_sent:
+            logger.info("%s: 오늘 일일 메시지를 이미 전송해 백업 실행을 건너뜁니다.", source)
+            results[key] = []
+            continue
         fresh_candidates = [article for article in crawled if article["url"] not in sent_urls]
         if not fresh_candidates:
             logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
@@ -464,6 +514,8 @@ async def main():
             # 전송된 기사 외의 중복·무관 기사도 검토 완료로 기록한다.
             sent_urls.update(article["url"] for article in fresh_candidates)
             save_sent(sent_urls)
+            daily_sent.add(source)
+            save_daily_sent(daily_sent)
             sent_count += len(summarized)
         else:
             had_error = True
