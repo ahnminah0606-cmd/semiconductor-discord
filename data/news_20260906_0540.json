@@ -1,0 +1,271 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "\"2028년까지 메모리 공급난\"…증권가, 삼성전자 '주가 재평가' 전망",
+      "url": "https://n.news.naver.com/mnews/article/092/0002436357",
+      "description": "국내외 증권가가 강력한 메모리 수요와 제한적 공급을 근거로 국내 반도체 기업 주가가 저평가됐다는 분석을 잇달아 내놨다. 글로벌 빅테크 기업의 장기공급계약(LTA) 체결 요구가 이어지며 공급난이 2028년까지 지속될",
+      "crawled_at": "2026-09-06T05:40:12.661060+09:00",
+      "content": "5일 업계에 따르면 KB증권과 글로벌 투자은행 노무라 등은 메모리 반도체 시장의 구조적 공급 부족에 주목했다. 김동원 KB증권 리서치본부장은 \"미국에 이어 바이두, 알리바바 등 중국 하이퍼스케일러까지 5년 장기공급계약 요구가 급증하고 있다\"며 \"신규 생산라인 완공부터 양산까지 3년 이상 걸려 공급 부족은 최소 2028년까지 이어질 것\"이라고 예상했다. 노무라의 CW 정 연구원 역시 \"고객사들이 물량 부족으로 완제품 감산까지 감수하며 불리한 LTA 조건을 수용 중\"이라며 \"중국 업체들 증설에도 2028년까지 공급 증가 여지는 제한적\"이라고 진단했다. 노무라는 이러한 호황 국면에도 주요 메모리 업체 주가가 여전히 고점 대비 37% 낮은 수준이라고 평가했다. 정 연구원은 \"2027년 예상 주가수익비율(P/E)이 평균 약 3배에 불과하다\"며 \"펀더멘털에 비해 주가가 심각하게 저평가돼 있다\"고 강조했다. 노무라는 삼성전자(목표가 67만원)와 SK하이닉스(목표가 470만원)에 '매수' 의견을 유지했다. KB증권은 삼성전자 실적 폭증과 역대급 주주환원에 주목하며 목표주가 60만원을 제시했다. 삼성전자의 하반기 영업이익은 전년비 587% 늘어난 221조원으로, 분기 평균 100조원을 상회해 5개 분기 연속 사상 최대 실적을 경신할 것으로 내다봤다. 파운드리(반도체 위탁생산)도 엔비디아가 인수한 그록의 4nm(나노미터, 10억분의 1m) LPU 양산 본격화로 흑자 전환 가능성이 높다고 평가했다. 김 본부장은 \"3개년 주주환원 잔여 재원을 110조원으로 보면 현금배당 70조원, 자사주 매입·소각 40조원이 가능하다\"며 \"하반기 배당수익률은 4%를 웃돌 것\"이라고 분석했다. 이어 \"실적 개선과 대규모 주주환원이 맞물려 2017년 이후 10년 만에 가장 강력한 주가 재평가 국면이 전개될 것\"이라고 전망했다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "증권가, 메모리 공급난 2028년까지 지속...삼성전자 주가 재평가 전망",
+      "summary": "KB증권·노무라 등은 중국 하이퍼스케일러의 장기공급계약 증가와 생산라인 완공 지연으로 메모리 공급 부족이 최소 2028년까지 이어질 것으로 전망했으며, 노무라는 주요 메모리 업체들이 펀더멘털 대비 주가가 저평가돼 있다며 삼성전자와 SK하이닉스에 '매수' 의견을 유지했다. KB증권은 삼성전자의 대규모 실적 개선과 주주환원을 근거로 목표주가 60만원을 제시했다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "中 반도체 장비사, 전공정 넘어 후공정까지 국산화 속도",
+      "url": "https://n.news.naver.com/mnews/article/030/0003463779",
+      "description": "중국 주요 반도체 장비사가 전공정에서 확보한 기술을 기반으로 후공정 장비 국산화에 속도를 내고 있다. 5일 업계에 따르면 나우라·중웨이반도체(AMEC)·화하이칭커 등 중국 반도체 장비사가 식각·증착·화학적기계연마(C",
+      "crawled_at": "2026-09-06T05:40:12.661312+09:00",
+      "content": "중국 주요 반도체 장비사가 전공정에서 확보한 기술을 기반으로 후공정 장비 국산화에 속도를 내고 있다. 5일 업계에 따르면 나우라·중웨이반도체(AMEC)·화하이칭커 등 중국 반도체 장비사가 식각·증착·화학적기계연마(CMP) 등 기존 기술을 전공정을 넘어 하이브리드 본딩·다이싱·웨이퍼 감박 등 후공정 전용 장비 제품군에까지 추가 적용하는 것으로 파악됐다. 이는 미국의 반도체 장비 수출 규제 속에서 중국이 장비 자립 범위를 첨단 패키징까지 확대하는 흐름으로 풀이된다. 특히 고대역폭메모리(HBM)·3차원(3D) 적층 확대로 전·후공정의 경계가 흐려지면서 기존 전공정 기술을 후공정 장비로 응용·확장할 여지도 커졌다. 중국 최대 장비사 나우라는 최근 반기보고서에서 12인치 웨이퍼 대 웨이퍼(WTW) 및 칩 대 웨이퍼(DTW) 하이브리드 본딩 장비 2종을 출시했으며 이 가운데 DTW는 고객사 적용 단계에 들어갔다고 밝혔다. 하이브리드 본딩은 고대역폭메모리(HBM)·칩렛처럼 여러 칩을 촘촘하게 쌓기 위해 칩과 웨이퍼를 정밀하게 접합하는 기술이다. 올해 실리콘관통전극(TSV) 전해도금과 패널레벨패키징(PLP) 전용 공정 장비도 내놨다. 칩을 수직으로 연결하기 위해 만든 미세 구멍을 구리로 채우는 장비부터 대형 패널의 배선 형성·표면처리 장비까지 첨단패키징에서 대응 가능한 영역을 확장한 것이다. 중국 식각장비 선두 업체 중웨이반도체는 기존 TSV 식각에서 다이싱과 증착으로 범위를 넓히고 있다. 웨이퍼를 개별 칩으로 나누는 플라즈마 다이싱 장비는 올해 중국 주요 고객사 검증 단계로 진척됐다. 중웨이반도체는 상반기에는 범프하부금속층(UBM)용 증착 장비 개발에도 착수했다. 칩 접합부 아래 금속층을 형성하는 장비다. AMEC는 향후 5년간 자체 연구개발과 인수합병(M&A)을 통해 첨단패키징에 필요한 장비 제품군의 70% 이상에 대응한다는 목표도 세웠다. 기존 TSV 식각 중심에서 다이싱·증착까지 패키징 장비 포트폴리오를 넓히겠다는 구상이다. CMP 장비를 주력으로 하는 화하이칭커도 기존 기술의 적용 범위를 첨단패키징으로 넓히고 있다. 일부 첨단 CMP 장비를 중국 주요 메모리 업체의 HBM 생산라인에 공급한 데 이어 감박·에지 가공 등 별도 패키징 장비군도 추가했다. 올해 상반기에는 첨단 메모리용 신형 12인치 감박 장비를 처음 출하했다. 오종혁 대외경제정책연구원(KIEP) 연구원은 “중국은 미국의 장비 수출 규제로 선단공정 고도화에 제약을 받고 있어 첨단패키징을 통해 개별 칩의 성능 한계를 보완하는 전략을 추진하고 있다”며 “여러 칩을 연결해 총연산능력을 높이는 방식이 중요해지면서 장비 국산화 범위도 후공정으로 확대되는 흐름”이라고 말했다. 다만 중국 업체가 공개한 신규 장비 상당수는 아직 고객 검증이나 상용화 초기 단계다. 실제 양산라인에서 수율과 장비 가동 안정성, 생산성을 입증할 수 있을지가 향후 시장 확대 관건이 될 전망이다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "중국 장비사들, 전공정 기술로 후공정 첨단패키징 장비 국산화 가속",
+      "summary": "나우라·중웨이반도체·화하이칭커 등 중국 주요 반도체 장비사가 식각·증착·CMP 등 전공정 기술을 하이브리드 본딩·다이싱·감박 등 후공정 장비에 적용해 첨단패키징 장비 국산화에 나섰다. 다수 장비가 고객 검증·초기 상용화 단계로, 양산 수율·가동 안정성이 향후 관건이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "삼전·SK하닉 이번주 반등 주목…美 CPI·선옵 만기 변수[증시전망대]",
+      "url": "https://n.news.naver.com/mnews/article/029/0003046269",
+      "description": "미·이란 갈등과 글로벌 금리 상승에 흔들렸던 국내 증시가 이번주 삼성전자와 SK하이닉스를 중심으로 반등을 모색한다. 반도체 실적 전망 개선이 지수 하단을 받치고 있지만 미국 물가지표와 국내 선물·옵션 동시만기일을 앞",
+      "crawled_at": "2026-09-06T05:40:12.660572+09:00",
+      "content": "미·이란 갈등과 글로벌 금리 상승에 흔들렸던 국내 증시가 이번주 삼성전자와 SK하이닉스를 중심으로 반등을 모색한다. 반도체 실적 전망 개선이 지수 하단을 받치고 있지만 미국 물가지표와 국내 선물·옵션 동시만기일을 앞두고 외국인 수급 변동성이 커질 수 있어 박스권 장세가 이어질 전망이다. 6일 한국거래소에 따르면 지난 4일 코스피 지수는 전주 대비 1.50% 하락한 6687.21에 거래를 마쳤다. 같은 기간 코스닥 지수도 2.97% 밀린 813.50을 기록했다. 지난주 국내 증시는 미·이란 충돌 재개로 지정학적 불안이 다시 커지면서 크게 출렁였다. 국제유가 상승과 함께 미국 장기 국채금리도 뛰면서 성장주를 중심으로 투자심리가 위축됐다. 특히 미 10년물 국채금리가 4.8%까지 오르는 등 금리 부담이 커지자 반도체를 비롯한 국내 증시 주도주에 매물이 집중됐다. 이후 금리 상승세가 진정되고 저가 매수세가 유입되면서 낙폭 일부를 되돌렸다. 이번주 시장의 시선은 다시 미국 물가로 향한다. 오는 10일 미국의 8월 생산자물가지수(PPI), 11일에는 소비자물가지수(CPI)가 잇따라 발표된다. 오는 15~16일 예정된 미국 연방공개시장위원회(FOMC)를 앞둔 만큼 물가가 예상보다 강하게 나오면 국채금리 상승과 증시 조정 압력이 재차 커질 수 있다. 나정환 NH투자증권 연구원은 8월 CPI가 전년 대비 3.4%, 전월 대비 0.4% 오를 것으로 내다봤다. 다만 그는 “최근 국제유가 상승에도 미국 내 휘발유 가격은 아직 6월 수준으로 회귀하는 데 그쳤고, 서비스 물가에서도 전 업종으로 임금 상승세가 확산하는 상황은 아니라며 물가의 급격한 재상승 가능성은 낮다”고 평가했다. 조병현 다올투자증권 연구원은 “최근 국제유가와 장기금리가 높은 수준을 유지하고 있어 인플레이션 지표를 확인할 필요가 있다”고 봤다. 시장에서는 8월 PPI 상승률이 전년 대비 5.2%로 전월 4.7%보다 높아질 것으로 예상하고 있다. 물가 부담이 다시 확인될 경우 금리 상승 압력이 이어질 가능성이 있다는 분석이다. 유럽의 통화정책도 변수다. ECB는 오는 9~10일 통화정책회의를 연다. 지난 6월 정책금리를 인상한 뒤 7월 동결했지만 최근 유럽의 물가가 다시 반등하면서 추가 금리 인상 가능성을 배제하기 어려운 상황이다. 조 연구원은 “겨울철을 앞두고 가스 가격 부담까지 다시 부각되고 있어 ECB의 통화정책 경계감이 이어질 수 있다”고 진단했다. 국내에서는 10일 코스피200 선물·옵션 동시만기일이 예정돼 있다. 최근 외국인이 현·선물 시장에서 매도 우위를 보인 데다 선물 미결제약정과 옵션 헤지 포지션도 줄어든 만큼 만기 전후 수급 변화에 따라 지수 변동성이 확대될 가능성이 있다. 나 연구원은 “외국인의 기존 포지션 청산 과정에서 근월물 매도가 재개되면 하방 압력이 커질 수 있다”고 분석했다. 증권가는 당분간 지수가 뚜렷한 방향성을 잡기보다 박스권에서 등락할 가능성에 무게를 두고 있다. NH투자증권은 이번주 코스피 예상 범위를 6200~7300으로 제시했다. 다올투자증권도 이익 전망 개선과 원화 강세 등이 지수 하단을 지지하는 반면 금리 부담이 상단을 제한하면서 6200~7000선 수준의 박스권 흐름이 이어질 것으로 전망했다. 다만 반도체에 대해서는 여전히 긍정적인 시각이 유지되고 있다. 나 연구원은 “D램 가격 상승으로 반도체 업종의 12개월 선행 이익 전망치가 빠르게 개선되고 있고, 코스피 이익에서 반도체가 차지하는 비중도 70%를 넘어섰다”며 “중장기 실적 개선 흐름은 유효하다”고 봤다. 다만 그는 “최근 상승 탄력이 둔화된 만큼 반도체 일변도의 대응보다는 2차전지와 인공지능(AI) 플랫폼·서비스 등으로 관심을 넓힐 필요가 있다”고 조언했다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "삼성·SK하이닉스 중심 반등 시도…美 물가·선옵 만기가 변수",
+      "summary": "국내 증시는 반도체 실적 개선으로 하단을 지지받는 가운데 이번주 美 PPI·CPI 발표와 10일 코스피200 선물·옵션 동시만기일로 외국인 수급 변동성 확대가 예상돼 박스권 장세가 이어질 전망이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "독일에 뜬 '삼성 AI 판촉왕'…가전·TV 추천부터 상담까지 척척",
+      "url": "https://n.news.naver.com/mnews/article/001/0016291630",
+      "description": "삼성전자 IFA서 'AI 프로모터' 공개…리테일 매장 활용 전망 \"둘 중 어떤 제품이 나한테 더 잘 맞아?\" 4일(현지시간) 개막한 유럽 최대 가전 전시회 'IFA 2026' 삼성전자 전시장. 한쪽에 마련된 대형 화",
+      "crawled_at": "2026-09-06T05:40:12.661397+09:00",
+      "content": "(베를린=연합뉴스) 강태우 기자 = 삼성전자가 4일(현지시간) 독일 베를린에서 개막한 'IFA 2026' 전시관에서 대규모언어모델(LLM)을 기반으로 사용자의 질문을 이해하고 제품 정보를 소개하는 'AI 프로모터'를 공개했다. 2026.9.5 burning@yna.co.kr (베를린=연합뉴스) 강태우 기자 = \"둘 중 어떤 제품이 나한테 더 잘 맞아?\" 4일(현지시간) 개막한 유럽 최대 가전 전시회 'IFA 2026' 삼성전자 전시장. 한쪽에 마련된 대형 화면에 질문을 던지자 사람의 모습을 한 인공지능(AI) 아바타가 제품의 특징과 차이점을 설명하고 취향에 맞는 제품을 추천했다. 이 AI 아바타의 정체는 삼성전자가 선보인 'AI 프로모터(promoter)'다. AI가 단순히 가전제품을 작동시키는 것을 넘어 오프라인 매장에서 제품을 설명하고 소비자의 구매를 돕는 'AI 직원' 역할까지 맡는 것이다. 영어로 \"영화를 볼 수 있는 제품을 추천해달라\"고 요청하자 AI 프로모터는 즉각 올레드(OLED) TV를 추천했다. \"100인치의 큰 제품으로 추천해달라\"는 요구에는 마이크로 RGB(빨강·초록·파랑) TV 가운데 특정 모델을 골라 제품 특징을 설명했다. \"한국어로 답해달라\"고 요청하자 곧바로 한국어로 답변하기도 했다. 다만 현재 한국어로 질문하는 기능은 지원하지 않는다. AI 프로모터는 일반적인 채팅 상담과 달리 대규모언어모델(LLM)을 기반으로 사용자의 질문을 이해하고 제품 정보를 바탕으로 대화를 이어가는 인터랙티브형 AI다. 화면 속 AI는 실제 사람처럼 자연스러운 모습으로 구현됐고, 화면 앞에 마련된 마이크에 직접 질문하거나 QR코드를 통해 휴대전화로도 대화할 수 있었다. 최성민 삼성전자 독일법인 CE리테일담당 프로는 \"현재 프로토타입을 테스트 중이며 유럽 출시를 염두에 두고 있다\"고 설명했다. 제품은 기업간거래(B2B) 방식으로 리테일 매장 등에 활용될 가능성이 크다. AI 프로모터가 실제 매장에 적용될 경우 직원의 제품 설명과 상담 업무를 일부 보조하면서 매장별 서비스 편차를 줄이고, 적은 인력으로도 일정한 수준의 고객 응대가 가능할 것으로 보인다. (베를린=연합뉴스) 강태우 기자 = 삼성전자가 4일(현지시간) 독일 베를린에서 개막한 IFA 2026 전시관에서 대규모언어모델(LLM)을 기반으로 사용자의 질문을 이해하고 제품 정보를 소개하는 'AI 프로모터'를 공개했다. 2026.9.5 burning@yna.co.kr 이날 삼성전자 전시장은 일반 관람객보다 전문 유통업체와 기업 고객 등 B2B 관계자들로 북적거렸다. AI 프로모터 외에도 유럽 시장을 겨냥해 에너지 효율과 공간 활용성을 높인 세탁기와 냉장고 앞에서 관계자들이 모여 제품 설명을 듣는 모습도 쉽게 볼 수 있었다. 삼성전자는 올해 IFA에서 기존 메인 전시장인 메세 베를린을 벗어나 베를린 도심의 훔볼트 카레에 별도 전시 공간을 마련했다. 이곳에서 전문 유통업체와 B2B 고객, 미디어를 대상으로 신제품 발표와 비즈니스 프로그램을 진행하고 있다. 실제 제품을 체험하는 데서 나아가 거래선과의 접점을 넓히는 데 초점을 맞춘 것으로, 올해 IFA가 강조한 '딜 메이킹 플랫폼'이라는 행사 성격과도 맞닿아 있다. 삼성전자는 올해 IFA에서 '당신의 AI 일상 동반자'를 주제로 가전과 스마트기기가 연결되는 AI홈을 넘어 여가와 건강관리 등 일상 전반으로 확장된 'AI 리빙' 경험을 선보였다. 엔터테인먼트·홈·케어 등 3개 테마로 구성된 전시장에서는 마이크로 RGB TV와 비스포크 AI 패밀리허브 냉장고, 후드 일체형 인덕션, 빌트인 식기세척기 등을 소개했다. (서울=연합뉴스) 삼성전자가 독일 베를린에서 열리는 유럽 최대 가전 전시회 IFA 2026 개막에 앞서 6일까지 '당신의 AI 일상 동반자'라는 주제로 전시관을 '훔볼트 카레'에 운영한다고 3일 밝혔다. 사진은 'IFA 2026' 삼성 전시관에서 관람객들이 삼성전자 '비스포크 AI 패밀리허브 냉장고'에 대한 설명을 듣고 있는 모습. 2026.9.3 [삼성전자 제공. 재판매 및 DB 금지] photo@yna.co.kr burning@yna.co.kr",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "삼성, IFA 2026서 LLM 기반 'AI 프로모터' 공개",
+      "summary": "삼성전자는 IFA 2026에서 대규모언어모델(LLM) 기반의 AI 아바타 'AI 프로모터'를 공개해 제품 추천·설명·상담을 시연했으며 현재 유럽 출시에 앞서 프로토타입을 테스트 중이고 주로 B2B 리테일용으로 활용될 가능성이 크다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "“하루 1대도 안 팔려” “그냥 싼 맛에 산다” 조롱받던 샤오미…삼성 따라 한 ‘접는 폰’ 내놨다",
+      "url": "https://n.news.naver.com/mnews/article/016/0002693244",
+      "description": "샤오미가 삼성전자·애플의 ‘격전지’로 떠오른 ‘여권형’ 폴더블 스마트폰 시장에 승부수를 던졌다. 삼성전자의 여권형 폴더블폰과 유사한 비율의 신작 ‘샤오미 18 폴드’를 공개했다. 애플까지 첫 폴더블폰 출시를 앞두면서",
+      "crawled_at": "2026-09-06T05:40:12.660652+09:00",
+      "content": "[헤럴드경제=차민주 기자] 샤오미가 삼성전자·애플의 ‘격전지’로 떠오른 ‘여권형’ 폴더블 스마트폰 시장에 승부수를 던졌다. 삼성전자의 여권형 폴더블폰과 유사한 비율의 신작 ‘샤오미 18 폴드’를 공개했다. 애플까지 첫 폴더블폰 출시를 앞두면서, 삼성전자가 주도하고 있는 폴더블폰 시장의 경쟁 구도도 한층 치열해질 전망이다. 국내 스마트폰 시장에서 “하루에 한 대도 안 팔린다” “샤오미 제품은 싼 가격 때문에 산다”는 평가를 받았던 샤오미가 이번 신작을 계기로 반등할 수 있을지 주목된다. 정보기술(IT) 업계에 따르면 샤오미는 독일 베를린에서 열리는 유럽 최대 가전 전시회 ‘IFA 2026’에서 신작 ‘샤오미 18 폴드’를 공개했다. 샤오미는 오는 7일 중국에서 열리는 가을 신제품 행사에서도 샤오미 18 폴드를 전면에 내세울 것으로 알려졌다. 유럽 최대 가전 전시회에서 우선 제품을 알린 뒤, 자국 시장에서 신제품 출시 행보를 이어가는 모습이다. 이 제품은 샤오미가 자체 설계한 모바일 프로세서(AP) ‘XRING O3’가 탑재됐다. XRING O3는 3나노미터(㎚·10억분의 1m) 공정을 기반으로 제작된 샤오미의 최신 칩이다. 샤오미는 그간 퀄컴과 미디어텍 등 외부 업체의 AP를 주로 사용해왔다. 중국 메모리 반도체 업체 창신메모리테크놀로지(CXMT)의 LPDDR6 D램도 탑재된다. 스마트폰의 두뇌와 메모리를 모두 최신 사양으로 끌어올리면서 프리미엄 시장을 정조준한 것으로 풀이된다. 특히 새로운 여권형 비율을 적용했다. 이는 앞서 삼성이 선보인 ‘갤럭시 Z 폴드8’과 같은 구조다. 샤오미가 삼성에 이어 여권형 폴더블폰 시장에 참전하면서, 이번 신작으 계기로 국내 시장에서 반등할 수 있을지도 업계의 관심사다. 샤오미는 지난해 한국 법인을 세우고 한국 시장 공략을 본격화했다. 오프라인 매장을 개최해 국내 소비자와의 접점 확대에도 나섰다. 자체 AP와 최신 메모리가 탑재한 폴더블폰을 활용해 프리미엄 시장에서 영향력을 확대하겠다는 목표다. 아울러 애플도 이번 하반기 첫 폴더블폰을 선보인다. 애플은 오는 9일 신제품 공개 행사를 개최하고 이른바 ‘아이폰 폴드(가칭)’로 불리는 첫 폴더블 아이폰을 공개한다. 해당 제품은 삼성전자 갤럭시 Z 폴드 8와 유사한 ‘여권형 폴더블폰’ 디자인을 갖춘 것으로 전해진다. 삼성전자와 애플은 물론 샤오미까지 제품을 선보이면서, 폴더블폰 시장의 경쟁 구도도 치열해질 전망이다. 시장조사업체 카운터포인트리서치는 애플의 시장 진입을 계기로 올해 글로벌 폴더블 스마트폰 출하량이 전년 대비 20% 증가할 것으로 내다봤다. 특히 애플은 시장 진입 첫해인 올해 글로벌 폴더블폰 시장에서 28%의 점유율을 차지할 것으로 집계됐다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "샤오미, 자체 AP 탑재한 여권형 폴더블폰 ‘샤오미 18 폴드’ 공개",
+      "summary": "샤오미가 IFA 2026에서 3nm 자체 AP XRING O3와 CXMT LPDDR6를 탑재한 여권형 폴더블폰 '샤오미 18 폴드'를 공개했으며, 삼성·애플과의 경쟁 심화 속 프리미엄 시장 공략을 본격화한다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.974654+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.993430+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.013460+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.033640+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.102294+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.126668+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.151875+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.179095+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.206912+09:00"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "Korea hosts a Squid Games, National AI Tournament, the best non-Chinese open source model gets eliminated, why Nvidia needs open source, implications…",
+      "url": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.506410+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI vs HuggingFace, Container Escapes, Kernel Bypass, Network Policies, Security Keys, Multi-tenant Grafana, and a ClusterMAX 3.0 Preview",
+      "url": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.548734+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.646652+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.702044+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.761339+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.802833+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.856720+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.913362+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:15.966566+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.018730+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.059251+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.101256+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.154032+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.256763+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.325087+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.382406+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.443905+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.471574+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.535469+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-09-06T05:40:16.573707+09:00"
+    }
+  ]
+}
