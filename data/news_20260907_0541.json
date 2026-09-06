@@ -1,0 +1,271 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "“기계도 안 만져본 회사가?” AI 칩 개발 도전, 성공할 수 있을까[김창영의 실리콘밸리 룩]",
+      "url": "https://n.news.naver.com/mnews/article/011/0004659100",
+      "description": "“기계 만져 본 적 없는 회사가 하루 아침에 칩 만든다고요? 글쎄요. 잘 될까요?” 미국 캘리포니아주 실리콘밸리에서 10년 가까이 인공지능(AI) 칩 개발을 담당하고 있는 한 개발자는 최근 AI 칩 시장에 뛰어든 기",
+      "crawled_at": "2026-09-07T05:40:58.391423+09:00",
+      "content": "MS, TSMC와 마이아칩 30만개 공급 협상 소프트웨어 기업의 AI 칩 사업 확장에 관심 칩 개발 경험 전무하거나 부족한 점에 우려 Arm “실리콘 공급, 라이선스보다 더 복잡” 엔비디아와 AMD의 집중 견제도 극복해야 브로드컴·마벨 손 잡는 연합 전선 구축 시도 미국 캘리포니아주 실리콘밸리에서 10년 가까이 인공지능(AI) 칩 개발을 담당하고 있는 한 개발자는 최근 AI 칩 시장에 뛰어든 기업들을 어떻게 보느냐는 질문에 박한 평가를 내렸다. 그는 “소프트웨어와 하드웨어는 완전히 다르다”며 “인프라를 모르는 회사가 10년, 20년 동안 칩 개발에 매달린 회사를 당장 따라잡는 일은 불가능하다”고 말했다. 다만 오래 전 칩 개발에 뛰어든 구글과 아마존웹서비스(AWS)는 예외로 뒀다. 그는 “구글은 검색 서비스에서 시작했지만 이미 10년 넘게 칩 개발을 진행했고 지금 엔비디아도 TPU를 견제하고 있다”며 “구글 정도 아니면 칩 기업들이 크게 신경 쓰지 않는 분위기다. 노하우를 무시하지 못한다. 칩 개발이 절대 쉬운 일이 아니다”라고 평가했다. 그 결과 많은 소프트웨어 기업들이 AI 칩 시장에 뛰어들었다. 아마존웹서비스(AWS)가 2006년 클라우드 컴퓨팅 서비스를 시작하고 2012년 맞춤형 실리콘 제작에 뛰어들었다. 구글은 2015년 텐서처리장치(TPU)를 처음 출시하면서 10년 넘게 맞춤형 AI 칩 개발 노하우를 쌓았다. 그 결과 AWS는 인페렌시아, 구글은 TPU로 추론용 칩을 선도하고 있다. 오래 전부터 인프라 사업을 시작한 두 기업을 제외하면 대부분 최근에서야 칩 개발에 착수했다. MS는 엔비디아 GPU에 대항하고 구글 TPU를 추격하기 위해 공격적으로 칩 확장에 나서고 있다. 디인포메이션은 지난 8월 10일(현지 시간) MS가 대형 클라우드 고객사 유치를 위해 차세대 AI 칩 ‘마이아300’ 생산을 내년에 대폭 늘린다는 목표를 세우고 대만 파운드리(반도체 수탁 생산 기업) TSMC와 협상을 벌이고 있다고 보도했다. MS가 이르면 이달 마이아 300을 공개하고 내년 30만개 이상을 공급받기 위한 협상을 진행 중이라는 소식이다. 마이아 200 생산량이 수만 개인 점을 고려하면 대폭 늘어난 수치다. 모건스탠리는 구글이 올해 TPU 300만개 이상을, 내년에는 500만개를 각각 생산할 것으로 예상한다. 사티아 나델라 MS 최고경영자(CEO)는 2022년 법원 제출 자료를 통해 공개된 이메일에서 “우리는 엔비디아 위의 얇은 층에 불과하고 모든 지식재산권은 오픈AI가 갖고 있다”며 자체 칩 필요성을 강조한 바 있다. 앤트로픽과 오픈AI도 하이퍼스케일러(대규모 컴퓨팅 인프라 운영기업)와 함께 자체 칩 경쟁에 가세했다. 엔비디아 그래픽처리장치(GPU), 아마존·구글 칩이 탑재된 데이터센터를 임대해 AI 모델 ‘클로드’와 ‘GPT’를 각각 개발한 두 기업이 칩 독립을 준비 중이다. 로이터는 4월 소식통을 인용해 앤트로픽이 자체 칩 개발을 검토하고 있다고 보도했다. 디인포메이션은 7월 앤트로픽이 자체 AI 칩 개발을 위한 초기 단계 작업을 시작했으며, 잠재적 제조 파트너인 삼성전자 파운드리(반도체 수탁 생산)와 협의를 진행하고 있다고 보도했다. 지난해 10월 브로드컴과 맞춤형 칩 개발을 위해 협력한다고 밝혔던 오픈AI는 7월 첫 자체 추론 전용 칩 ‘할라페뇨’를 공개했다. 할라페뇨는 오픈AI가 구축하는 데이터센터에 오픈AI 구상대로 설계된 칩이 탑재될 전망이다. 후발주자들의 아킬레스건은 하드웨어, 즉 기계를 만져 본 경험이 부족하다는 점이다. 윈도우 운영체제(OS)를 만들던 MS, 페이스북·인스타그램 등 소셜미디어(SNS)를 운영하는 메타, AI 모델을 만드는 앤트로픽·오픈AI는 모두 소프트웨어 기업이다. MS의 경우 데이터센터를 통해 ‘애저’ 클라우드 서비스를 운영하고는 있지만 엔비디아·AMD 등 GPU 의존도가 높다. ‘기계를 만져 본 적 없는 기업’도 스스로 약점을 잘 알고 있다. 세계 최대 반도체 지식재산권(IP) 기업 Arm(암)은 올해 3월 회사 창립 35년 만에 처음 자체 칩인 ‘Arm AGI CPU’를 처음 선보인 뒤 지난달 반도체 학회 세미나인 ‘핫칩스’에서 주요 사양을 공개했다. 설계 밑그림만 그려주던 기업이 고객사와 경쟁하지 않는다는 전통을 깨고 데이터센터 서버 칩 제조사들에 도전장을 내민 것이다. 부족한 칩 개발 경험, 엔비디아·AMD의 방해 작전으로 어려운 도전이기는 하지만 연합 전선을 구축하면 골리앗과 다윗의 싸움이 될 수 있다는 평가도 나온다. 브로드컴이나 마벨처럼 칩 설계를 돕는 기업이 있기 때문이다. 브로드컴과 마벨은 자사 AI 모델에 딱 맞는 칩을 구현하도록 도와달라는 고객사 요구에 따라 칩 설계를 맡는다. 실리콘 제조, 전력 및 열 관리, 메모리 연계는 물론 최종 파운드리 생산 준비까지 총괄한다. 지난해부터 AI 시장이 학습 중심에서 추론이 중요한 에이전틱 AI 중심으로 바뀌면서 추론에 특화된 맞춤형 칩(ASIC) 수요가 급증했고, ASIC을 설계하는 브로드컴과 마벨에 ‘러브콜’이 쏟아지고 있다. 국내 AI 스타트업의 한 대표는 “엔비디아 중심의 구도가 깨지고 있는 이유 중 하나가 브로드컴이 플랫폼을 너무 잘 만들어 놓았기 때문”이라며 “성능에 별 차이가 없는 칩이 똑같이 나오고 있을 만큼 브로드컴이 너무 잘하고 있다”고 설명했다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "소프트웨어사들의 AI 칩 도전과 난관",
+      "summary": "소프트웨어 기업들이 엔비디아·구글에 대응해 자체 AI 칩 개발에 뛰어들고 있으나 하드웨어 경험 부족과 엔비디아·AMD의 견제, 실리콘 공급·제조 복잡성 등 난관이 크며 브로드컴·마벨 등 설계 파트너와의 연합으로 돌파를 모색하고 있다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "일반 랙의 20배 전기 먹는 베라루빈…\"받을 준비\"가 관건",
+      "url": "https://n.news.naver.com/mnews/article/008/0005410082",
+      "description": "정부가 3조8500억원을 들여 최신 GPU를 확보해도 꽂을 자리가 없으면 무용지물이다. 베라루빈은 기존 데이터센터에 그대로 넣을 수 없는 장비다. 공급 일정에 맞춰 '받을 준비'를 갖추는 것이 투자의 성패를 가를 전",
+      "crawled_at": "2026-09-07T05:40:58.391564+09:00",
+      "content": "6일 업계에 따르면 정부가 도입하는 베라루빈 NVL72는 서버 선반(랙) 하나에 루빈 GPU 72개와 베라 CPU 36개를 통신·전력·냉각 장치와 함께 묶은 제품이다. 냉장고 크기의 철제 캐비닛 하나가 그 자체로 하나의 슈퍼컴퓨터인 셈이다. 성능을 한 통에 집약한 대가는 전기다. 랙 1대가 200㎾급 전력을 쓴다. 일반 데이터센터의 랙당 전력(5~10㎾)의 20배가 넘고, 가구당 계약전력(3㎾)을 기준으로 하면 일반 가정 60여 가구가 동시에 쓰는 전력을 캐비닛 하나가 소모하는 수준이다. 전기를 많이 쓰면 열도 그만큼 나온다. 지금까지 데이터센터는 찬 공기를 불어넣는 방식으로 서버를 식혔지만, 이 정도 밀도에서는 공기로 열을 빼내는 속도가 발열을 따라가지 못한다. 그래서 냉각액을 관으로 흘려 칩에 직접 대는 액체냉각 설비가 필수다. 서버에 냉각 배관과 냉각액까지 더해지면 랙 하나가 수 톤에 이른다. 건물 바닥이 이를 버텨야 하기 때문에, 기존 서버룸에 장비만 바꿔 넣는 것으로는 감당이 안 된다. 전기·냉각·건물 구조를 한꺼번에 다시 설계해야 한다는 뜻이다. 새로 짓는 AIDC(AI데이터센터)는 이런 조건을 처음부터 반영하고 있다. LG유플러스가 베라루빈 수용을 염두에 두고 짓는 파주 AIDC는 완공 시 총 수전 용량이 200㎿로 수도권 최대급이고, 바닥 하중은 ㎡당 2톤으로 설계됐다. 일반 사무용 건물(0.3~0.5톤)의 4배가 넘는다. SK텔레콤도 차세대 고성능 서버를 수용할 수 있는 AIDC 구축을 추진 중이다. 기존 데이터센터가 아예 배제되는 것은 아니다. 통신업계 관계자는 \"장비 사이 간격을 넓히는 등 배치를 조정하면 기존 시설에서도 수용이 가능하다\"며 \"액체냉각도 이미 활용하는 기술인 만큼 새 기술 개발보다 개별 시설의 전력·냉각 능력을 확보하는 것이 중요하다\"고 설명했다. 설치 장소가 반드시 수도권일 필요도 없다. GPU는 연구자가 장비 앞에 앉아서 쓰는 것이 아니라, 초기 설치와 연결 작업이 끝나면 클라우드를 통해 어디서든 원격으로 쓴다. 전력 여유가 있는 지방에 두고 서울에서 접속해도 연구에는 지장이 없다는 얘기다. 정부가 확보할 베라루빈을 어느 시설에 배치할지는 아직 정해지지 않았다. 장비는 한꺼번에 오지 않고 엔비디아 공급 상황에 따라 나눠 들어온다. 장비가 도착했는데 데이터센터가 준비되지 않았다면 수백억원짜리 랙이 창고에서 대기해야 한다. 반대로 센터를 다 지어놓고 장비가 늦으면 시설이 놀게 된다. 납품 일정과 가동 준비 시점을 맞추는 정밀한 조율이 3조8500억원 투자의 마지막 조건인 셈이다. 이정헌 더불어민주당 의원은 \"국가의 생존이 걸린 AI 전쟁에서 주도권을 잡기 위해 정부가 과감하고 선제적인 결단을 내렸다\"며 \"베라루빈 도입이 대한민국 AI 산업의 획기적인 도약과 미래 성장 동력 확보로 이어지도록 당 차원에서도 모든 정책적·예산적 지원을 아끼지 않겠다\"고 밝혔다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "정부 도입 베라루빈 NVL72, 전력·냉각·건물 재구성 필요",
+      "summary": "베라루빈 NVL72는 랙당 루빈 GPU 72개·베라 CPU 36개로 구성돼 랙 1대가 약 200kW를 소모해 기존(5~10kW) 대비 20배 이상의 전력과 액체냉각·강화된 바닥 하중을 요구하며, 장비·센터 납품 시점 조율이 사업 성패의 핵심이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "[단독]갈수록 비싸지는 차세대 칩 '베라루빈'…정부, 대당 275억 예산 책정",
+      "url": "https://n.news.naver.com/mnews/article/008/0005410076",
+      "description": "한국 정부가 내년 도입할 엔비디아 차세대 AI 칩 '베라루빈'의 예산을 랙 1대당 275억원으로 잡은 것으로 확인됐다. 외신이 예상한 가격의 두 배가 넘는다. AI 칩 가격이 치솟는 '칩플레이션' 속에서도 비용을 감",
+      "crawled_at": "2026-09-07T05:40:58.391663+09:00",
+      "content": "6일 이정헌 더불어민주당 의원실이 확보한 '글로벌AI프론티어랩' 사업설명서에 따르면 과학기술정보통신부는 내년 GPU 서버 확충 예산으로 3조8500억원을 배정했다. 전액 베라루빈 NVL72 서버 랙 140대 확보에 쓰인다. NVL72 랙은 1대당 루빈 GPU 72개와 베라 CPU(중앙처리장치) 36개로 구성돼, 루빈 GPU 기준 총 1만80장을 확보하게 된다. 과기정통부가 2028년까지 확보하겠다고 밝힌 첨단 GPU 5만2000장과는 별도 물량이다. 실제 공급량은 엔비디아 공급 사정에 따라 일부 달라질 수 있다. 랙 1대당 275억원은 외신 예상치를 크게 웃돈다. 미국 투자은행 번스타인은 지난 6월 보고서에서 베라루빈 NVL72 랙 비용을 910만달러(약 123억원)로, 모건스탠리는 약 780만달러(약 105억원)로 예측했다. 정부는 GPU 물량 부족에 따른 가격 인상 가능성과 설비 비용까지 고려해 예산을 잡았다고 설명했다. 정부는 베라루빈을 AGI(범용인공지능) 등 차세대 프론티어 모델 개발에 투입한다. 앤스로픽의 초거대 AI '미토스' 공개 이후 한국도 최상위 모델을 확보해야 한다는 목소리가 커진 데 따른 것이다. 배경훈 부총리 겸 과기정통부 장관은 지난 6월 \"미토스급 모델을 만들기 위해서는 베라루빈 1만장 정도가 필요하다\"고 밝힌 바 있다. 이번 140대 도입분이 정확히 그 규모다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "정부, 베라루빈 NVL72 랙 140대 확보에 3조8500억 배정…대당 275억 책정",
+      "summary": "과기정통부가 내년 GPU 서버 확충 예산 3조8500억원을 전액 베라루빈 NVL72 서버 랙 140대(루빈 GPU 72개·베라 CPU 36개 구성) 확보에 사용하며 랙당 단가를 275억원으로 잡았다. 정부는 GPU 공급 부족과 설비비 반영을 이유로 들었고, 해당 장비는 AGI 등 차세대 프론티어 모델 개발에 투입될 예정이다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "[인터뷰] 美 인디애나 주지사 \"AI 인프라, 주민에게도 이익 돼야\"",
+      "url": "https://n.news.naver.com/mnews/article/469/0000952429",
+      "description": "미국 인디애나주(州)를 찾으면 끝없이 펼쳐진 옥수수밭이 먼저 눈에 들어온다. 그러나 불과 몇 년 뒤면 이 주의 상징은 인공지능(AI) 데이터센터가 될지 모른다. 대표적인 농업주로 손꼽히던 인디애나가 전례 없는 속도로",
+      "crawled_at": "2026-09-07T05:40:58.391682+09:00",
+      "content": "옥수수밭, 데이터센터·반도체 공장 변신 중 주민 반발 경험 후 주지사가 세운 조건은 \"인재·일자리·교육…지역과 함께 성장\" 미국 인디애나주(州)를 찾으면 끝없이 펼쳐진 옥수수밭이 먼저 눈에 들어온다. 그러나 불과 몇 년 뒤면 이 주의 상징은 인공지능(AI) 데이터센터가 될지 모른다. 대표적인 농업주로 손꼽히던 인디애나가 전례 없는 속도로 '글로벌 AI 인프라의 심장'으로 변신 중인 까닭이다. 미국 버지니아대 웰던 쿠퍼 센터 집계에 따르면 올 초 기준 인디애나에는 구글과 아마존(AWS), 메타, 마이크로소프트 등 빅테크의 데이터센터만 38개가 들어서 있고, 계획됐거나 건설 중인 시설도 37개에 달한다. 이 같은 급격한 변화는 동시에 새로운 과제를 낳고 있다. '데이터센터 님비(NIMBY)' 현상은 미 전역에서 점차 거세지고 있다. 3월 갤럽 조사에서 \"우리 동네 데이터센터 건설에 반대한다\"고 답한 미국인은 71%였고, 지난달 조사에서는 이 비율이 75%까지 올랐다. 인디애나에서도 마찬가지다. 그런데도 인디애나는 AI 도시로의 전환에 속도를 늦추지 않고 있다. 이 주는 기업 투자를 끌어오는 것과 지역사회의 수용성을 어떻게 동시에 확보하고 있을까. 본보는 지난달 27일(현지시간) 웨스트 라피엣에서 마이크 브런 인디애나 주지사를 두 차례 만나 AI·반도체 투자 전략과 지역사회와의 공존 방안을 물었다. 국내 언론이 브런 주지사와 인터뷰한 건 처음이다. 브런 주지사는 \"AI 데이터센터나 반도체 공장을 유치할 때 가장 중요한 것은 지역사회에 남는 순편익(net benefit)\"이라고 강조했다. 이어 \"기업이 이곳에 들어온다면 지역사회에 더하는 것이 있어야 한다\"며 \"우리의 자원을 과도하게 압박해서는 안 된다. 그래야 우리 모두 함께 성장할 수 있다\"고 말했다. \"투자 규모보다 지역에 무엇이 남느냐\" 앞서 인디애나가 포트웨인에 구글 데이터센터를 유치하면서 마련한 방식이 대표적이다. 주 정부는 최초 투자 금액(8억 달러)에 대해 35년간 장비·에너지 구입세를 면제해주고, 이후 추가투자시 면제 기간을 5년씩 늘려 최대 50년까지 보장하는 성과 연동형 혜택을 설계했다. 대신 구글은 지역사회에 투자한다. 지역기관 두 곳에 25만 달러(약 3억3,800만 원)를 지원하고, 아이비테크 커뮤니티칼리지와는 인력 양성 프로그램을, 지역 전력회사 인디애나 미시간 파워와는 청정에너지 공급 확대를 추진했다. 그럼에도 주민들은 농경지·지하수 고갈 같은 환경 훼손은 물론, 전력망 확충 비용이 결국 전기 요금 고지서로 전가될 것이라고 우려한다. '데이터센터 님비' 현상이 브런 주지사에게도 현재진행형 고민거리인 것이다. 이에 그는 3월 기자회견에서 데이터센터로 인한 전기요금 부담이 주민에게 전가되지 않도록, 인디애나의 모든 데이터센터가 쓰는 전력을 100% 자체 조달하도록 요구하겠다고 밝혔다. 주의회는 데이터센터가 특정 세제 혜택을 받으려면 전기요금 절감분의 1%를 지역에 지급하도록 하는 법(HB1210)을 통과시켰고, 브런 주지사가 3월 12일 서명하며 이 법이 발효됐다. 같은 달 레바논시에 유치한 메타의 100억 달러 규모 데이터센터 협약에도 비슷한 원칙이 담겼다. 메타는 전력 비용을 전액 자체 부담하고, 20년간 매년 100만 달러를 지역 에너지비 지원기금으로 내며, 데이터센터에 쓴 물 100%를 정화해 인근 하천으로 되돌려보내기로 했다. 이처럼 브런 주지사가 지역사회의 편익을 반복해서 강조하는 배경에는 자신의 사업 경험도 있다. 1981년부터 고향인 재스퍼에서 사업을 키우며 지역사회에 편익이 있어야 한다는 걸 체득했다는 것이다. 그는 \"소통하고, 지역이 대비할 수 있게 하고, 투자에서 실질적 이익을 얻도록 해야 궁극적으로 주에 순편익이 돌아간다\"고 말했다. 기업 유치에서 '지역 생태계' 구축으로 그가 SK하이닉스의 투자를 특히 강조한 것도 이런 맥락이다. 이날 인디애나주 웨스트 라피엣에서는 SK하이닉스가 약 40억 달러를 투자해 미국 첫 AI 메모리용 '어드밴스드 패키징' 생산 거점을 구축하는 기공식이 열렸다. 차세대 고대역폭메모리(HBM) 생산과 첨단 패키징 연구개발을 담당하는 시설이다. 기공식 이후 다시 만난 그는 \"이만한 규모의 투자를 특정 주에 유치하는 게 얼마나 어려운지 37년간 사업을 해본 경험으로 잘 안다\"며 \"여러 주와 경쟁했고, 주 정부와 연방정부가 함께 투자했다\"고 자랑했다. 브런 주지사가 말하는 지역 편익의 핵심에는 인재가 있다. 기업이 필요로 하는 인력을 지역 대학과 직업·기술교육기관에서 키우고, 기업의 투자가 다시 지역 일자리와 교육 기회로 이어지는 구조다. SK하이닉스 역시 퍼듀대와 차세대 첨단 패키징 기술 공동 연구에 나서고 있다. 브런 주지사는 SK하이닉스가 AI 시대에 필요한 \"중요한 토대를 만들고 있다\"고 말했다. 극심한 성장통을 먼저 겪은 주 정부로서 한국에 전하고 싶은 메시지를 묻자 그는 \"기업을 데려오는 것만으로는 충분하지 않다\"며 유치 경쟁이 끝난 뒤의 관계를 강조했다. \"정부·기업·지역사회가 인프라 비용과 성장의 과실을 어떻게 나눌지를 설계하는 데서 시작돼야 한다\"는 것이다. 그는 \"AI 시대의 산업정책은 (AI 기반시설) 유치 이후에도 지역사회와 신뢰를 쌓고, 순편익을 지속적으로 설계해나가는 과정\"이라고 말했다. 지역사회가 부담해야 할 전력·용수·토지 비용과 그곳에 돌아갈 일자리·교육·투자 효과를 어떻게 맞바꿀 것인지가 함께 설계돼야 한다는 얘기다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "인디애나주지사 “AI 인프라, 지역에 실질적 이익 남겨야”",
+      "summary": "마이크 브런 인디애나 주지사는 데이터센터·반도체 유치 시 지역의 순편익을 최우선으로 하고 전력·물·세제 부담이 주민에게 전가되지 않도록 기업에 자체 부담과 지역 기금·인력양성 연계 등을 요구한다고 밝혔다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "“심각한 저평가”…노무라 ‘삼전닉스’ 목표가 ‘67만·470만’ 유지",
+      "url": "https://n.news.naver.com/mnews/article/029/0003046433",
+      "description": "글로벌 투자은행(IB)을 중심으로 국내 증시를 이끄는 삼성전자와 SK하이닉스의 주가가 본질 가치 대비 심각하게 저평가돼 있다는 분석이 나왔다. 인공지능(AI) 사이클에 따른 구조적 공급 부족과 대규모 자사주 매입이",
+      "crawled_at": "2026-09-07T05:40:58.391773+09:00",
+      "content": "글로벌 투자은행(IB)을 중심으로 국내 증시를 이끄는 삼성전자와 SK하이닉스의 주가가 본질 가치 대비 심각하게 저평가돼 있다는 분석이 나왔다. 인공지능(AI) 사이클에 따른 구조적 공급 부족과 대규모 자사주 매입이 강력한 하방 지지력을 형성하고 있다는 평가다. 7일 한국거래소에 따르면 지난 4일 삼성전자와 SK하이닉스는 전 거래일 대비 각각 2.20% 오른 25만5000원, 3.20% 뛴 164만7000원에 장을 마감했다. 주가 변동성 속에서도 반도체 투톱이 동반 반등에 성공한 가운데, 글로벌 투자은행 노무라증권은 지난 4일 보고서를 통해 두 종목의 목표주가를 각각 67만원과 470만원으로 유지하며 ‘매수’ 의견을 냈다. 현 주가 대비 두 배를 훌쩍 웃도는 수준이다. 노무라는 두 회사의 주가가 고점 대비 각각 30%, 40% 이상 급락하면서 2027년 예상 주가수익비율(P/E) 기준 평균 3배 수준까지 떨어져 극심한 저평가 영역에 진입했다고 진단했다. AI 투자 확대로 치솟는 수요에 비해 공급 부족이 심화돼 향후 4년 내 글로벌 생산능력이 두 배, 6년 내 세 배로 늘어야 하는 구조적 호황기라는 설명이다. 특히 빅테크 등 주요 고객사들이 5년 장기계약(LTA)을 체결하면서 20~30% 규모의 선급금을 지급하고 있어 실적 안정성도 보장된다고 분석했다. 양사가 추진 중인 55조원 규모의 자사주 매입 정책 역시 증시 하단을 받치는 버팀목이다. 신한투자증권에 따르면 현재 두 회사의 추가 매수 여력은 약 38조3000억원으로, 일평균 1조6000억원씩 사들일 경우 24거래일간 방어 물량을 투입할 수 있는 규모다. 다만 원화 가치 상승(환율 하락)은 단기 실적 변수로 꼽힌다. 노무라는 원화 가치가 10% 오르면 영업익이 약 12% 감소할 수 있다고 분석했고, 씨티그룹 역시 환율 부담을 반영해 SK하이닉스와 삼성전자의 목표가를 각각 300만원, 43만원으로 낮추면서도 업황 개선세는 유효하다고 짚었다. 한편 이번 주(7~11일) 국내 증시는 반도체 투톱의 펀더멘털을 축으로 미국의 물가지표와 장기 국채 금리 진정 여부에 따라 방향성을 결정할 전망이다. 중동발 긴장감과 유가 급등으로 미 10년물 국채 금리가 연초 이후 최고치인 4.8%까지 치솟았으나, 9일 미 재무부의 장기 국채 바이백 확대(회당 20억달러→40억달러)와 11일 발표될 8월 소비자물가지수(CPI)가 금리 안정의 분수령이 될 전망이다. 시장 추정치(3.4%) 수준으로 인플레이션 둔화가 확인될 경우 9월 미 연준의 금리 동결 기대감이 지수 반등 동력으로 작용할 수 있다. 다만 오는 10일 예정된 코스피200 선물·옵션 동시 만기일(‘네 마녀의 날’) 전후로는 수급 변동성을 경계해야 한다. 미결제약정 감소와 옵션 헤지 되돌림 상황을 감안할 때 장중 등락폭이 확대될 수 있는 만큼, 주 후반 지표 확인 전까지는 단기 변동성에 주의할 필요가 있다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "노무라, 삼성전자·SK하이닉스 목표가 각각 67만·470만원 유지하며 '매수' 제시",
+      "summary": "노무라증권은 삼성전자와 SK하이닉스의 목표주가를 각각 67만원·470만원으로 유지하며 현 주가 대비 심각한 저평가 상태라고 진단했고, AI 수요에 따른 구조적 공급 부족과 55조원 규모 자사주 매입이 하방 지지 요인이라고 평가했다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.342397+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.354762+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.365821+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.378427+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.417612+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.433155+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.448495+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.464412+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.480467+09:00"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "Korea hosts a Squid Games, National AI Tournament, the best non-Chinese open source model gets eliminated, why Nvidia needs open source, implications…",
+      "url": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.350044+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI vs HuggingFace, Container Escapes, Kernel Bypass, Network Policies, Security Keys, Multi-tenant Grafana, and a ClusterMAX 3.0 Preview",
+      "url": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.377093+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "OpenAI’s self-designed ASIC compared with Rubin, Jalapeño’s TCO, throughput per MW, and spicy deets",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.411939+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "$3 Million USD dataset open sourced, 1 Mil+ Context Length, Multiturn, Sub Agents 95%+ KVCache HitRate, GB300 NVL72, MI355, B200",
+      "url": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.447359+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Comparing open vs. closed models across the eras of frontier models, Is the gap narrowing?",
+      "url": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.491535+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Double the Performance, Double the Power, Double the Fun",
+      "url": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.518314+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "American Grid design needs an overhaul, Why it is good to be full of cold air.",
+      "url": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.547995+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Can TileRT software on NVIDIA GPU compete with Cerebras, Groq LPU, SambaNova? Batch Size 1, Disaggregated engine, high throughput prefill engine, high…",
+      "url": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.582572+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Inference at 100B/GW/year, SpaceX's stellar pace, Microsoft's 10GW 2026 Awakening, Azure Can Grow Triple-Digits",
+      "url": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.626225+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "GCP YoY rev growth >100%, DeepMind's long term failure is Google Cloud's short term gain",
+      "url": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.669284+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Kimi K3’s architecture: compressed memory, attention across depth, latent expert routing, and serving performance",
+      "url": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.700676+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Everyone Says They're Modular, Do The Vendor Claims Hold Up? Zuck's Tents, AWS's Houdini, 60GW+ Modular Capacity Tracked, Full Vendor Landscape Mapping…",
+      "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.761244+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Up to 105% Equity Rebate Discounts for OpenAI, Agentic Kernel Generation, Improvement in Software Quality, Unstable Internal Development Clusters…",
+      "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.803918+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Rubin LUT Based Tensor Core, Feynman, Rack Scale, Perf Per MegaWatt, Perf Per Dollar, Software Improvements, Public Rubin Software, PyTorch, vLLM…",
+      "url": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.878661+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Meta Infrastructure has become bloated, with middle managers expending resources on over-engineered technology solutions that lose sight of broader…",
+      "url": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.939323+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "A top tier RL environment startup spawns out of thin air, the most aggressive compute ramp we've ever seen, 2000km+ scale-across, and some advice for…",
+      "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:00.976270+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Anthropic’s Opportunity is Theirs to Lose",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.006518+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Over 7T AI debt by 2029, There can be no Neoclouds without the Trinity. Nvidia's Backstop Economics Explained. AI Debt Needs Quantified. Nvidia's…",
+      "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.031620+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "Zuck Takes Plan B? SpaceX 2.0, Bedrock 2.0, MSL Isn't Giving Up, Scaling RecSys by 10x... ClusterMAX ranking coming soon?",
+      "url": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.092517+09:00"
+    },
+    {
+      "source": "SemiAnalysis",
+      "title": "ECTC 2026 Roundup, Intel, TSMC, SK Hynix, Samsung, Micron, Marvell, Lightmatter, Microsoft",
+      "url": "https://newsletter.semianalysis.com/p/ectc2026",
+      "description": "",
+      "crawled_at": "2026-09-07T05:41:01.128783+09:00"
+    }
+  ]
+}
