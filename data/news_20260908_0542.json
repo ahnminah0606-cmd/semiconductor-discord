@@ -1,0 +1,107 @@
+{
+  "naver": [
+    {
+      "source": "NaverNews",
+      "title": "젠슨 황 “아스트라로 AGI 시대 도래”",
+      "url": "https://n.news.naver.com/mnews/article/081/0003677759",
+      "description": "젠슨 황 엔비디아 최고경영자(CEO)가 앞으로 그래픽처리장치(GPU) 40만개가 추가로 가동될 것이라고 예고했다. 오픈AI의 최신 인공지능(AI) 모델 ‘GPT-6 아스트라’ 학습에 이미 블랙웰 GPU 10만개 이상",
+      "crawled_at": "2026-09-08T05:42:18.447811+09:00",
+      "content": "다음 모델엔 40만개 투입 예고도 ‘황의 법칙’ 넘어선 AI메모리 수요 삼성·SK하이닉스 HBM 수혜 기대 젠슨 황 엔비디아 최고경영자(CEO)가 앞으로 그래픽처리장치(GPU) 40만개가 추가로 가동될 것이라고 예고했다. 오픈AI의 최신 인공지능(AI) 모델 ‘GPT-6 아스트라’ 학습에 이미 블랙웰 GPU 10만개 이상이 투입된 데 이어 AI 개발에 동원되는 반도체 규모가 수십만개 단위로 커지고 있다. AI 가속기에 탑재되는 고대역폭메모리(HBM) 수요도 덩달아 늘면서 삼성전자와 SK하이닉스에 대한 실적 기대도 높아지고 있다. 황 CEO는 6일(현지시간) 엑스(X)에 아스트라가 10만개 이상의 블랙웰 GPU로 학습됐다며 “범용인공지능(AGI)이 도래했다”고 평가했다. AGI는 인간이 수행하는 대부분의 지적 업무를 폭넓게 해낼 수 있는 수준의 AI를 뜻한다. 이어 “앞으로 40만개의 GPU가 추가로 가동될 것”이라고 밝혔다. 40만개의 구체적인 투입처와 가동 시점은 밝히지 않았다. GPU 성능이 빠르게 향상되는 ‘황의 법칙’이 이어지고 있지만 성능 개선이 수요를 줄이기는커녕 더 큰 모델과 더 많은 연산을 불러오며 외려 GPU와 HBM의 수요가 커지는 상황이다. GPU 투입량 증가는 곧 HBM 수요 확대와 연결된다. HBM은 여러 개의 D램을 수직으로 쌓아 대량의 데이터를 빠르게 주고받도록 만든 메모리로, 블랙웰을 비롯한 AI 가속기에 필수적으로 탑재된다. AI 데이터센터 투자가 급증하면서 HBM 생산량도 빠르게 늘고 있지만 수요 증가 속도를 따라잡기에는 부족하다는 전망이 우세하다. 트렌드포스는 내년 HBM의 총 메모리 용량 기준 출하량이 올해보다 50~60% 늘어나도 공급 부족이 이어질 것으로 내다봤다. 트렌드포스에 따르면 엔비디아는 차세대 ‘루빈 울트라’에 당초 검토하던 12단 HBM4E뿐 아니라 적층 수를 낮춘 8단 HBM4E와 8·12단 HBM4 등 여러 구성을 검토하고 있다. 내년 D램 공급 부족과 고적층 HBM4E의 초기 수율, 인증 일정 등을 고려해 한정된 메모리로 더 많은 GPU를 생산하기 위한 선택지를 넓히고 있다는 분석이다. 엔비디아가 GPU당 HBM 탑재량까지 조정하는 방안을 검토하는 것은 HBM 공급 압박이 그만큼 크다는 의미이기도 하다. AI 인프라 투자가 수십만개의 GPU를 추가로 흡수하는 상황에서는 이런 조정이 전체 HBM 수요 감소로 이어지기보다 GPU 공급 확대를 뒷받침할 가능성이 크다. 수요 확대의 직접적인 수혜가 예상되는 곳은 삼성전자와 SK하이닉스다. 카운터포인트리서치가 지난 3일 발표한 자료에 따르면 올해 2분기 글로벌 HBM 시장에서 SK하이닉스는 매출 기준 점유율 50%로 1위를 차지했고 삼성전자는 1분기 21%에서 33%로 점유율을 높였다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "엔비디아 황 CEO, GPT-6 ‘아스트라’ 학습에 GPU·HBM 수요 급증 전망",
+      "summary": "황 창업자는 GPT-6 아스트라 학습에 블랙웰 GPU 10만대 이상이 투입됐고 추가로 40만대 가동을 예고했으며, 이에 따라 HBM 수요가 크게 늘어 삼성전자와 SK하이닉스가 수혜를 볼 것으로 전망된다."
+    },
+    {
+      "source": "NaverNews",
+      "title": "신축 사옥 짓고 캠퍼스 리모델링… 빅테크는 지금 ‘AI 제국’ 건설 중",
+      "url": "https://n.news.naver.com/mnews/article/023/0003997153",
+      "description": "‘풀스택 AI’ 기업으로 변신 물리적 거점도 함께 키워 지난 4일(현지 시각) 오후 미국 캘리포니아주 산타클라라. 엔비디아 본사 사옥 ‘보이저’ 맞은편 공사장에서 수십 개의 콘크리트 기둥 사이로 굴착기와 크레인 등",
+      "crawled_at": "2026-09-08T05:42:18.448121+09:00",
+      "content": "물리적 거점도 함께 키워 지난 4일(현지 시각) 오후 미국 캘리포니아주 산타클라라. 엔비디아 본사 사옥 ‘보이저’ 맞은편 공사장에서 수십 개의 콘크리트 기둥 사이로 굴착기와 크레인 등 중장비 10여 대가 바쁘게 움직이고 있었다. 이 곳은 완공 시 축구장 4개 크기(약 9100평)에 달하는 엔비디아의 또다른 신축 사옥 현장이다. 이와 같이 실리콘밸리는 곳곳이 공사 중이다. 엔비디아 본사에서 차로 15분 떨어진 마운틴뷰에서도 오픈AI의 5개 동 규모 캠퍼스가 리모델링 중이다. 같은 날 현장을 찾았을 때는 공사가 막바지에 접어든 듯 건물 외부 공간에 야외 의자와 테이블 등을 설치하는 작업이 한창이었다. 규모는 약 44만7000제곱피트(약 1만2600평)로, 1500명 이상을 수용할 수 있는 공간이다. 앤스로픽 역시 사정은 비슷하다. 샌프란시스코 하워드 스트리트 일대 건물들을 잇따라 빌려 사실상 하나의 거대한 ‘앤스로픽 타운’을 형성하고 있다. 구글도 최근 실리콘밸리의 물리적 거점을 다시 키우고 있다. 지난 7월 구글은 본사 캠퍼스 지역 인근에 5개 건물, 약 150만제곱피트 규모의 공간을 다시 확보했다. 주목할 점은 이 같은 확장이 단순한 직원 수 증가 때문이 아니라는 사실이다. 반도체, 컴퓨팅 인프라, 모델, 소프트웨어, 에이전트, 로보틱스까지 AI 산업 전반을 직접 통제하는 ‘풀스택(full-stack) AI’ 기업으로 변신하면서 물리적 거점도 함께 커지는 것이다. 소수 승자가 된 AI 기업들이 기술 영역을 넘어 현실 공간까지 넓혀가며 ‘AI 제국’을 구축하는 모양새다. 가령 게임용 그래픽 처리 장치 회사인 엔비디아는 AI 붐을 타고 ‘AI 칩 최강자’ 자리에 올랐다. 지난 3월 열린 연례 콘퍼런스 ‘GTC 2026’에서는 “더 이상 AI 칩 파는 회사 아니다”라고 선언했으며 AI 서버, 소프트웨어, 오픈 모델, 로보틱스로 사업 영역을 넓히고 있다. 오픈AI 역시 AI 모델을 개발하는 동시에 AI 기기, AI 인프라, 맞춤형 AI 칩 분야에 진출했다. 영국 일간 가디언은 “단 6개 빅테크에 권력이 집중되면서 승자독식 구조가 나타날 수 있다”고 전했다.",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "빅테크들, AI 풀스택 전환 위해 실리콘밸리 물리적 거점 확장",
+      "summary": "엔비디아·오픈AI·구글·앤스로픽 등 빅테크가 반도체·인프라·모델·로보틱스 등 AI 전반을 통제하는 ‘풀스택’ 전략으로 캠퍼스 신축·리모델링과 대규모 공간 확보에 나서며 물리적 거점을 확장하고 있다."
+    }
+  ],
+  "trendforce": [
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix 800 Trillion Won Expansion Strains Chipmaking Tool Supply, Potentially Pressures TSMC, Intel",
+      "url": "https://www.trendforce.com/news/2026/06/30/news-samsung-sk-hynix-800-trillion-won-expansion-strains-chipmaking-tool-supply-potentially-pressures-tsmc-and-intel/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.280605+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Samsung, SK hynix, Micron Face U.S. Class-Action Lawsuit Over Alleged DRAM Supply Manipulation",
+      "url": "https://www.trendforce.com/news/2026/06/29/news-samsung-sk-hynix-micron-face-u-s-class-action-lawsuit-over-alleged-dram-supply-manipulation/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.302594+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Apple Price Hikes Erode Neo’s Cost Edge as Xbox Cites 2.5x Memory Surge for New Increase",
+      "url": "https://www.trendforce.com/news/2026/06/26/news-apple-price-hikes-erode-neos-cost-edge-as-xbox-cites-2-5x-memory-surge-for-new-increase/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.326415+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Qualcomm Reportedly Plans China AI Chip Push With Export-Control-Compliant Custom Chips",
+      "url": "https://www.trendforce.com/news/2026/06/25/news-qualcomm-reportedly-plans-china-ai-chip-push-with-export-control-compliant-custom-chips/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.347995+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] ASE Reportedly Raises Advanced Packaging Quotes by More Than 20% in Latest AI-Driven Price Hike",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-ase-reportedly-raises-advanced-packaging-quotes-by-more-than-20-in-latest-ai-driven-price-hike/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.427803+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Musk’s TeraFab Lands First Major Hire as 18-Year Intel Veteran With 18A Experience Joins as Director",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-musks-terafab-lands-first-major-hire-as-18-year-intel-veteran-with-18a-experience-joins-as-director/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.457351+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[Insights] Memory Spot Price Update: DRAM Spot Prices See Gains in Low-Density DDR4 and DDR3 Amid Sideways Market",
+      "url": "https://www.trendforce.com/news/2026/07/01/insights-memory-spot-price-update-dram-spot-prices-see-gains-in-low-density-ddr4-and-ddr3-amid-sideways-market/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.485756+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Passive Component Prices Rise as YAGEO Reportedly Begins Broadest Capacitor Hike in Years on July 1",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-passive-component-prices-rise-as-yageo-reportedly-begins-broadest-capacitor-hike-in-years-on-july-1/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.516640+09:00"
+    },
+    {
+      "source": "TrendForce",
+      "title": "[News] Intel Reportedly Breaks Ground on Santa Clara Expansion for Next-Gen EUV Mask Capacity",
+      "url": "https://www.trendforce.com/news/2026/07/01/news-intel-reportedly-breaks-ground-on-santa-clara-expansion-for-next-gen-euv-mask-capacity/",
+      "description": "",
+      "crawled_at": "2026-09-08T05:42:22.549551+09:00"
+    }
+  ],
+  "semianalysis": [
+    {
+      "source": "SemiAnalysis",
+      "title": "InferenceX, Up to 50% Better Performance per Dollar, Rapid Externalization of TPU stack, Growing Customer Base, Ironwood, TPUv8i, Reducing CUDA Moat",
+      "url": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam",
+      "description": "InferenceX, Up to 50% Better Performance per Dollar, Rapid Externalization of TPU stack, Growing Customer Base, Ironwood, TPUv8i, Reducing CUDA Moat",
+      "crawled_at": "2026-09-08T05:42:21.370512+09:00",
+      "content": "For more than a decade, the industry has watched Google build an empire on its own silicon. Search, Ads, YouTube, and every generation of Gemini run on TPUs. Few accelerators have attracted as much architectural scrutiny or as much debate about what their performance and economics would look like outside the company that designed them. Anthropic being the biggest user of TPUs, surpassing Deepmind’s own use by 2029. Google’s internal success was never the question. The question was how much of that advantage the rest of the industry could actually get. Could you take an open-weight model, serve it through a familiar inference engine, and beat NVIDIA on the economics that matter to your business? Today, we are publishing the first third-party inference results for TPUv7 Ironwood on InferenceX Official Preview. In our apples-to-apples comparisons against B200/B300, Ironwood delivers up to 50% better performance per dollar. Its advantage extends across much of the Pareto curve, and we examine the economics from both sides: Google’s internal total cost of ownership and the external TCO an actual customer pays. Ironwood (TPUv7) is the first generation in which Google is competing for others’ inference workloads with chips that can be purchased outright or rented through its own cloud. In November 2025, we already said that Anthropic loves TPUs and committed to over one million of them (around 400k+ in direct purchases and 600k+ rented through GCP), used mainly for training but also for inference. Our Accelerator Model has the latest figures for Anthropic’s TPU shipments and Google’s overall TPU shipments by quarter, plus estimates for TPUv8i, v8t, and various v9 / v10, and more We are excited by how quickly the new TorchTPU stack is developing, the external stack for TPUs. Later in the article, we will discuss the upcoming work needed for TPU software externalization, including optimizing speculative decoding, disaggregated prefill, KV-cache offloading, multi-turn agentic workloads, and more. Even so, we at SemiAnalysis strongly believe that TPU externalization is heading in the right direction and moving full steam ahead. Furthermore, unlike AMD, which is still learning how to build a test-first software culture, Google has decades of software engineering experience and an extremely well established quality-driven culture, so we expect external TPU software to mature rapidly. In this article, we will cover all the optimizations that went into TPU kernels and the serving stack for open-weight models, including DP attention optimization, MoE routing and kernel optimization, and reducing padding in GDN kernels. We will also take a deep dive into the TPU system and discuss the next steps the amazing TPU performance engineers are pursuing to make the stack widely available. Google has spent more than a decade demonstrating what it can build with TPUs. Now we get to measure what the rest of the industry can do with them. Shoutout to the Google (Chris Chan, Jahangir Hasan, Wangyuan Zhang, Anne Stern, Puneith Kaul, Ruizi Dong, Sangam Jindal, Qi Zhou, Madhan Jaganathan, Gang Ji, Jun Wan, Devanshu Jain, Jiaxin Cao, Srinath Mandalapu, Haowen Ning) and Inferact teams for this amazing TPU foundation and performance! Furthermore, shoutout to the RadixArk team that is also working on TorchTPU SGLang. InferenceX Official Preview: TPUv7 Ironwood vs. Blackwell and Blackwell Ultra We are already seeing strong results from the upcoming native TorchTPU vLLM stack in apples-to-apples comparisons against Nvidia GPUs. Google is using Qwen3.5 397B in FP8 as the initial bring-up model. Later sections take a deep dive into why the new TorchTPU approach is a marked improvement over the previous TorchAX path for external TPU vLLM/SGLang serving. Once that foundation is in place, Google plans to extend support to other open-weight models, including Kimi K3 and GLM5.3. Once a handful of models are well optimized, we believe adding optimized support for a wide range of popular open models near day 0 becomes far easier. Today, vLLM and SGLang concentrate their day-0 support on Nvidia, with passable day-0 coverage for AMD. We expect TorchTPU to be stable enough in the near future that vLLM and SGLang maintainers may add TPUs to that day-0 list. The stack is expected to leave private beta & be open sourced around October. In apples-to-apples comparisons of aggregated serving with FP8 and single-token prediction, we are seeing up to 50% better performance per dollar from TPU than from B200 and B300 running FP8 in aggregated serving. When serving models using FP4 on NVIDIA GPUs, there is quality loss verus FP8. TPUv7 does not have native FP4 computation thus on FP4, NVIDIA GPUs still maintains the lead. This will change with TPUv8i which has native FP4 support thus we strongly believe TPUv8i Boardfly will be competitive to Rubin NVL72. We believe the TPU performance-per-dollar advantage can persist once Google enables disaggregated serving and speculative decoding, with MTP and disaggregated serving enabled on both sides of the comparison. Later in the article, we discuss the optimizations Google plans to add once the TorchTPU foundation is in place. To keep the bring-up scope contained, Google has initially focused on benchmarking 8k1k. However, we believe that the TorchTPU stack will also perform amazingly well on agentic workloads & will be publishing results for those too later in the year. Later on in the article, we will talk about the next steps & roadmap of TPU external Inference. TPU is King on Performance per Dollar At an interactivity of 100 tokens/s/user, Ironwood costs approximately $0.181 per million total tokens, compared with $0.222 for B200 and $0.276 for B300. That is approximately 19% lower cost than B200 and 34% lower than B300, while delivering the same per-user generation speed. For this comparison, we use an external TPU TCO against B200/B300 TCO for an hyperscaler lab to buy TPU. Last year, SemiAnalysis Accelerator Model was the first to break that Google is selling TPUs instead of just renting out through Google Cloud. TPU’s lower hourly cost offsets its lower throughput across much of the interactivity range. The SemiAnalysis TCO Model provides a full breakdown of the TPU BoM estimate and TCO estimates. Across most of the raw-performance curve, TPU does not outperform Nvidia GPUs. However, that comparison does not account for TPU’s lower TCO. Buyers of TPU are mainly concerned with how much revenue they can make, i.e. performance per dollar and performance per watt. That being said, at interactivity of 20 tok/s/user, Ironwood also leads on raw throughput, reaching 9,364 total tokens/s/chip, compared with 8,903 on B200 and 8,925 on B300. This is approximately 5% higher throughput than either GPU in these runs. Combined with the lower modeled hourly cost, Ironwood delivers 50.4% more tokens per dollar than B200 and 96.0% more than B300. If we consider TPU TCO for Google’s internal workloads at $1.03/chip-hour, the performance-per-dollar advantage at concurrency 256 increases to 76.7% over B200 and 130.2% over B300. However, these high-concurrency results come with latency trade-offs. For example, at concurrency 256, TPU mean TTFT is 5.41 seconds, compared with 3.75 seconds on B200 and 2.40 seconds on B300. The previously discussed 50% to 96% advantage applies to this datapoint specifically, rather than every latency target. Looking at end-to-end latency, Ironwood remains competitive beyond that highest-throughput point. At a 20-second median response time, the Pareto curves put TPU at approximately $0.098 per million total tokens, compared with $0.106 for B200 and $0.132 for B300. TPU therefore costs approximately 8% less than B200 and 25% less than B300. Despite all of the above, B200 can still come out ahead on a small part of the Apples to Apples curve, including around the 30-second median response time. However, TPU regains its lower cost per million tokens at longer response times, while maintaining a cost advantage over B300 across the overlapping range shown here. Apples to Bananas: GB300 NVL72 Disagg verus TPUv7 Agg Google has been running disaggregated serving internally for years in production and that path is heavily optimized, but the external TPU serving stack does not have a fully optimized disagg path yet. So today, GB200/300 NVL72 is more competitive on perf per dollar in a disagg-vs-disagg comparison. But we expect that gap to close within a few months & TPUv7 to be competitive againist GB200/300 NVL72 as Google, Inferact, RadixArk, and SemiAnalysis land optimizations, and we will publish TPUv7 disagg vs GB200/300 NVL72 disagg in a follow-up article. TPUv7 pods can scale up to over 1k+ chips through their low latency ICI fabric thus can enable optimizations for large models disagg & ultra wideEP that NVIDIA NVL72 can’t perform. Even on an apples to bananas comparison between TPUv7 aggregated serving verus GB300 NVL72 disagg, using internal TCO, TPUv7 is decently competitive on high latency & low to left medium latency. But when comparing on the right medium e2e latency, GB300 NVL72 disagg has an single advantage against TPuv7 aggregrated serving. When looking at it GB300 NVL72 disagg verus TPUv7 agg, it is competitive at low and high e2e latency but in the middle, there is about an 30% perf per dollar advantage of GB300 against TPUv7 agg. We strongly believe once disaggregated serving on TPUv7 is optimized, it would be competitive across the full pareto against GB300 NVL72. Inference Serving with the New Native, First-Class TorchTPU Backend vs. the Previous TorchAX Stack Previous TorchAX vLLM Backend Google previously used the TorchAX backend to translate the PyTorch-based implementations in vLLM and SGLang into JAX. TorchAX was intended to let developers run PyTorch model definitions through JAX. However, issues with this approach have prompted Google and the PyTorch, vLLM, and SGLang communities to collaborate on a new approach called TorchTPU. It lets developers use TPUs as native PyTorch devices, while StableHLO, XLA, and TPU-optimized Pallas kernels handle the low-level execution behind the scenes. In the upcoming sections of the article, we will be showing the performance of this new TorchTPU backend compared to NVIDIA Blackwell & Blackwell Ultra GPUs. vLLM TPU support has evolved through three different stages: Its first TPU prototype used PyTorch/XLA. Its lazy execution model collected operations into computation graphs for XLA to compile, rather than executing each PyTorch operation immediately. The current public backend, tpu-inference, uses a TPU-optimized JAX implementation when one is available. Otherwise, TorchAX translates the original PyTorch model into operations that JAX can execute. The goal is to reuse mature TPU primitives and parallelism support without requiring every PyTorch model to be rewritten. The upcoming third design, TorchTPU, lets vLLM treat TPUs as native PyTorch devices. It will be the go-to backend for SGLang and vLLM on TPUs going forward. The diagram below zooms in on the second stage and shows how vLLM’s tpu-inference backend combines direct JAX models and PyTorch models running through TorchAX. The original choice of JAX was pragmatic. In the last announcement, Google described difficulties with low-level optimization, paged attention, and fitting vLLM’s worker model to TPU execution. They thought that JAX would offer more mature TPU primitives and parallelism support. TorchAX let the team use those capabilities without rewriting every PyTorch model, while TPU-oriented JAX implementations could share the same kernel and compiler work. With TorchAX, developers still write the model in PyTorch, but JAX executes it on the TPU. TorchAX acts as the translation layer between the two frameworks. As the TorchAX documentation explains, a torchax.tensor.Tensor behaves like an ordinary PyTorch tensor but is backed by a jax.Array. When the mod",
+      "content_ok": true,
+      "summary_ok": true,
+      "summary_title": "TPUv7 Ironwood, 외부화된 TorchTPU로 GPU 대비 최대 50% 더 나은 성능당 비용",
+      "summary": "SemiAnalysis의 InferenceX 공식 프리뷰 결과, TPUv7 Ironwood는 B200/B300 대비 최대 50% 더 높은 성능당 비용을 보였고(특정 설정에선 50~96% 우위), Google의 TorchTPU 외부 스택 개발이 빠르게 진행되어 TPU 외부화와 디스애그리게이티드 서빙 최적화로 경쟁력이 더욱 강화될 전망이다."
+    }
+  ]
+}
