@@ -25,6 +25,7 @@ SOURCES = {"naver": "NaverNews", "trendforce": "TrendForce", "semianalysis": "Se
 DISCORD_WEBHOOK_NEWS = os.getenv("DISCORD_WEBHOOK_NEWS", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+FORCE_RESEND = os.getenv("FORCE_RESEND", "").lower() == "true"
 STATE_FILE = Path("data/sent_urls.json")
 DAILY_STATE_FILE = Path("data/daily_sent.json")
 KST = ZoneInfo("Asia/Seoul")
@@ -460,6 +461,20 @@ def save_results(results):
     path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def load_latest_results():
+    """수동 재전송용으로 가장 최근의 요약 완료 결과를 불러온다."""
+    paths = sorted(Path("data").glob("news_*.json"), reverse=True)
+    for path in paths:
+        try:
+            results = json.loads(path.read_text(encoding="utf-8"))
+            if any(results.get(key) for key in SOURCES):
+                logger.info("수동 재전송 결과 사용: %s", path)
+                return results
+        except (json.JSONDecodeError, OSError, TypeError):
+            continue
+    return None
+
+
 async def main():
     if not OPENAI_API_KEY:
         logger.error("OPENAI_API_KEY가 설정되지 않았습니다.")
@@ -467,6 +482,12 @@ async def main():
     if not DISCORD_WEBHOOK_NEWS:
         logger.error("DISCORD_WEBHOOK_NEWS가 설정되지 않았습니다.")
         return 1
+    if FORCE_RESEND:
+        latest_results = load_latest_results()
+        if not latest_results:
+            logger.error("재전송할 기존 뉴스 요약이 없습니다.")
+            return 1
+        return 0 if send_combined(latest_results) else 1
     if daily_message_was_sent():
         logger.info("오늘 통합 뉴스 메시지를 이미 전송해 백업 실행을 건너뜁니다.")
         return 0
