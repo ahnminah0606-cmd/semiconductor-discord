@@ -441,7 +441,7 @@ def send_combined(results):
     try:
         response = requests.post(
             DISCORD_WEBHOOK_NEWS,
-            json={"username": "반도체뉴스봇", "content": content, "embeds": embeds},
+            json={"content": content, "embeds": embeds},
             timeout=20,
         )
         if response.status_code not in (200, 204):
