@@ -21,11 +21,8 @@ from openai import OpenAI
 # 로컬 실행에서는 프로젝트 .env가 셸에 남은 오래된 값보다 우선한다.
 # GitHub Actions에는 .env가 없으므로 Actions Secret에는 영향을 주지 않는다.
 load_dotenv(override=True)
-WEBHOOKS = {
-    "naver": ("NaverNews", os.getenv("DISCORD_WEBHOOK_NAVER", "")),
-    "trendforce": ("TrendForce", os.getenv("DISCORD_WEBHOOK_TRENDFORCE", "")),
-    "semianalysis": ("SemiAnalysis", os.getenv("DISCORD_WEBHOOK_SEMIANALYSIS", "")),
-}
+SOURCES = {"naver": "NaverNews", "trendforce": "TrendForce", "semianalysis": "SemiAnalysis"}
+DISCORD_WEBHOOK_NEWS = os.getenv("DISCORD_WEBHOOK_NEWS", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 STATE_FILE = Path("data/sent_urls.json")
@@ -33,7 +30,7 @@ DAILY_STATE_FILE = Path("data/daily_sent.json")
 KST = ZoneInfo("Asia/Seoul")
 HEADERS = {"User-Agent": "Mozilla/5.0 AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 MAX_CANDIDATES = 20
-MAX_SUMMARIES = 5
+MAX_SUMMARIES = 3
 
 def now_kst():
     return datetime.now(KST)
@@ -217,7 +214,7 @@ SUMMARY_SCHEMA = {
     "type": "object",
     "properties": {
         "title": {"type": "string", "description": "자연스러운 한국어 요약 제목"},
-        "summary": {"type": "string", "description": "기사의 중요한 내용을 담은 한국어 2~4문장"},
+        "summary": {"type": "string", "description": "기사의 핵심 사건, 배경과 업계 의미를 담은 한국어 2~3문장"},
     },
     "required": ["title", "summary"],
     "additionalProperties": False,
@@ -247,14 +244,19 @@ def parse_summary(raw):
         raise ValueError("title 또는 summary가 비어 있습니다.")
     if not re.search(r"[가-힣]", title) or not re.search(r"[가-힣]", summary):
         raise ValueError("한국어 제목 또는 요약이 생성되지 않았습니다.")
-    if len(summary) < 40:
+    if len(summary) < 80:
         raise ValueError("요약이 지나치게 짧습니다.")
     return title[:200], summary
 
 
 def summarize(client, article):
     prompt = f"""다음 반도체/기술 기사를 한국어로 요약하세요. 제공된 내용만 사용하고 추측하지 마세요.
-본문의 핵심 사실만 사용하세요. title은 70자 이내의 한국어 제목, summary는 1~2문장·160자 안팎으로 간결하게 작성하세요.
+본문의 핵심 사실만 사용하세요. title은 70자 이내의 한국어 제목으로 작성하세요.
+summary는 2~3문장·약 220~300자로 작성하고, 다음 내용을 자연스럽게 포함하세요:
+1. 무슨 일이 있었는지에 대한 핵심 사실
+2. 독자가 이해하는 데 필요한 주요 배경이나 수치
+3. 반도체 산업·기업·공급망에 미치는 의미 또는 전망
+본문에 없는 내용은 추측하지 말고, 단순히 제목을 반복하지 마세요.
 반드시 다른 문구나 마크다운 없이 {{"title":"...","summary":"..."}} JSON 객체만 출력하세요.
 
 원문 제목: {article['title']}
@@ -295,7 +297,7 @@ def summarize(client, article):
 
 
 def select_important(client, articles, source):
-    """반도체와 직접 관련된 중요 기사만 0~5개 선별한다."""
+    """반도체와 직접 관련된 중요 기사만 최대 설정 개수만큼 선별한다."""
     if not articles:
         return []
 
@@ -317,7 +319,7 @@ def select_important(client, articles, source):
 - 같은 사건을 다룬 중복 기사와 본문 정보가 부족한 기사
 
 규칙:
-- 중요 기사가 부족하면 5개를 채우지 말고 0~{MAX_SUMMARIES}개만 선택하세요.
+- 중요 기사가 부족하면 개수를 억지로 채우지 말고 0~{MAX_SUMMARIES}개만 선택하세요.
 - 직접 관련성이 불확실하면 제외하세요.
 - 중요한 순서대로 서로 다른 ID만 반환하세요.
 
@@ -370,23 +372,22 @@ def save_sent(urls):
     STATE_FILE.write_text(json.dumps({"urls": sorted(urls)[-2000:]}, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def load_daily_sent():
-    """오늘 이미 메시지를 보낸 출처를 불러온다."""
+def daily_message_was_sent():
+    """오늘 통합 뉴스 메시지를 이미 보냈는지 확인한다."""
     today = now_kst().date().isoformat()
     try:
         data = json.loads(DAILY_STATE_FILE.read_text(encoding="utf-8"))
-        if data.get("date") == today:
-            return set(data.get("sources", []))
+        return data.get("date") == today and data.get("sent") is True
     except (FileNotFoundError, json.JSONDecodeError, TypeError):
         pass
-    return set()
+    return False
 
 
-def save_daily_sent(sources):
+def save_daily_sent():
     DAILY_STATE_FILE.parent.mkdir(exist_ok=True)
     DAILY_STATE_FILE.write_text(
         json.dumps(
-            {"date": now_kst().date().isoformat(), "sources": sorted(sources)},
+            {"date": now_kst().date().isoformat(), "sent": True},
             ensure_ascii=False,
             indent=2,
         ),
@@ -406,50 +407,47 @@ def shorten(text, limit):
 
 
 def compact_block(index, article, summary_limit):
-    # URL을 꺾쇠로 감싸 Discord의 자동 링크 미리보기(Embed)를 억제한다.
     title = shorten(article["summary_title"], 70)
     summary = shorten(article["summary"], summary_limit)
-    return f"{index}. **{title}**\n{summary}\n원문: <{article['url']}>"
+    return f"**{index}. {title}**\n{summary}"
 
 
-def daily_message(source, articles):
-    """선별 기사 전체를 Discord 제한 안의 메시지 한 개로 합친다."""
-    header = f"#{source}\n- {now_kst().strftime('%-m/%-d')} 요약"
-    for summary_limit in (170, 140, 110, 80):
-        blocks = [
-            compact_block(index, article, summary_limit)
-            for index, article in enumerate(articles, 1)
-        ]
-        content = header + "\n\n" + "\n\n".join(blocks)
-        if len(content) <= 1900:
-            return content
-
-    # URL이 비정상적으로 길어도 메시지를 나누지 않고 들어가는 기사까지만 싣는다.
-    blocks = []
-    for index, article in enumerate(articles, 1):
-        block = compact_block(index, article, 60)
-        candidate = header + "\n\n" + "\n\n".join(blocks + [block])
-        if len(candidate) > 1900:
-            break
-        blocks.append(block)
-    return header + "\n\n" + "\n\n".join(blocks)
+def source_embed(source, articles):
+    """출처 하나를 링크 없는 Discord embed 카드로 만든다."""
+    styles = {
+        "NaverNews": ("🟢 NAVER NEWS", 0x03C75A),
+        "TrendForce": ("🔵 TRENDFORCE", 0x3B82F6),
+        "SemiAnalysis": ("🟠 SEMIANALYSIS", 0xF59E0B),
+    }
+    title, color = styles[source]
+    description = "\n\n".join(
+        compact_block(index, article, 320)
+        for index, article in enumerate(articles, 1)
+    )
+    return {"title": title, "description": description, "color": color}
 
 
-def send(articles, webhook, source):
-    if not articles:
-        logger.info("%s: 새 기사 없음", source)
+def send_combined(results):
+    """새 뉴스가 있는 출처만 카드로 묶어 Discord 메시지 하나로 전송한다."""
+    if not DISCORD_WEBHOOK_NEWS:
+        logger.error("DISCORD_WEBHOOK_NEWS 미설정")
         return False
-    if not webhook:
-        logger.error("%s: Discord Webhook 미설정", source)
-        return False
-    content = daily_message(source, articles)
+    embeds = [source_embed(SOURCES[key], results[key]) for key in SOURCES if results.get(key)]
+    if not embeds:
+        logger.info("세 출처 모두 새로운 주요 뉴스가 없어 Discord 메시지를 보내지 않습니다.")
+        return None
+    content = f"📰 **오늘의 반도체 뉴스 · {now_kst().strftime('%-m/%-d')}**"
     try:
-        response = requests.post(webhook, json={"username": "반도체뉴스봇", "content": content}, timeout=20)
+        response = requests.post(
+            DISCORD_WEBHOOK_NEWS,
+            json={"username": "반도체뉴스봇", "content": content, "embeds": embeds},
+            timeout=20,
+        )
         if response.status_code not in (200, 204):
-            logger.error("%s Discord 응답 오류: HTTP %d", source, response.status_code)
+            logger.error("Discord 응답 오류: HTTP %d", response.status_code)
             return False
-        logger.info("%s Discord 일일 메시지 1개 발송 완료 (%d자, 기사 %d건)",
-                    source, len(content), len(articles))
+        total = sum(len(items) for items in results.values())
+        logger.info("Discord 통합 메시지 1개 발송 완료 (기사 %d건)", total)
         return True
     except Exception as exc:
         logger.error("%s Discord 발송 실패: %s", source, type(exc).__name__)
@@ -466,23 +464,21 @@ async def main():
     if not OPENAI_API_KEY:
         logger.error("OPENAI_API_KEY가 설정되지 않았습니다.")
         return 1
-    missing_webhooks = [source for source, webhook in WEBHOOKS.values() if not webhook]
-    if missing_webhooks:
-        logger.error("Discord Webhook 미설정: %s", ", ".join(missing_webhooks))
+    if not DISCORD_WEBHOOK_NEWS:
+        logger.error("DISCORD_WEBHOOK_NEWS가 설정되지 않았습니다.")
         return 1
+    if daily_message_was_sent():
+        logger.info("오늘 통합 뉴스 메시지를 이미 전송해 백업 실행을 건너뜁니다.")
+        return 0
     results, sent_urls, client = await crawl_all(), load_sent(), OpenAI(api_key=OPENAI_API_KEY)
-    daily_sent = load_daily_sent()
-    sent_count = 0
+    reviewed_urls = set()
     had_error = False
     for key, crawled in results.items():
-        source, webhook = WEBHOOKS[key]
-        if source in daily_sent:
-            logger.info("%s: 오늘 일일 메시지를 이미 전송해 백업 실행을 건너뜁니다.", source)
-            results[key] = []
-            continue
+        source = SOURCES[key]
         fresh_candidates = [article for article in crawled if article["url"] not in sent_urls]
         if not fresh_candidates:
             logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
+            results[key] = []
             continue
 
         enriched = await asyncio.gather(
@@ -495,13 +491,13 @@ async def main():
 
         selected = select_important(client, deduplicated, source)
         if selected is None:
+            results[key] = []
             had_error = True
             continue
         if not selected:
             logger.info("%s: 반도체 직접 관련 중요 기사 없음", source)
             results[key] = []
-            sent_urls.update(article["url"] for article in fresh_candidates)
-            save_sent(sent_urls)
+            reviewed_urls.update(article["url"] for article in fresh_candidates)
             continue
 
         summarized = [summarize(client, article) for article in selected]
@@ -510,17 +506,19 @@ async def main():
             logger.error("%s: LLM 요약 실패 기사가 있어 Discord 발송을 건너뜁니다.", source)
             had_error = True
             continue
-        if send(summarized, webhook, source):
-            # 전송된 기사 외의 중복·무관 기사도 검토 완료로 기록한다.
-            sent_urls.update(article["url"] for article in fresh_candidates)
+        reviewed_urls.update(article["url"] for article in fresh_candidates)
+    if had_error:
+        logger.error("일부 출처 처리 실패로 통합 메시지를 전송하지 않습니다.")
+    else:
+        send_result = send_combined(results)
+        if send_result is True:
+            sent_urls.update(reviewed_urls)
             save_sent(sent_urls)
-            daily_sent.add(source)
-            save_daily_sent(daily_sent)
-            sent_count += len(summarized)
-        else:
+            save_daily_sent()
+        elif send_result is False:
             had_error = True
     save_results(results)
-    logger.info("실행 완료: 새 기사 %d건 전송", sent_count)
+    logger.info("실행 완료: 통합 메시지 %s", "전송" if not had_error else "미전송")
     return 1 if had_error else 0
 
 if __name__ == "__main__":

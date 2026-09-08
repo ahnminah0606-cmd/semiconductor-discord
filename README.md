@@ -8,12 +8,13 @@
 
 * 반도체 뉴스 자동 크롤링
 * NaverNews, TrendForce, SemiAnalysis에서 사이트별 최신 기사 후보 최대 20개 수집
-* 신규 5개 이하는 전부 요약하고, 6개 이상은 AI가 중요 기사 5개 선별
+* AI가 출처별 주요 기사 최대 3개를 엄선
 * Playwright와 requests를 사이트 특성에 맞게 사용
-* 기사 본문 수집 후 OpenAI API로 한국어 핵심 요약 생성
-* 사이트별 최신 기사 5개의 한국어 제목·요약을 하나의 Discord 묶음 메시지로 전송
-* 원문 링크는 유지하되 Discord 자동 링크 미리보기 Embed는 억제
-* Discord 2,000자 제한을 넘을 때만 사이트 메시지를 안전하게 분할
+* 기사 본문 수집 후 핵심 사건·배경·업계 의미를 포함한 한국어 2~3문장 요약 생성
+* 세 출처의 최신 기사 제목·요약을 하나의 Discord 통합 메시지로 전송
+* NaverNews, TrendForce, SemiAnalysis를 색상별 카드로 구분
+* 새 주요 뉴스가 없는 출처는 메시지에서 생략
+* 원문 링크 없이 한국어 제목과 요약만 제공
 * 본문 접근 실패 시 JSON-LD, 메타 description, 제목 순 fallback
 * 전송 성공 URL을 기록해 같은 기사 재전송 방지
 * `.env`를 이용한 Webhook URL 보안 관리
@@ -52,7 +53,7 @@ Python 크롤러 실행
       ↓
 OpenAI API 한국어 요약
       ↓
-사이트별 제목·요약 5개를 메시지 하나로 구성
+세 출처의 제목·요약을 통합 메시지 하나로 구성
       ↓
 Discord Webhook
       ↓
@@ -92,9 +93,7 @@ playwright install chromium
 프로젝트 최상위에 `.env` 파일을 생성합니다.
 
 ```env
-DISCORD_WEBHOOK_NAVER=https://discord.com/api/webhooks/... # NaverNews 채널
-DISCORD_WEBHOOK_TRENDFORCE=https://discord.com/api/webhooks/...
-DISCORD_WEBHOOK_SEMIANALYSIS=https://discord.com/api/webhooks/...
+DISCORD_WEBHOOK_NEWS=https://discord.com/api/webhooks/... # News 채널
 OPENAI_API_KEY=sk-...
 # 선택 사항 (기본값: gpt-5-mini)
 OPENAI_MODEL=gpt-5-mini
@@ -186,12 +185,10 @@ Settings
 → New repository secret
 ```
 
-다음 Repository secrets 4개를 등록합니다.
+다음 Repository secrets 2개를 등록합니다.
 
 ```text
-DISCORD_WEBHOOK_NAVER
-DISCORD_WEBHOOK_TRENDFORCE
-DISCORD_WEBHOOK_SEMIANALYSIS
+DISCORD_WEBHOOK_NEWS
 OPENAI_API_KEY
 ```
 
@@ -207,9 +204,7 @@ OPENAI_API_KEY
 
 ```yaml
 env:
-  DISCORD_WEBHOOK_NAVER: ${{ secrets.DISCORD_WEBHOOK_NAVER }}
-  DISCORD_WEBHOOK_TRENDFORCE: ${{ secrets.DISCORD_WEBHOOK_TRENDFORCE }}
-  DISCORD_WEBHOOK_SEMIANALYSIS: ${{ secrets.DISCORD_WEBHOOK_SEMIANALYSIS }}
+  DISCORD_WEBHOOK_NEWS: ${{ secrets.DISCORD_WEBHOOK_NEWS }}
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5-mini' }}
 ```
@@ -321,12 +316,11 @@ Discord에 전송했습니다. 이 때문에 잘못된 API 키 테스트에서�
 자동 재시도합니다. 재시도도 실패하면 영어 원문 제목이나 JSON 코드를 대신 보내지
 않고 해당 사이트의 Discord 전송 전체를 중단합니다.
 
-### `DISCORD_WEBHOOK_URL`의 용도가 불분명했던 경우
+### News 채널 웹훅 설정
 
-기존 일반 명칭은 실제로 NaverNews 채널의 웹훅이었습니다. 코드와 문서, Actions
-설정을 모두 `DISCORD_WEBHOOK_NAVER`로 변경했습니다. GitHub Actions에서는 기존
-Secret의 이름을 직접 변경할 수 없으므로 동일한 웹훅 값으로 새 Secret을 등록해야
-합니다.
+세 출처가 하나의 News 채널로 전송되므로 코드와 Actions에서
+`DISCORD_WEBHOOK_NEWS` 하나만 사용합니다. GitHub Actions에서는 News 채널의
+웹훅 값을 이 이름의 Repository Secret으로 등록해야 합니다.
 
 ### 네이버 뉴스가 0건이고 전자신문으로 표시되던 경우
 
@@ -335,13 +329,12 @@ Secret의 이름을 직접 변경할 수 없으므로 동일한 웹훅 값으로
 주소와 `a.sa_text_title` 선택자를 사용하도록 변경했습니다. 수집된 네이버 기사
 본문도 다른 사이트와 동일하게 요약 파이프라인을 거칩니다.
 
-### Discord 메시지가 2,000자를 넘는 경우
+### Discord 통합 메시지의 길이
 
-Discord 일반 메시지 제한보다 여유 있는 1,900자를 내부 기준으로 사용합니다.
-사이트별 기사 5건의 한국어 요약 제목, 핵심 내용, 원문 링크를 우선 한 메시지로
-묶고 제한을 넘을 때만 `(계속)` 메시지로 분할합니다. 원문 URL은 `<URL>` 형식으로
-감싸 클릭은 가능하지만 Discord의 자동 링크 미리보기 Embed는 나타나지 않습니다.
-기사 링크를 각각 별도 메시지로 보내지 않습니다.
+출처별 주요 기사 최대 3개를 엄선하고, 기사마다 핵심 사건·배경·업계 의미를 담은
+2~3문장 요약을 작성합니다. 세 출처는 한 Discord 메시지 안의 색상별 Embed 카드로
+구분됩니다. 원문 링크는 넣지 않으며, 새 주요 뉴스가 없는 출처의 카드는 표시하지
+않습니다.
 
 ### 같은 기사가 다음 날 다시 전송되는 경우
 
@@ -350,13 +343,13 @@ Discord 일반 메시지 제한보다 여유 있는 1,900자를 내부 기준으
 로컬과 GitHub Actions를 동시에 실행하면 상태 커밋 시점에 따라 중복될 수 있으므로
 주 자동화 방식 하나만 사용하는 것이 좋습니다.
 
-### 신규 기사가 6개 이상인 경우
+### 신규 기사가 많은 경우
 
-사이트별 후보를 최대 20개까지 수집합니다. 신규 기사가 5개 이하면 모두 요약하고,
-6개 이상이면 AI가 반도체 기술 중요도, 시장·투자·공급망 파급력, 정보의 구체성,
-주제 다양성을 평가해 상위 5개만 고릅니다. 선별 결과는 Structured Outputs로 서로
-다른 기사 ID 정확히 5개를 받도록 검증합니다. Discord 전송이 성공하면 선택되지
-않은 후보도 검토 완료로 기록해 다음 날 오래된 기사로 뒤늦게 전송되지 않게 합니다.
+사이트별 후보를 최대 20개까지 수집합니다. AI가 반도체 기술 중요도,
+시장·투자·공급망 파급력, 정보의 구체성과 주제 다양성을 평가해 출처별 최대 3개만
+고릅니다. 중요 기사가 부족하면 개수를 억지로 채우지 않습니다. Discord 전송이
+성공하면 선택되지 않은 후보도 검토 완료로 기록해 다음 날 오래된 기사로 뒤늦게
+전송되지 않게 합니다.
 
 ## 주의사항
 
