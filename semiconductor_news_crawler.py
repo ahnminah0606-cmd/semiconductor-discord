@@ -415,9 +415,9 @@ def compact_block(index, article, summary_limit):
 def source_embed(source, articles):
     """출처 하나를 링크 없는 Discord embed 카드로 만든다."""
     styles = {
-        "NaverNews": ("🟢 NAVER NEWS", 0x03C75A),
-        "TrendForce": ("🔵 TRENDFORCE", 0x3B82F6),
-        "SemiAnalysis": ("🟠 SEMIANALYSIS", 0xF59E0B),
+        "NaverNews": ("🐰 NAVER NEWS", 0x03C75A),
+        "TrendForce": ("🐬 TRENDFORCE", 0x3B82F6),
+        "SemiAnalysis": ("🦊 SEMIANALYSIS", 0xF59E0B),
     }
     title, color = styles[source]
     description = "\n\n".join(
