@@ -26,8 +26,10 @@ DISCORD_WEBHOOK_NEWS = os.getenv("DISCORD_WEBHOOK_NEWS", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 FORCE_RESEND = os.getenv("FORCE_RESEND", "").lower() == "true"
+FINAL_SEND = os.getenv("FINAL_SEND", "").lower() == "true"
 STATE_FILE = Path("data/sent_urls.json")
 DAILY_STATE_FILE = Path("data/daily_sent.json")
+PENDING_FILE = Path("data/daily_pending.json")
 KST = ZoneInfo("Asia/Seoul")
 HEADERS = {"User-Agent": "Mozilla/5.0 AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 MAX_CANDIDATES = 20
@@ -141,6 +143,35 @@ async def crawl_naver():
         return []
 
 
+async def crawl_semianalysis():
+    """RSS를 사용해 동적 아카이브 페이지의 기사 누락을 방지한다."""
+    url = "https://newsletter.semianalysis.com/feed"
+    try:
+        logger.info("SemiAnalysis RSS 크롤링 시작")
+        response = await asyncio.to_thread(
+            requests.get, url, headers=HEADERS, timeout=20
+        )
+        response.raise_for_status()
+        soup = BeautifulSoup(response.content, "xml")
+        found = []
+        for entry in soup.select("item"):
+            title_tag, link_tag = entry.find("title"), entry.find("link")
+            title = title_tag.get_text(" ", strip=True) if title_tag else ""
+            href = link_tag.get_text(" ", strip=True) if link_tag else ""
+            description_tag = entry.find("description")
+            description = (
+                description_tag.get_text(" ", strip=True)
+                if description_tag else ""
+            )
+            if title and href and "/p/" in href:
+                found.append(item("SemiAnalysis", title, href, description))
+        logger.info("SemiAnalysis RSS: %d건 수집", len(found))
+        return unique(found)
+    except Exception as exc:
+        logger.error("SemiAnalysis RSS 크롤링 실패: %s", exc, exc_info=True)
+        return []
+
+
 async def crawl_all():
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
@@ -151,8 +182,7 @@ async def crawl_all():
                 crawl_naver(),
                 crawl_links(context, "TrendForce", "https://www.trendforce.com/news/category/semiconductors/",
                             lambda u: "trendforce.com/news/" in u and "/category/" not in u),
-                crawl_links(context, "SemiAnalysis", "https://newsletter.semianalysis.com/archive",
-                            lambda u: "semianalysis.com" in u and "/p/" in u),
+                crawl_semianalysis(),
             )
             return {"naver": naver, "trendforce": tf, "semianalysis": sa}
         finally:
@@ -396,6 +426,60 @@ def save_daily_sent():
     )
 
 
+def load_pending():
+    """오늘 앞선 실행에서 확보한 기사와 검토 URL을 불러온다."""
+    today = now_kst().date().isoformat()
+    try:
+        data = json.loads(PENDING_FILE.read_text(encoding="utf-8"))
+        if data.get("date") == today:
+            results = data.get("results", {})
+            return (
+                {key: list(results.get(key, [])) for key in SOURCES},
+                set(data.get("reviewed_urls", [])),
+            )
+    except (FileNotFoundError, json.JSONDecodeError, TypeError, OSError):
+        pass
+    return ({key: [] for key in SOURCES}, set())
+
+
+def save_pending(results, reviewed_urls):
+    PENDING_FILE.parent.mkdir(exist_ok=True)
+    PENDING_FILE.write_text(
+        json.dumps(
+            {
+                "date": now_kst().date().isoformat(),
+                "results": results,
+                "reviewed_urls": sorted(reviewed_urls),
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+
+def merge_results(pending, current):
+    """출처별로 URL 중복을 제거하며 실행 결과를 누적한다."""
+    merged = {}
+    for key in SOURCES:
+        articles = pending.get(key, []) + current.get(key, [])
+        merged[key] = list(
+            {
+                article["url"]: article
+                for article in articles
+                if article.get("url")
+            }.values()
+        )[:MAX_SUMMARIES]
+    return merged
+
+
+def clear_pending():
+    try:
+        PENDING_FILE.unlink()
+    except FileNotFoundError:
+        pass
+
+
 def shorten(text, limit):
     text = " ".join(str(text).split())
     if len(text) <= limit:
@@ -491,12 +575,22 @@ async def main():
     if daily_message_was_sent():
         logger.info("오늘 통합 뉴스 메시지를 이미 전송해 백업 실행을 건너뜁니다.")
         return 0
+    pending_results, pending_reviewed_urls = load_pending()
+    pending_urls = {
+        article["url"]
+        for articles in pending_results.values()
+        for article in articles
+        if article.get("url")
+    }
     results, sent_urls, client = await crawl_all(), load_sent(), OpenAI(api_key=OPENAI_API_KEY)
-    reviewed_urls = set()
+    reviewed_urls = set(pending_reviewed_urls)
     had_error = False
     for key, crawled in results.items():
         source = SOURCES[key]
-        fresh_candidates = [article for article in crawled if article["url"] not in sent_urls]
+        fresh_candidates = [
+            article for article in crawled
+            if article["url"] not in sent_urls and article["url"] not in pending_urls
+        ]
         if not fresh_candidates:
             logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
             results[key] = []
@@ -528,18 +622,26 @@ async def main():
             had_error = True
             continue
         reviewed_urls.update(article["url"] for article in fresh_candidates)
+    combined_results = merge_results(pending_results, results)
     if had_error:
-        logger.error("일부 출처 처리 실패로 통합 메시지를 전송하지 않습니다.")
+        logger.error("일부 출처 처리 실패로 이번 실행 결과를 전송하지 않습니다.")
+    elif not FINAL_SEND:
+        save_pending(combined_results, reviewed_urls)
+        logger.info("07:30 통합 발송을 위해 현재 결과를 누적 저장합니다.")
     else:
-        send_result = send_combined(results)
+        send_result = send_combined(combined_results)
         if send_result is True:
             sent_urls.update(reviewed_urls)
             save_sent(sent_urls)
             save_daily_sent()
+            clear_pending()
         elif send_result is False:
             had_error = True
-    save_results(results)
-    logger.info("실행 완료: 통합 메시지 %s", "전송" if not had_error else "미전송")
+    save_results(combined_results)
+    status = "누적 저장"
+    if FINAL_SEND:
+        status = "전송" if not had_error else "미전송"
+    logger.info("실행 완료: 통합 메시지 %s", status)
     return 1 if had_error else 0
 
 if __name__ == "__main__":
