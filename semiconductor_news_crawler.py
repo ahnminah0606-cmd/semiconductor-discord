@@ -69,19 +69,19 @@ def title_tokens(title):
     }
 
 
-def deduplicate_topics(articles, threshold=0.6):
+def deduplicate_topics(articles, threshold=0.6, title_field="title"):
     """언론사만 다른 동일 이슈를 제목 토큰 중복률로 제거한다."""
     kept = []
     kept_tokens = []
     for article in articles:
-        tokens = title_tokens(article.get("title", ""))
+        tokens = title_tokens(article.get(title_field, ""))
         duplicate = False
         for previous in kept_tokens:
             smaller = min(len(tokens), len(previous))
             overlap = len(tokens & previous) / smaller if smaller else 0
             if overlap >= threshold:
                 duplicate = True
-                logger.info("유사 주제 제외: %s", article.get("title", ""))
+                logger.info("유사 주제 제외: %s", article.get(title_field, ""))
                 break
         if not duplicate:
             kept.append(article)
@@ -463,12 +463,17 @@ def merge_results(pending, current):
     merged = {}
     for key in SOURCES:
         articles = pending.get(key, []) + current.get(key, [])
-        merged[key] = list(
+        unique_articles = list(
             {
                 article["url"]: article
                 for article in articles
                 if article.get("url")
             }.values()
+        )
+        merged[key] = deduplicate_topics(
+            unique_articles,
+            threshold=0.55,
+            title_field="summary_title",
         )[:MAX_SUMMARIES]
     return merged
 
@@ -571,7 +576,11 @@ async def main():
         if not latest_results:
             logger.error("재전송할 기존 뉴스 요약이 없습니다.")
             return 1
-        return 0 if send_combined(latest_results) else 1
+        cleaned_results = merge_results(
+            {key: [] for key in SOURCES},
+            latest_results,
+        )
+        return 0 if send_combined(cleaned_results) else 1
     if daily_message_was_sent():
         logger.info("오늘 통합 뉴스 메시지를 이미 전송해 백업 실행을 건너뜁니다.")
         return 0
@@ -589,7 +598,9 @@ async def main():
         source = SOURCES[key]
         fresh_candidates = [
             article for article in crawled
-            if article["url"] not in sent_urls and article["url"] not in pending_urls
+            if article["url"] not in sent_urls
+            and article["url"] not in pending_urls
+            and article["url"] not in reviewed_urls
         ]
         if not fresh_candidates:
             logger.info("%s: 새 기사 없음 (수집 %d건)", source, len(crawled))
@@ -616,6 +627,11 @@ async def main():
             continue
 
         summarized = [summarize(client, article) for article in selected]
+        summarized = deduplicate_topics(
+            summarized,
+            threshold=0.55,
+            title_field="summary_title",
+        )
         results[key] = summarized
         if not all(article.get("summary_ok") for article in summarized):
             logger.error("%s: LLM 요약 실패 기사가 있어 Discord 발송을 건너뜁니다.", source)
